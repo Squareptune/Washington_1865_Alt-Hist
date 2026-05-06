@@ -1,0 +1,30 @@
+title: James G. Blaine
+is-pinned-card: true
+tags: advisor
+card-image: img/portraits/James_G._Blaine.jpg
+view-if: Blaine_advisor = 1
+new-page: true
+
+= James G. Blaine
+
+James G. Blaine is a representative from Maine and is one of the leading figures of the House of representatives with his mix between Radicalism and Moderate policies.
+
+- @Blaine_Unity: Unify the Radicals and Moderates
+- @Blaine_WASP: **I HATE CATHOLICS!!**
+- @root: Return to main
+
+@Blaine_Unity
+subtitle: Mend the differences between the two factions
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; radical_strength += 3; moderate_strength += 3; radical_dissent -= 3; moderate_dissent -=3;
+
+Blaine reduces the tensions between the Radical and Moderate Republicans.
+
+@Blaine_WASP
+subtitle: **THESE DAMN IRISHMEN AND THERE DRUNKEDNESS!!!!**
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; immigrant_laborers_rep -= 7; immigrant_laborers_dem += 7; middle_class_rep += 5; workers_rep += 5; 
+
+Blaine says unspeakable things to these ani- I mean Irishmen.

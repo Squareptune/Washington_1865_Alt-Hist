@@ -1,0 +1,43 @@
+title: Roscoe Conkling
+is-pinned-card: true
+tags: advisor
+card-image: img/portraits/Roscoe_Conkling.jpg
+view-if: conkling_advisor = 1
+new-page: true
+
+= Roscoe Conkling
+
+Roscoe Conkling of New York is the most powerful machine boss in the Republican Party. From his command of the Custom House, he controls vast patronage networks and delivers votes with mechanical precision. He is handsome, vain, fiercely intelligent, and utterly unscrupulous in pursuit of power.
+
+- @conkling_custom_house: Leverage Custom House Patronage
+- @conkling_postal_patronage: Dominate Post Office Appointments
+- @conkling_immigrant_machine: Strengthen Immigrant Networks
+- @root: Return to main
+
+@conkling_custom_house
+title: Leverage Custom House Patronage
+subtitle: Custom House resources, jobs, and contracts flow to machine allies.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; resources += 3; NY_workers_rep += 4; NY_immigrant_laborers_rep += 3; liberal_dissent += 4; conservative_strength += 2;
+
+Conkling activates the Custom House machinery. Patronage flows to loyal Republicans, contracts go to machine allies, and positions are filled by those who understand the meaning of party discipline. The coffers fill, the machine purrs, and conservatives are pleased by the display of executive power. Liberal reformers are appalled.
+
+@conkling_postal_patronage
+title: Dominate Post Office Appointments
+subtitle: Conkling uses the Post Office to reward loyalists and punish enemies.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
+go-to: post_policy
+
+Conkling leverages his influence over the Postmaster General.
+
+@conkling_immigrant_machine
+title: Strengthen Immigrant Networks
+subtitle: Conkling's machine absorbs immigrant workers into the Republican base.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; immigrant_laborers_rep += 6; workers_rep += 3; NY_immigrant_laborers_rep += 5; conservative_dissent += 2; moderate_dissent -= 1;
+
+Conkling's machine reaches deep into the immigrant neighborhoods of New York and other major cities. Jobs, favors, and Christmas turkeys flow to the faithful. Irish and German workers, traditionally Democratic, find reasons to vote Republican. The machine grows fatter and the conservatives are pleased with the working-class support.

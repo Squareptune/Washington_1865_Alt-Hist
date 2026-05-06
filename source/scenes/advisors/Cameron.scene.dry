@@ -1,0 +1,43 @@
+title: Simon Cameron
+is-pinned-card: true
+tags: advisor
+card-image: img/portraits/Smn_Cameron.jpg
+view-if: cameron_advisor = 1
+new-page: true
+
+= Simon Cameron
+
+Simon Cameron is a veteran political operator and power broker from Pennsylvania. A former Senator, Secretary of War, and diplomat, Cameron built his career through patronage, connections, and an unrivaled command of party machinery.
+
+- @Cameron_Military: Draw on War Department Experience
+- @Cameron_machine: Mobilize the Cameron Machine
+- @Cameron_conservative: Strengthen the Conservative Wing
+- @root: Return to main
+
+@Cameron_Military
+title: Draw on War Department Experience
+subtitle: Cameron advises the administration using his experience as Secretary of War.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
+go-to: military_policy
+
+Cameron draws on his time overseeing the War Department, offering practical, if politically minded, advice on military affairs.
+
+@Cameron_machine
+title: Mobilize the Cameron Machine
+subtitle: Cameron activates his political network across Pennsylvania.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; PA_workers_rep += 3; PA_middle_class_rep += 4; PA_rural_rep += 3; PA_immigrant_laborers += 2;
+
+Cameron sets his political machine into motion. Party operatives, local bosses, and loyal officeholders across Pennsylvania coordinate to reinforce Republican strength.
+
+@Cameron_conservative
+title: Strengthen the Conservative Wing
+subtitle: Cameron works to build up the party’s conservative faction.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; conservative_strength += 4; radical_strength -= 4;
+
+Cameron campaigns among the party to increase the strength of the conservative faction against the growing radicals.
