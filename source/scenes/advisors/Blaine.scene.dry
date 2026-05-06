@@ -2,7 +2,7 @@ title: James G. Blaine
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/James_G._Blaine.jpg
-view-if: Blaine_advisor = 1
+view-if: blaine_advisor = 1
 new-page: true
 
 = James G. Blaine
