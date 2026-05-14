@@ -110,7 +110,7 @@ for (let state of Q.states) {
   // Close state nudge — weaker now, just a small thumb on the scale
   // Player actions can still fully override this
   if (closeStates[state] !== undefined) {
-    let nudge = closeStates[state] * 0.3; // only 30% as strong as before
+    let nudge = closeStates[state] * 0.1; // only 30% as strong as before
     let randomJitter = (Math.random() * 0.8) - 0.4; // wider jitter
     let marginTarget = nudge + randomJitter;
 
