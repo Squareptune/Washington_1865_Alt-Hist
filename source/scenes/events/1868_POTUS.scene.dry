@@ -233,15 +233,12 @@ go-to: potus_menu
 
 {!<tr><td><div class="box" style="background-color:#4575b4; outline:2px solid;"></div> !}Democrats{!</td><td>!}[+ demEVTotal +] votes{!</td></tr>!}
 
-[? if liberal_split = 1 : {!<tr><td><div class="box" style="background-color:#DAA520; outline:2px solid;"></div> !}Liberal Republicans{!</td><td>!}[+ libEVTotal +] votes{!</td></tr>!} ?]
-
 {!</table>!}
 
 @potus_menu
 
 - @victory
 - @defeat_dem
-- @defeat_lib
 - @house_decides
 - @defeat_O
 
@@ -249,7 +246,64 @@ go-to: potus_menu
 title: Republicans won the election!
 subtitle: Republicans: [+ repEVTotal +] electoral votes
 view-if: potus_winner = "rep"
-on-arrival: president = Candidate; president_party = "rep";
+on-arrival: {!
+    president = Candidate; 
+    president_party = "rep";
+    
+    // GRANT CABINET
+    if (Q.Candidate == "Grant") {
+        Q.sect_state = "Hamilton Fish";
+        Q.sect_state_party = "R";
+        Q.sect_treasury = "George S. Boutwell";
+        Q.sect_treasury_party = "R";
+        Q.sect_war = "William W. Belknap";
+        Q.sect_war_party = "R";
+        Q.sect_interior = "Jacob D. Cox";
+        Q.sect_interior_party = "R";
+        Q.sect_postmaster = "John A. J. Creswell";
+        Q.sect_postmaster_party = "R";
+        Q.attorney_general = "Ebenezer Rockwood Hoar";
+        Q.attorney_general_party = "R";
+        Q.sect_agriculture = "Norman J. Colman";
+        Q.sect_agriculture_party = "R";
+    }
+    
+    // WADE CABINET
+    if (Q.Candidate == "Wade") {
+        Q.sect_state = "Charles Sumner";
+        Q.sect_state_party = "R";
+        Q.sect_treasury = "Henry C. Carey";
+        Q.sect_treasury_party = "R";
+        Q.sect_war = "Benjamin F. Butler";
+        Q.sect_war_party = "R";
+        Q.sect_interior = "John Palmer Usher";
+        Q.sect_interior_party = "R";
+        Q.sect_postmaster = "Oliver P. Morton";
+        Q.sect_postmaster_party = "R";
+        Q.attorney_general = "Montgomery Blair";
+        Q.attorney_general_party = "R";
+        Q.sect_agriculture = "Isaac Newton";
+        Q.sect_agriculture_party = "R";
+    }
+    
+    // CHASE CABINET
+    if (Q.Candidate == "Chase") {
+        Q.sect_state = "William H. Seward";
+        Q.sect_state_party = "R";
+        Q.sect_treasury = "John Sherman";
+        Q.sect_treasury_party = "R";
+        Q.sect_war = "Edwin M. Stanton";
+        Q.sect_war_party = "R";
+        Q.sect_interior = "Orville H. Browning";
+        Q.sect_interior_party = "R";
+        Q.sect_postmaster = "Alexander W. Randall";
+        Q.sect_postmaster_party = "R";
+        Q.attorney_general = "Henry Stanbery";
+        Q.attorney_general_party = "R";
+        Q.sect_agriculture = "Isaac Newton";
+        Q.sect_agriculture_party = "R";
+    }
+!}
 
 The Republicans have managed to get a majority of the electors in this election. [? if president == "Wade": The American people have signaled their mandate for Benjamin Wade to serve as President and work with congress. ?][? if president == "Grant": Grant's war career of saving the Union has made an impression on voters. Hopefully he will lead us into a brighter future. ?][? if president == "Chase": Chase is elected president — the Radical Republicans despise him and this could lead to a crisis within the party, but the Moderates and Conservatives are cheering with this return to normalcy in the Executive Mansion. ?]
 
@@ -257,17 +311,28 @@ The Republicans have managed to get a majority of the electors in this election.
 title: The Democrats have won the presidency.
 subtitle: Democrats: [+ demEVTotal +] electoral votes
 view-if: potus_winner = "dem"
-on-arrival: president = "Seymour"; president_party = "dem";
+on-arrival: {!
+    president = "Horatio Seymour"; 
+    president_party = "dem";
+    
+    // SEYMOUR CABINET
+    Q.sect_state = "James Guthrie";
+    Q.sect_state_party = "D";
+    Q.sect_treasury = "Francis Preston Blair Sr.";
+    Q.sect_treasury_party = "D";
+    Q.sect_war = "Robert E. Lee";
+    Q.sect_war_party = "D";
+    Q.sect_interior = "James Doolittle";
+    Q.sect_interior_party = "D";
+    Q.sect_postmaster = "William O. Bartow";
+    Q.sect_postmaster_party = "D";
+    Q.attorney_general = "Jeremiah Black";
+    Q.attorney_general_party = "D";
+    Q.sect_agriculture = "Charles Q. Carter";
+    Q.sect_agriculture_party = "D";
+!}
 
-[? if liberal_split = 1 : The Liberal Republican split has handed the election to the Democrats. Horatio Seymour will be the next President of the United States. The damage wrought by the party's division may haunt Reconstruction for years to come. ?][? if liberal_split = 0 : How did you lose this election? It was programmed to be basically impossible to lose! ?]
-
-@defeat_lib
-title: The Liberal Republicans have won the presidency!
-subtitle: Liberal Republicans: [+ libEVTotal +] electoral votes
-view-if: potus_winner = "lib"
-on-arrival: president = "Greeley"; president_party = "lib";
-
-In a stunning upset, the Liberal Republican candidate has won a majority of electoral votes. Their platform of reconciliation, civil service reform, and an end to military occupation has resonated with voters weary of Reconstruction's costs and controversies.
+ How did you lose this election? It was programmed to be basically impossible to lose!
 
 @house_decides
 title: No majority — the election goes to the House!
@@ -278,11 +343,77 @@ on-arrival: {!
   if (Q.house_majority >= 2) {
     Q.potus_winner = "rep";
     Q.president = Q.Candidate;
-    Q.president_party = "rep";
+    Q.president_party = "rep"
+    if (Q.Candidate == "Grant") {
+      Q.sect_state = "Hamilton Fish";
+      Q.sect_state_party = "R";
+      Q.sect_treasury = "George S. Boutwell";
+      Q.sect_treasury_party = "R";
+      Q.sect_war = "William W. Belknap";
+      Q.sect_war_party = "R";
+      Q.sect_interior = "Jacob D. Cox";
+      Q.sect_interior_party = "R";
+      Q.sect_postmaster = "John A. J. Creswell";
+      Q.sect_postmaster_party = "R";
+      Q.attorney_general = "Ebenezer Rockwood Hoar";
+      Q.attorney_general_party = "R";
+      Q.sect_agriculture = "Norman J. Colman";
+      Q.sect_agriculture_party = "R";
+    }
+    
+    // WADE CABINET
+    if (Q.Candidate == "Wade") {
+        Q.sect_state = "Charles Sumner";
+        Q.sect_state_party = "R";
+        Q.sect_treasury = "Henry C. Carey";
+        Q.sect_treasury_party = "R";
+        Q.sect_war = "Benjamin F. Butler";
+        Q.sect_war_party = "R";
+        Q.sect_interior = "John Palmer Usher";
+        Q.sect_interior_party = "R";
+        Q.sect_postmaster = "Oliver P. Morton";
+        Q.sect_postmaster_party = "R";
+        Q.attorney_general = "Montgomery Blair";
+        Q.attorney_general_party = "R";
+        Q.sect_agriculture = "Isaac Newton";
+        Q.sect_agriculture_party = "R";
+    }
+    
+    // CHASE CABINET
+    if (Q.Candidate == "Chase") {
+        Q.sect_state = "William H. Seward";
+        Q.sect_state_party = "R";
+        Q.sect_treasury = "John Sherman";
+        Q.sect_treasury_party = "R";
+        Q.sect_war = "Edwin M. Stanton";
+        Q.sect_war_party = "R";
+        Q.sect_interior = "Orville H. Browning";
+        Q.sect_interior_party = "R";
+        Q.sect_postmaster = "Alexander W. Randall";
+        Q.sect_postmaster_party = "R";
+        Q.attorney_general = "Henry Stanbery";
+        Q.attorney_general_party = "R";
+        Q.sect_agriculture = "Isaac Newton";
+        Q.sect_agriculture_party = "R";
+    };
   } else if (Q.dem_r > Q.rep_r) {
     Q.potus_winner = "dem";
     Q.president = "Seymour";
     Q.president_party = "dem";
+    Q.sect_state = "James Guthrie";
+    Q.sect_state_party = "D";
+    Q.sect_treasury = "Francis Preston Blair Sr.";
+    Q.sect_treasury_party = "D";
+    Q.sect_war = "Robert E. Lee";
+    Q.sect_war_party = "D";
+    Q.sect_interior = "James Doolittle";
+    Q.sect_interior_party = "D";
+    Q.sect_postmaster = "William O. Bartow";
+    Q.sect_postmaster_party = "D";
+    Q.attorney_general = "Jeremiah Black";
+    Q.attorney_general_party = "D";
+    Q.sect_agriculture = "Charles Q. Carter";
+    Q.sect_agriculture_party = "D";
   } else {
     Q.potus_winner = "rep";
     Q.president = Q.Candidate;

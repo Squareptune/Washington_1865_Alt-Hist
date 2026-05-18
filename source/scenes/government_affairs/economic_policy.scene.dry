@@ -12,52 +12,162 @@ The Civil War has left the federal government with unprecedented levels of debt 
 
 Creditors demand "sound money" to stabilize the economy and protect their assets, while debtors, farmers, and many veterans call for an expanded money supply to avoid deflation and ease their burdens. Every decision has consequences for national unity, economic growth, and class politics.
 
-- @return_gold: Gradually return to the gold standard and retire Greenbacks.
-- @maintain_greenbacks: Continue using Greenbacks to finance Reconstruction.
-- @inflate_currency: Issue more paper currency to support labor and farmers.
+The choice before us will shape the financial future of the Republic.
+
+- @return_gold: Return to the gold standard and retire Greenbacks.
+- @maintain_greenbacks: Continue issuing Greenbacks to fuel the economy.
+- @inflate_currency: Issue aggressively to support labor and farmers.
 - @debt_repayment: Prioritize paying down national debt to reassure markets.
 - @banking_expansion: Expand national banks in the South to promote recovery.
-- @stabilize_currency: Support bond-buybacks and treasury contraction to further stabilize currency.
-- @encourage_investment: Encourage foreign and domestic investment through fiscal guarantees and gold convertibility.
+- @contraction: Contract the money supply to fight inflation.
+- @root: Do not change monetary policy for now.
+- @easy_discard
+- @cancel_advisor_action
 
 @return_gold
+subtitle: Return to specie payments and sound money.
 view-if: GreenBacks = 1
-on-arrival: GreenBacks = 0; inflation -= 0.3; economic_growth -= 0.1; middle_class_rep += 2; rural_rep -= 2; workers_rep -= 2; radical_dissent += 3; conservative_dissent -= 2; conservative_strength += 1; 
+on-arrival: {!
+    Q.GreenBacks = 0;
+    Q.inflation -= 0.4;
+    Q.economic_growth -= 0.2;
+    Q.middle_class_rep += 3;
+    Q.middle_class_dem -= 1;
+    Q.rural_rep -= 3;
+    Q.rural_dem += 3;
+    Q.workers_rep -= 2;
+    Q.workers_dem += 2;
+    Q.radical_dissent += 5;
+    Q.moderate_dissent -= 3;
+    Q.conservative_dissent -= 4;
+    Q.liberal_strength += 3;
+    Q.europe_relation += 2;
+    Q.budget += 1;
+!}
 
-We announce a gradual resumption of specie payments. Wall Street celebrates, and Northern creditors regain confidence in the dollar. But deflation hurts farmers, debtors, and war veterans alike, stoking unrest in rural and working-class communities.
+We announce a gradual resumption of specie payments, signaling commitment to "hard money." Wall Street celebrates, and Northern creditors regain confidence in the dollar. European investors, reassured by our fiscal discipline, increase their holdings of American bonds.
+
+But the effects on ordinary Americans are severe. Deflation spreads as the money supply contracts. Farmers who borrowed at high interest rates find their debts growing in real terms. War veterans promised pensions discover their value shrinking. Rural areas, dependent on credit for spring planting, suffer acute distress.
+
+The Radical press denounces this as betrayal of the working man. Yet the financial establishment applauds our "responsibility."
 
 @maintain_greenbacks
-view-if: GreenBacks = 1
-on-arrival: inflation += 0.1; economic_growth += 0.1; rural_rep += 2; workers_rep += 2; middle_class_rep -= 2; conservative_dissent += 2
+subtitle: Keep Greenbacks in circulation; balanced approach.
+View-if: GreenBacks = 1
+on-arrival: {!
+    Q.inflation += 0.05;
+    Q.economic_growth += 0.1;
+    Q.rural_rep += 2;
+    Q.workers_rep += 1;
+    Q.middle_class_rep -= 1;
+    Q.middle_class_dem += 1;
+    Q.conservative_dissent += 2;
+    Q.moderate_strength += 2;
+    Q.moderate_dissent -= 1;
+    Q.lib_strength += 1;
+!}
 
-We continue to circulate Greenbacks, balancing economic growth with moderate inflation. The move keeps the economy flexible but worries fiscal conservatives and bondholders who favor hard money.
+We maintain Greenback circulation at current levels, balancing economic growth with modest inflation. The policy keeps liquidity available for Northern industry and Southern reconstruction without alarming creditors entirely.
+
+This middle path satisfies few completely. Conservatives grumble that we're not fully committed to hard money. Radicals complain we're not doing enough to relieve debtors. But the economy hums along at a sustainable pace.
 
 @inflate_currency
+subtitle: Issue aggressively to stimulate growth and relieve debtors.
 view-if: GreenBacks = 1
-on-arrival: inflation += 0.3; economic_growth += 0.3; rural_rep += 3; workers_rep += 3; middle_class_rep -= 3; radical_strength += 3; conservative_dissent += 3
+on-arrival: {!
+    Q.inflation += 0.4;
+    Q.economic_growth += 0.4;
+    Q.rural_rep += 4;
+    Q.rural_dem -= 2;
+    Q.workers_rep += 3;
+    Q.workers_dem -= 2;
+    Q.unemployed_rep += 2;
+    Q.unemployed_dem -= 1;
+    Q.middle_class_rep -= 4;
+    Q.middle_class_dem += 3;
+    Q.conservative_dissent += 5;
+    Q.radical_strength += 4;
+    Q.radical_dissent -= 3;
+    Q.europe_relation -= 3;
+!}
 
-We issue a new round of Greenbacks to stimulate the economy and support workers and indebted farmers. Farmers and war veterans praise the move, but bankers and industrialists decry it as reckless inflationism.
+We authorize massive new issues of Greenbacks, flooding the economy with liquidity. Farmers and workers cheer as credit becomes cheap and abundant. Reconstruction projects accelerate. The Southern economy, starved for capital, begins to revive.
+
+But the cost is inflation. Prices rise. Savers and creditors watch their holdings lose value. The financial press erupts in alarm. European investors, fearing the depreciation of American securities, begin selling. The dollar weakens against gold and foreign currencies.
+
+Bankers warn of ruin. Reformers and conservatives desert us. Yet the common people—laborers, farmers, freedmen—see opportunity and relief for the first time since the war's end.
 
 @debt_repayment
-on-arrival: inflation -= 0.1; economic_growth -= 0.1; budget -= 1; middle_class_rep += 1; rural_rep -= 1
+subtitle: -1 budget. Reduce the national debt to stabilize finances.
+choose-if: budget >= 1
+unavailable-subtitle: [? if budget < 1 : We cannot afford to allocate funds to debt repayment. ?]
+on-arrival: {!
+    Q.budget -= 1;
+    Q.inflation -= 0.1;
+    Q.economic_growth -= 0.1;
+    Q.middle_class_rep += 2;
+    Q.conservative_strength += 2;
+    Q.conservative_dissent -= 2;
+    Q.moderate_dissent -= 1;
+    Q.rural_rep -= 2;
+    Q.workers_rep -= 1;
+    Q.radical_dissent += 4;
+    Q.europe_relation += 1;
+!}
 
-We allocate budgetary surplus to reducing the war debt. This builds trust in federal finances and soothes the bond markets, but it leaves less money for Reconstruction programs.
+We commit budgetary surplus to retiring the war debt. This builds credibility with foreign lenders and domestic bondholders. Confidence in federal finances strengthens. Interest rates on government borrowing fall slightly.
+
+The down side: funds that might have gone to Reconstruction programs, education, or infrastructure now vanish into debt service. Radicals accuse us of prioritizing Wall Street over the freedmen. The pace of Southern recovery slows.
+
+Yet markets are reassured, and the long-term fiscal position of the government improves.
 
 @banking_expansion
-on-arrival: inflation += 0.05; economic_growth += 0.2; middle_class_rep += 2; rural_rep += 1; conservative_strength += 1
+subtitle: +0.5 budget. Charter new national banks across the South.
+on-arrival: {!
+    Q.inflation += 0.08;
+    Q.economic_growth += 0.25;
+    Q.budget += 0.5;
+    Q.rural_rep += 3;
+    Q.middle_class_rep += 2;
+    Q.conservative_strength += 1;
+    Q.moderate_strength += 1;
+    Q.workers_rep += 1;
+    Q.radical_dissent -= 2;
+!}
 
-We charter new national banks in Southern states to encourage investment, rebuild infrastructure, and spread Northern financial institutions across the reunited Union.
+We charter a network of national banks throughout the former Confederate states, spreading Northern financial institutions and capital into the South. These banks finance reconstruction projects, help freedmen establish businesses, and integrate Southern commerce into national markets.
 
-@stabilize_currency
-view-if: GreenBacks = 0
-choose-if: budget > 0
-unavailable-subtitle: We can't afford such a program
-on-arrival: inflation -= 0.5; conservative_dissent -= 2; economic_growth -= 0.5 if economic_growth > 0; budget -= 1
+The policy works. Capital flows southward. New towns sprout. The Southern economy, shattered by war, begins to rebuild on Northern lines.
 
-We authorize the Treasury to pursue contractionary measures, including bond buybacks and limited money supply growth, to stabilize the value of the dollar and keep it in line with gold reserves. Conservative economists support this policy, though it may slow growth.
+But the banks also concentrate economic power in Republican hands—a political asset now, but potentially dangerous. Democrats cry foul about carpetbagger finance. Traditional Southern planters resent Northern bankers' control. Still, growth is real, and Republican business allies are satisfied.
 
-@encourage_investment
-view-if: GreenBacks = 0
-on-arrival: middle_class_rep += 2; budget += 1; economic_growth += 1; liberal_dissent += 1
+@contraction
+subtitle: Contract the money supply to fight inflation and stabilize the currency.
+view-if: inflation >= 2 and GreenBacks = 1
+choose-if: inflation >= 2
+unavailable-subtitle: [? if inflation < 2 : Inflation is not yet high enough to justify contraction. ?]
+on-arrival: {!
+    Q.inflation -= 0.3;
+    Q.economic_growth -= 0.2;
+    Q.middle_class_rep += 2;
+    Q.conservative_strength += 1;
+    Q.rural_rep -= 3;
+    Q.rural_dem += 3;
+    Q.workers_dem += 2;
+    Q.radical_dissent += 6;
+    Q.moderate_dissent += 2;
+    Q.budget -= 0.5;
+!}
 
-By reaffirming our commitment to the gold standard and offering fiscal guarantees to investors, we attract capital into Northern infrastructure and banking. Wall Street is pleased — but reformers warn of rising inequality and foreign dependence.
+With inflation rising, we move to contract the money supply. The Treasury begins retiring Greenbacks, reducing liquidity. Interest rates rise. Prices stabilize.
+
+The immediate effect is painful. Credit dries up. Farmers and small businesses struggle to meet obligations. Construction projects stall for lack of financing. Unemployment ticks upward as economic activity slows.
+
+The Radical wing erupts in fury. We are, they cry, crushing the poor to appease creditors. Yet inflation does ease, and by year's end, prices stabilize and confidence partially returns.
+
+It is a Hobson's choice: allow inflation to run, or accept contraction's short-term pain for long-term stability.
+
+@root
+go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
+
+We maintain the current monetary stance and do not change course at this time.
