@@ -34,19 +34,19 @@ view-if: french_mexico = 0
 choose-if: budget >= 1
 subtitle: -1 budget
 unavailable-subtitle: We lack the budget to project power abroad.
-on-arrival: europe_relation -= 2; budget -= 1; french_mexico = 1
+on-arrival: europe_relation -= 2; budget -= 1; PoliticalCostPenalty += 1; french_mexico = 1
 
 Under Napoleon III, France has installed Maximilian as Emperor of Mexico. This violates the Monroe Doctrine, and now that the Civil War has ended, we are signaling our intention to uphold it.
 
 We send diplomatic notes and troops to the border, warning France to withdraw. We are not prepared for war, but a strong signal may suffice.
 
 @pressure_mexico2
-title: Pressure France to withdraw from Mexico.
+title: Continue to pressure France to withdraw from Mexico.
 view-if: french_mexico = 1
 choose-if: budget >= 1
 subtitle: -1 budget
 unavailable-subtitle: We lack the budget to sustain foreign pressure.
-on-arrival: europe_relation -= 2; budget -= 1; french_mexico = 2; middle_class_rep += 3; radical_strength += 2; radical_dissent -= 2;
+on-arrival: europe_relation -= 2; budget -= 1; PoliticalCostPenalty += 1; french_mexico = 2; middle_class_rep += 3; radical_strength += 2; radical_dissent -= 2;
 
 Facing mounting pressure and lacking international support, the French military evacuates Mexico. The Republican forces seize the opportunity to strike, defeating Maximilian's regime and executing the would-be Emperor.
 
@@ -57,7 +57,7 @@ title: Assert naval presence in the Caribbean.
 view-if: caribbean_patrol = 0
 choose-if: navy_strength >= 220 and budget >= 1
 unavailable-subtitle: Our Navy isn't large enough to enforce the Monroe Doctrine.
-on-arrival: caribbean_patrol += 1; europe_relation -= 1; moderate_strength += 1; economic_growth += 0.1; budget -= 1; navy_strength -= 5
+on-arrival: caribbean_patrol += 1; europe_relation -= 1; moderate_strength += 1; economic_growth += 0.1; budget -= 1; PoliticalCostPenalty += 1; navy_strength -= 5
 
 The Caribbean is crawling with European ships and pirates. With our navy modernizing, we deploy warships to project power and enforce stability.
 

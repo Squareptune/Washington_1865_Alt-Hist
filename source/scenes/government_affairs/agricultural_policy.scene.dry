@@ -26,7 +26,7 @@ subtitle: -1 budget - Break up Confederate plantations for freedmen’s homestea
 unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?] [? if judicial_reform < 2 : The courts wouldn't support such action ?]
 choose-if: judicial_reform >= 2 and budget > 0
 view-if: fifth_A = 0
-on-arrival: budget -= 1; freemen_rep += 3; land_reform += 1; rural_dem -= 8*(1-dissent); radical_strength += 8; moderate_dissent += 5; kkk_militancy += 0.1; agriculture_goal_completed += 1; liberal_strength += 3; liberal_dissent -= 2
+on-arrival: budget -= 1; PoliticalCostPenalty += 1; freemen_rep += 3; land_reform += 1; rural_dem -= 8*(1-dissent); radical_strength += 8; moderate_dissent += 5; kkk_militancy += 0.1; agriculture_goal_completed += 1; liberal_strength += 3; liberal_dissent -= 2
 
 We seize rebel estates under the Confiscation Acts, granting land to freedmen’s cooperatives. Former slaves become yeoman farmers—but ex-Confederates scream of ‘Negro domination.’ The Klan burns crops in response.
 
@@ -44,7 +44,7 @@ The Reconstruction government has authorized a bold land redistribution effort: 
 title: Freedmen’s Credit
 subtitle: -2 budget - Increase financing for agricultural credit and insurance.
 choose-if: budget >= 2
-on-arrival: budget -= 2; agricultural_finance += 1; rural_rep += 6*(1-dissent); rural_dem -= 4; kkk_strength -= 5; rural_policy += 1; economic_growth += 0.2; moderate_strength += 2; liberal_strength += 1; conservative_dissent += 1
+on-arrival: budget -= 2; PoliticalCostPenalty += 2; agricultural_finance += 1; rural_rep += 6*(1-dissent); rural_dem -= 4; kkk_strength -= 5; rural_policy += 1; economic_growth += 0.2; moderate_strength += 2; liberal_strength += 1; conservative_dissent += 1
 
 "The Freedmen’s Bank expands loans for Black cotton growers and white tenant farmers. Northern investors grumble about risk, but Southern Republicans hail it as salvation from sharecropping bondage."
 
@@ -52,7 +52,7 @@ on-arrival: budget -= 2; agricultural_finance += 1; rural_rep += 6*(1-dissent); 
 title: Bread Subsidies
 subtitle: -1 budget – Cheap grain for Northern factories.
 choose-if: budget >= 1
-on-arrival: budget -= 1; workers_rep += 5*(1-dissent); unemployed_rep += 4; rural_dem += 3; economic_growth += 0.2; moderate_strength += 2; conservative_dissent += 1
+on-arrival: budget -= 1; PoliticalCostPenalty += 1; workers_rep += 5*(1-dissent); unemployed_rep += 4; rural_dem += 3; economic_growth += 0.2; moderate_strength += 2; conservative_dissent += 1
 
 "We flood Northern markets with cheap Midwestern grain. Textile workers cheer, but Southern planters accuse us of ‘starving the South’ to feed Yankee mills."
 
@@ -60,7 +60,7 @@ on-arrival: budget -= 1; workers_rep += 5*(1-dissent); unemployed_rep += 4; rura
 title: Cotton Bureau
 subtitle: -2 budget – Federal price guarantees for cotton.
 choose-if: budget >= 2
-on-arrival: budget -= 2; rural_rep += 7*(1-dissent); economic_growth += 0.4; europe_relation -= 2.5; moderate_strength += 3; conservative_dissent += 2; liberal_dissent += 1
+on-arrival: budget -= 2; PoliticalCostPenalty += 2; rural_rep += 7*(1-dissent); economic_growth += 0.4; europe_relation -= 2.5; moderate_strength += 3; conservative_dissent += 2; liberal_dissent += 1
 max-visits: 1
 
 "The U.S. Cotton Bureau sets fixed prices, shielding freedmen from exploitative traders. London textile magnates threaten to buy Egyptian cotton instead, while Wall Street howls about needing limited government intervention."

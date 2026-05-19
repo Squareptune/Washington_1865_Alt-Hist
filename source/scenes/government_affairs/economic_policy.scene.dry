@@ -113,6 +113,7 @@ on-arrival: {!
     Q.workers_rep -= 1;
     Q.radical_dissent += 4;
     Q.europe_relation += 1;
+    Q.PoliticalCostPenalty += 1;
 !}
 
 We commit budgetary surplus to retiring the war debt. This builds credibility with foreign lenders and domestic bondholders. Confidence in federal finances strengthens. Interest rates on government borrowing fall slightly.
@@ -157,6 +158,7 @@ on-arrival: {!
     Q.radical_dissent += 6;
     Q.moderate_dissent += 2;
     Q.budget -= 0.5;
+    Q.PoliticalCostPenalty += 0.5;
 !}
 
 With inflation rising, we move to contract the money supply. The Treasury begins retiring Greenbacks, reducing liquidity. Interest rates rise. Prices stabilize.

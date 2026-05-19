@@ -25,7 +25,7 @@ The federal judiciary remains one of the greatest obstacles to Reconstruction. M
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget.
 choose-if: budget >= 1
-on-arrival: judicial_reform += 1; budget -= 1; radical_strength += 5; conservative_dissent += 5; moderate_dissent += 5; freemen_rep += 5;
+on-arrival: judicial_reform += 1; budget -= 1; PoliticalCostPenalty += 1; radical_strength += 5; conservative_dissent += 5; moderate_dissent += 5; freemen_rep += 5;
 
 Radical Republicans launch a full-scale campaign to overhaul the judiciary—impeaching obstructionist judges, appointing new justices, and passing legislation to expand the court's size. The move unleashes conservative backlash but opens the door for ambitious reform.
 
@@ -33,7 +33,7 @@ Radical Republicans launch a full-scale campaign to overhaul the judiciary—imp
 subtitle: -2 budget
 unavailable-subtitle: Not enough budget.
 choose-if: budget >= 2
-on-arrival: budget -= 2; judicial_reform += 2; conservative_dissent += 5; moderate_dissent += 4; radical_strength += 3; freemen_rep += 4; middle_class_rep += 1;
+on-arrival: budget -= 2; PoliticalCostPenalty += 2; judicial_reform += 2; conservative_dissent += 5; moderate_dissent += 4; radical_strength += 3; freemen_rep += 4; middle_class_rep += 1;
 
 Congress passes the Judicial Circuits Act, dramatically expanding federal court districts and enabling the appointment of dozens of loyal judges. Conservative factions decry it as court-packing, but the legislation survives constitutional challenge and shifts the judiciary firmly in favor of Reconstruction.
 

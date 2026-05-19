@@ -22,7 +22,7 @@ The Post Office is the largest arm of the federal bureaucracy—and the most pol
 
 @southern_patronage
 subtitle: -1 Budget
-on-arrival: freemen_rep += 3; rural_dem -= 2; radical_strength += 1; conservative_dissent += 1; budget -= 1; kkk_strength += 2
+on-arrival: freemen_rep += 3; rural_dem -= 2; radical_strength += 1; conservative_dissent += 1; budget -= 1; PoliticalCostPenalty += 1; kkk_strength += 2
 
 Thousands of postal appointments across the South are handed to Black Republicans, Union loyalists, and carpetbaggers. This expands federal presence in the region—but inflames local opposition and fuels accusations of corruption.
 

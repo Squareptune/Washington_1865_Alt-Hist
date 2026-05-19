@@ -107,7 +107,7 @@ The treaty ends Red Cloud’s War, establishes the Great Sioux Reservation—inc
 subtitle: -1 Budget
 choose-if: budget >= 1 and army_loyalty > 0.5
 unavailable-subtitle: [? if budget < 1: We do not have the budget.?][? if army_loyalty <= 0.5: The Army is too disloyal to carry out this operation.?]
-on-arrival: native_relations -= 2; Sioux_Treaty = 0; army_strength -= 0.5; army_militancy += 1; conservative_strength += 1; radical_dissent += 2; budget -= 1
+on-arrival: native_relations -= 2; Sioux_Treaty = 0; army_strength -= 0.5; army_militancy += 1; conservative_strength += 1; radical_dissent += 2; budget -= 1; PoliticalCostPenalty += 1
 
 We take a hardline approach and order the military to suppress Native resistance in the West. Forts are reinforced, and settlers are escorted into contested areas.
 

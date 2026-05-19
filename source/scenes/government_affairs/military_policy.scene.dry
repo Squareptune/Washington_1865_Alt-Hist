@@ -42,7 +42,7 @@ Even after Appomattox, the Army remains a decisive tool of national authority in
 subtitle: -1 budget
 choose-if: budget >= 1
 unavailable-subtitle: We do not have the budget.
-on-arrival: budget -= 1; coalition_dissent -= 1 if coalition_dissent > 0; army_loyalty += 0.07 if army_loyalty < 1; army_strength += 20; radical_dissent += 3;  moderate_dissent += 2; conservative_strength += 5; conservative_dissent -= 3; dem_relation += 1; reconstruction_support += 1; economic_growth += 0.1
+on-arrival: budget -= 1; PoliticalCostPenalty += 1; coalition_dissent -= 1 if coalition_dissent > 0; army_loyalty += 0.07 if army_loyalty < 1; army_strength += 20; radical_dissent += 3;  moderate_dissent += 2; conservative_strength += 5; conservative_dissent -= 3; dem_relation += 1; reconstruction_support += 1; economic_growth += 0.1
 
 The decision to increase funding for the Army reassures conservative Republicans and moderates who favor strong federal enforcement in the South. However, many Radical Republicans and anti-military factions view it as a betrayal of civilian primacy. European observers are wary of American military expansion during such a volatile time.
 
@@ -58,7 +58,7 @@ With reduced funds, the Army scales back operations across the South. Though bud
 subtitle: -1 budget
 choose-if: budget >= 1 and reichswehr_loyalty < 1
 unavailable-subtitle: [? if budget < 1 : We do not have the budget. ?][? if reichswehr_loyalty >= 1 : The Reichswehr is already fully loyal to the democratic government. ?]
-on-arrival: army_loyalty += 0.15; army_militancy -= 0.5 if army_loyalty < 0.5; budget -= 1; dem_relation -= 5; pacifism += 1;
+on-arrival: army_loyalty += 0.15; army_militancy -= 0.5 if army_loyalty < 0.5; budget -= 1; PoliticalCostPenalty += 1; dem_relation -= 5; pacifism += 1;
 
 Reforms are underway to democratize the Army. Officers with known Confederate sympathies are dismissed, and new recruitment targets the Unionist and freedmen communities. While progress is uneven, this marks a significant shift in the Armyâ€™s alignment with Reconstruction goals.
 
@@ -79,7 +79,7 @@ The Navy played only a minor role in the Civil War's aftermath but remains essen
 subtitle: -1 budget
 choose-if: budget >= 1
 unavailable-subtitle: We do not have the budget.
-on-arrival: budget -= 1; navy_strength += 20; economic_growth += 0.1; coalition_dissent -= 1 if coalition_dissent > 0; european_tension += 1; democrat_support -= 1; radical_republican_dissent += 2
+on-arrival: budget -= 1; PoliticalCostPenalty += 1; navy_strength += 20; economic_growth += 0.1; coalition_dissent -= 1 if coalition_dissent > 0; european_tension += 1; democrat_support -= 1; radical_republican_dissent += 2
 
 With a stronger fleet, we can better enforce the Monroe Doctrine, assert American influence in the Caribbean, and protect freedmen's emigration routes. However, critics argue that this diverts resources from urgent domestic needs.
 
@@ -95,7 +95,7 @@ Reallocating naval funds helps support schools, land offices, and the Freedmenâ€
 subtitle: -1 budget
 choose-if: budget >= 1 and navy_loyalty < 1
 unavailable-subtitle: [? if budget < 1 : We do not have the budget. ?][? if navy_loyalty >= 1 : The Navy is already fully loyal to the democratic government. ?]
-on-arrival: budget -= 1; navy_loyalty += 0.15; navy_strength += 10; economic_growth += 0.05; european_relation += 1
+on-arrival: budget -= 1; PoliticalCostPenalty += 1; navy_loyalty += 0.15; navy_strength += 10; economic_growth += 0.05; european_relation += 1
 
 We implement reforms in naval education and promotion, ensuring officers are chosen by merit and loyalty to the Republic. We also retire some secessionist holdovers and begin investing in modern vessels.
 
@@ -116,7 +116,7 @@ The internal security forces of the union help protect the nation from the natio
 subtitle: -1 budget
 choose-if: budget >= 1
 unavailable-subtitle: We do not have the budget.
-on-arrival: budget -= 1; Us_police_strength += 5; economic_growth += 0.1; Us_police_militancy += 0.01; democrat_support -= 1; radical_dissent += 2
+on-arrival: budget -= 1; PoliticalCostPenalty += 1; Us_police_strength += 5; economic_growth += 0.1; Us_police_militancy += 0.01; democrat_support -= 1; radical_dissent += 2
 
 With a stronger force, we can better enforce law and order, and protect freedmen from attacks. However, critics argue that this is an invitations to tyranny.
 
@@ -132,7 +132,7 @@ Reallocating naval funds helps support schools, land offices, and the Freedmenâ€
 subtitle: -1 budget
 choose-if: budget >= 1 and Us_police_loyalty < 1
 unavailable-subtitle: [? if budget < 1 : We do not have the budget. ?][? if Us_police_loyalty >= 1 : The Police is already fully loyal to the government. ?]
-on-arrival: budget -= 1; Us_police_loyalty += 0.15; Us_police_loyalty += 4; economic_growth += 0.05;
+on-arrival: budget -= 1; PoliticalCostPenalty += 1; Us_police_loyalty += 0.15; Us_police_loyalty += 4; economic_growth += 0.05;
 
 We implement reforms in naval education and promotion, ensuring officers are chosen by merit and loyalty to the Republic. We also retire some secessionist holdovers and begin investing in modern doctines and equipment.
 
