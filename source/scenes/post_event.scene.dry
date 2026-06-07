@@ -391,17 +391,15 @@ for (let state of Q.southern_states) {
 
 }
 if (cls === "freemen") {
-    if (Q.fifthteen == 0) continue;
-
-    // --- Registration base ---
-    // Starts low, grows with Union League presence and Bureau outreach
-    let registrationRate = Math.min(1,
-        0.20
-        + (Q.Union_League_strength / 1000) * 0.40
-        + (Q.freedmen_education / 100) * 0.25
+    if (Q.fifthteen == 0) {
+        Q.freedmen_turnout = 0;
+    } else {
+        let registrationRate = Math.min(1,
+            0.20
+            + (Q.Union_League_strength / 1000) * 0.40
+            + (Q.freedmen_education / 100) * 0.25
     );
 
-    // --- Suppression penalty ---
     // Violence suppresses turnout; education and occupation partially counter it
     let rawSuppression = Math.min(1, (Q.ViolencePenalty || 0) / 30);
     let suppressionResistance = Math.min(0.5,
