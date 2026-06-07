@@ -351,11 +351,11 @@ view-if: blaine_advisor = 0 and n_advisors < 3
 on-arrival: blaine_advisor = 1; n_advisors += 1; moderate_strength += 4; moderate_dissent -= 3; middle_class_rep += 2; rural_rep += 1
 go-to: advisor_menu
 
-James Blaine is now an advisor. His national profile and political skill are considerable assets — though his ambition bears watching.
+James Blaine is now an advisor. His national profile and political skill are considerable assets though his ambition bears watching.
 
 @add_hayes
 title: Rutherford Hayes
-subtitle: Ohio governor. Moderate, honest, and broadly trusted.
+subtitle: Ohioian. Moderate, honest, and broadly trusted.
 is-card: true
 card-image: img/portraits/Rutherford_Hayes.jpg
 tags: moderate_advisor
@@ -381,7 +381,7 @@ Hamilton Fish is now an advisor. His diplomatic experience opens doors abroad th
 
 @add_conkling
 title: Roscoe Conkling
-subtitle: New York machine boss and dominant conservative figure. Bitter rival of Blaine. Controls the Custom House.
+subtitle: New York machine boss and dominant conservative figure. Controls the Custom House.
 is-card: true
 card-image: img/portraits/Roscoe_Conkling.jpg
 tags: conservative_advisor
@@ -389,7 +389,7 @@ view-if: conkling_advisor = 0 and n_advisors < 3
 on-arrival: conkling_advisor = 1; n_advisors += 1; conservative_strength += 5; conservative_dissent -= 4; resources += 1; liberal_dissent += 3
 go-to: advisor_menu
 
-Roscoe Conkling is now an advisor. His machine delivers votes and money — at a price.
+Roscoe Conkling is now an advisor. His machine delivers votes and money at a price.
 
 @add_cameron
 title: Simon Cameron
@@ -405,7 +405,7 @@ Simon Cameron is now an advisor. His Pennsylvania machine is a formidable asset,
 
 @add_seward
 title: William Seward
-subtitle: Secretary of State and former Whig leader. Pragmatic conservative and Johnson ally.
+subtitle: Secretary of State and former Whig leader. Pragmatic conservative.
 is-card: true
 card-image: img/portraits/Seward.jpg
 tags: conservative_advisor
@@ -427,11 +427,11 @@ view-if: schurz_advisor = 0 and n_advisors < 3 and liberal_split = 0
 on-arrival: schurz_advisor = 1; n_advisors += 1; liberal_strength += 5; liberal_dissent -= 4; civil_service_reform += 1; middle_class_rep += 2
 go-to: advisor_menu
 
-Carl Schurz is now an advisor. His reform credentials and German-American connections are significant assets — but his loyalty to the party is conditional on genuine reform.
+Carl Schurz is now an advisor. His reform credentials and German-American connections are significant assets but his loyalty to the party is conditional on genuine reform.
 
 @add_trumbull
 title: Lyman Trumbull
-subtitle: Illinois senator. Voted to acquit Johnson. Drifting steadily toward the Liberal Republicans.
+subtitle: Illinois senator. Drifting steadily toward the Liberal Republicans.
 is-card: true
 card-image: img/portraits/Lyman_Trumbull.jpg
 tags: liberal_advisor
@@ -439,11 +439,11 @@ view-if: trumbull_advisor = 0 and n_advisors < 3 and liberal_split = 0
 on-arrival: trumbull_advisor = 1; n_advisors += 1; liberal_strength += 3; liberal_dissent -= 3; radical_dissent += 4; moderate_dissent += 2
 go-to: advisor_menu
 
-Lyman Trumbull is now an advisor. His legal expertise is valuable, though his vote to acquit Johnson still rankles the Radicals.
+Lyman Trumbull is now an advisor. His legal expertise is valuable.
 
 @add_cox
 title: Jacob Cox
-subtitle: Ohio politician and Grant's Interior Secretary. Resigned over civil service disputes. Committed reformer.
+subtitle: Ohio politician and Committed reformer.
 is-card: true
 card-image: img/portraits/Jacob_Cox.jpg
 tags: liberal_advisor
@@ -451,7 +451,7 @@ view-if: cox_advisor = 0 and n_advisors < 3 and liberal_split = 0
 on-arrival: cox_advisor = 1; n_advisors += 1; liberal_strength += 3; liberal_dissent -= 3; civil_service_reform += 1; conservative_dissent += 2
 go-to: advisor_menu
 
-Jacob Cox is now an advisor. His reform credentials are genuine, and his Ohio connections are useful — but he has made enemies within the Grant administration.
+Jacob Cox is now an advisor. His reform credentials are genuine, and his Ohio connections are useful.
 
 ###################### NONFACTIONAL ADVISORS
 
@@ -465,4 +465,4 @@ view-if: douglass_advisor = 0 and n_advisors < 3
 on-arrival: douglass_advisor = 1; n_advisors += 1; freemen_rep += 5; workers_rep += 2; radical_dissent -= 3; liberal_dissent += 2
 go-to: advisor_menu
 
-Frederick Douglass is now an advisor. His moral authority transcends faction — and his connection to the freedmen community is invaluable.
+Frederick Douglass is now an advisor. His moral authority transcends faction and his connection to the freedmen community is invaluable.

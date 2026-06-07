@@ -1794,6 +1794,10 @@ Q.welfare = 0;
 Q.agricultural_policy = 0;
 Q.land_reform = 0;
 Q.works_program = 0;
+Q.freedmen_education = 0;
+Q.freedmen_turnout = 0;
+Q.bureau_cost = 1;
+Q.bureau_target = ""; 
 
 Q.europe_relation = 0;
 Q.french_mexico = 0;
@@ -1822,7 +1826,7 @@ Q.electoral_threshold = 0;
 
 Q.n_advisors = 0;
 if (!Array.isArray(Q.timers)) {
-    Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
+    Q.timers = ['advisor_action', 'bureau_timer', 'crisis_program',
         'fundraising', 'ideology',
         'inter_party_relationships', 'international_relations',
         'iron_front', 'media', 'enemies',

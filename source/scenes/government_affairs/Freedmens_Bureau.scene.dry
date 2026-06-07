@@ -1,0 +1,169 @@
+title: Freedmen's Bureau
+new-page: true
+is-card: true
+tags: potus_affairs
+view-if: rep_majority >= 1 and bureau_timer <= 0;
+card-image: img/Oliver_Otis_Howard.jpg
+on-arrival:{! 
+
+    Q.month_actions += 1;
+    Q.bureau_timer += 6;
+    Q.bureau_cost = Math.min(5, 1 + Math.floor((Q.kkk_strength + Q.whiteL_strength) / 400));
+
+!}
+
+= The Freedmen's Bureau
+
+General Oliver Howard's Bureau operates schools, labor offices, and makeshift courts across the South but its agents work under constant threat. Every dollar spent in hostile territory costs more than it would in peacetime.
+
+[? if kkk_strength + whiteL_strength >= 800 : Paramilitary violence is severe. Bureau operations are costly and dangerous — each action will require [+ bureau_cost +] budget. ?]
+
+[? if kkk_strength + whiteL_strength >= 400 and kkk_strength + whiteL_strength < 800 : Resistance is significant. Bureau actions will cost [+ bureau_cost +] budget. ?]
+
+[? if kkk_strength + whiteL_strength < 400 : The South is relatively calm. Bureau operations cost [+ bureau_cost +] budget. ?]
+
+Which state should we concentrate Bureau resources on this season?
+
+- @alabama: Alabama
+- @mississippi: Mississippi
+- @georgia: Georgia
+- @florida: Florida
+- @north_carolina: North Carolina
+- @south_carolina: South Carolina
+- @louisiana: Louisiana
+- @arkansas: Arkansas
+- @texas: Texas
+- @virginia: Virginia
+- @easy_discard
+- @cancel_advisor_action
+
+@alabama
+go-to: bureau_action
+on-arrival: bureau_target = "Alabama"
+
+@mississippi
+go-to: bureau_action
+on-arrival: bureau_target = "Mississippi"
+
+@georgia
+go-to: bureau_action
+on-arrival: bureau_target = "Georgia"
+
+@florida
+go-to: bureau_action
+on-arrival: bureau_target = "Florida"
+
+@north_carolina
+go-to: bureau_action
+on-arrival: bureau_target = "North Carolina"
+
+@south_carolina
+go-to: bureau_action
+on-arrival: bureau_target = "South Carolina"
+
+@louisiana
+go-to: bureau_action
+on-arrival: bureau_target = "Louisiana"
+
+@arkansas
+go-to: bureau_action
+on-arrival: bureau_target = "Arkansas"
+
+@texas
+go-to: bureau_action
+on-arrival: bureau_target = "Texas"
+
+@virginia
+go-to: bureau_action
+on-arrival: bureau_target = "Virginia"
+
+@bureau_action
+
+Bureau agents are on the ground in [+ bureau_target +]. What should they prioritize this season?
+
+- @schools: Open new Bureau schoolhouses and hire local teachers.
+- @courts: Station Bureau agents in local courthouses to assist freedmen with labor disputes.
+- @registration: Send agents door to door to register freedmen voters and explain their rights.
+- @outreach: Expand Bureau offices and build relationships with local Republican leaders and freedmen communities.
+- @soldiers: Request a detachment of federal soldiers to protect Bureau headquarters and agents.
+
+
+@schools
+subtitle: -[+ bureau_cost +] budget
+choose-if: budget >= bureau_cost
+unavailable-subtitle: Not enough budget.
+on-arrival:{!
+
+    Q.freedmen_education += 2;
+    Q.budget -= bureau_cost;
+    let s = Q.bureau_target;
+    Q[s + "_freemen_rep"] = Math.min(100, (Q[s + "_freemen_rep"] || 0) + 4);
+    Q[s + "_workers_rep"] = Math.min(100, (Q[s + "_workers_rep"] || 0) + 1);
+    Q[s + "_immigrant_laborers_rep"] = Math.min(100, (Q[s + "_workers_rep"] || 0) + 1);
+
+!}
+
+New schoolhouses open across [+ bureau_target +]. Freedmen of all ages attend in the evenings after fieldwork. Planters pressure landlords to evict teachers, and night riders burn two buildings before the month is out but enrollment keeps climbing.
+
+@courts
+subtitle: -[+ bureau_cost +] budget
+choose-if: budget >= bureau_cost
+unavailable-subtitle: Not enough budget.
+on-arrival: {!
+    Q.budget -= bureau_cost;
+    Q.judicial_reform += 0.25;
+    Q[s + "_freemen_rep"] = Math.min(100, (Q[s + "_freemen_rep"] || 0) + 3);
+    Q[s + "_rural_rep"] = Math.min(100, (Q[s + "_rural_rep"] || 0) + 1);
+!}
+
+Bureau agents begin adjudicating labor disputes in [+ bureau_target +], voiding exploitative sharecropping agreements and ruling in favor of freedmen owed back wages. It is a small improvement the courts remain hostile but freedmen learn they have somewhere to turn.
+
+@registration
+subtitle: -[+ bureau_cost +] budget
+choose-if: budget >= bureau_cost and fifthteen = 1
+unavailable-subtitle: [? if budget < bureau_cost : Not enough budget. ?][? if fifthteen != 1 : Requires the Fifteenth Amendment to be ratified. ?]
+on-arrival:{!
+    Q.budget -= bureau_cost;
+    let s = Q.bureau_target;
+    Q.freedmen_turnout = Math.min(100, (Q.freedmen_turnout || 0) + Math.max(1, Math.round(5 * (1 - (Q.ViolencePenalty || 0) / 30))));
+    Q.freedmen_education = Math.min(100, (Q.freedmen_education || 0) + 1);
+    Q[s + "_freemen_rep"] = Math.min(100, (Q[s + "_freemen_rep"] || 0) + 5);
+    Q.Union_League_strength = Math.min(1000, (Q.Union_League_strength || 0) + 25);
+    Q.kkk_militancy = Math.min(1, (Q.kkk_militancy || 0) + 0.03);
+!}
+
+Agents move through [+ bureau_target +] registering freedmen voters and distributing pamphlets explaining the new amendment. The Klan responds with targeted intimidation, but hundreds of new names appear on the rolls before the season ends.
+
+[? if ViolencePenalty >= 20 : Heavy paramilitary presence limited how many registrations agents could safely complete. ?][? if ViolencePenalty < 10 : With little violent resistance, agents were able to work freely and registration numbers surged. ?]
+
+@outreach
+subtitle: -[+ bureau_cost +] budget
+choose-if: budget >= bureau_cost
+unavailable-subtitle: Not enough budget.
+on-arrival: {!
+    Q.budget -= Q.bureau_cost;
+    Q.freedmen_education = Math.min(100, (Q.freedmen_education || 0) + 1);
+    Q.freedmen_turnout = Math.min(100, (Q.freedmen_turnout || 0) + 2);
+    let s = Q.bureau_target;
+    Q[s + "_freemen_rep"] = Math.min(100, (Q[s + "_freemen_rep"] || 0) + 2);
+    Q[s + "_workers_rep"] = Math.min(100, (Q[s + "_workers_rep"] || 0) + 2);
+    Q[s + "_middle_class_rep"] = Math.min(100, (Q[s + "_middle_class_rep"] || 0) + 1);
+    Q.Union_League_strength = Math.min(1000, (Q.Union_League_strength || 0) + 15);
+!}
+
+Bureau officers meet with Black ministers, freedmen community leaders, and Southern Republican organizers in [+ bureau_target +]. Trust is slow to build, but the network grows, and these connections will matter come election time.
+
+@soldiers
+subtitle: -[+ bureau_cost +] budget
+choose-if: budget >= bureau_cost and occupation >= 1
+unavailable-subtitle: [? if budget < bureau_cost : Not enough budget. ?][? if occupation < 1 : Requires at least minimal federal occupation. ?]
+on-arrival: {!
+    Q.budget -= Q.bureau_cost;
+    Q.kkk_strength = Math.max(0, (Q.kkk_strength || 0) - 10);
+    Q.whiteL_strength = Math.max(0, (Q.whiteL_strength || 0) - 5);
+    Q.freedmen_turnout = Math.min(100, (Q.freedmen_turnout || 0) + 3);
+    let s = Q.bureau_target;
+    Q[s + "_freemen_rep"] = Math.min(100, (Q[s + "_freemen_rep"] || 0) + 2);
+!}
+
+A detachment of federal infantry takes up position around Bureau headquarters in [+ bureau_target +]. Night raids on Bureau offices drop sharply. With less violence in the air, agents report being able to move and register voters more freely at least for now.

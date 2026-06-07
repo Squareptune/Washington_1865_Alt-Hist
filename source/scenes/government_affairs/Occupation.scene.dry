@@ -8,7 +8,7 @@ tags: cotus_affairs, cabinet
 
 = Dealing with Southern Occupation
 
-With Republican control of Congress, we can take a more assertive role in managing the Reconstruction of the South. Loyal officials and paramilitary forces can be empowered, hostile organizations suppressed, and the army deployed as needed.
+Reconstruction remains fragile across much of the South. Republican governors, Union Leagues, federal troops, and the Freedmen's Bureau all struggle to enforce the new order against determined resistance. With Congress behind us, we can strengthen federal authority, support loyal governments, or seek a less confrontational path.
 
 - @Reform
 - @expand_union_league
@@ -27,7 +27,7 @@ choose-if: rep_majority = 1 and conservative_strength <= 35
 unavailable-subtitle: [? if rep_majority < 1: We don't control Congress to reform the Law ?][? if conservative_strength > 35: The Conservatives will block the law from being passed ?]
 on-arrival: occupation = 2
 
-We managed to reform the Military Occupation Act of 1867 to allow full military forces to be directed to the south to reinforce Reconstruction.
+Congress approves amendments expanding federal authority in the occupied South. Military commanders are granted broader powers to protect elections, suppress political violence, and support loyal state governments.
 
 @expand_union_league
 title: Expand the Union League
@@ -41,18 +41,46 @@ We direct new resources into expanding the Union League, organizing freedmen, lo
 go-to: Deploy
 
 @crackdown_kkk
-title: Crackdown on the KKK
+title: Crackdown on the KKK [? if whiteL_formed = 1: and White Leagues?]
 choose-if: occupation >= 1 and Us_police_loyalty >= 0.6
 unavailable-subtitle: [? if occupation < 2: This requires full occupation ?][? if Us_police_loyalty < 0.6: Police won't cooperate ?]
-on-arrival: kkk_strength *= 0.7; kkk_militancy -= 0.05; Us_police_loyalty -= 0.05; army_militancy += 0.1; dem_relation -= 6; rural_dem += 2
+on-arrival: {!
 
-We launch coordinated raids on suspected Klan hideouts. Some sympathizers within law enforcement slow the operation, but we manage to disrupt their operations.
+    Q.kkk_strength *= 0.7; 
+    Q.kkk_militancy -= 0.05; 
+    Q.Us_police_loyalty -= 0.05; 
+    Q.army_militancy += 0.1; 
+    Q.dem_relation -= 6; 
+    Q.rural_dem += 2;
+    if (whiteL_formed = 1) {
+
+        whiteL_strength += 2;
+        whiteL_militancy += 0.03;
+    }
+
+!}
+
+We launch coordinated raids on suspected Klan hideouts. Some sympathizers within law enforcement slow the operation, but we manage to disrupt their operations.[?if whiteL_formed = 1: Yet some former Klansmen simply reorganize into more open paramilitary groups, particularly the growing White Leagues.?]
 
 @persecute_kkk
-title: Further Persecute the Klan
+title: Further Persecute the Klan [? if whiteL_formed = 1: and White Leagues?]
 choose-if: occupation >= 2 and judicial_reform >= 3 and Us_police_loyalty >= 0.7
 unavailable-subtitle: [? if occupation < 2: Federal occupation is required ?][? if judicial_reform < 3 : Courts won’t prosecute ?][? if Us_police_loyalty < 0.7 : Police are too disloyal ?]
-on-arrival: kkk_strength *= 0.6; kkk_militancy -= 0.05; Us_police_loyalty += 0.1; army_militancy += 0.1; dem_relation -= 4; rural_dem += 1
+on-arrival:{! 
+
+    Q.kkk_strength *= 0.6; 
+    Q.kkk_militancy -= 0.05; 
+    Q.Us_police_loyalty += 0.1; 
+    Q.army_militancy += 0.1; 
+    Q.dem_relation -= 4; 
+    Q.rural_dem += 1;
+    if (whiteL_formed == 1) {
+
+        whiteL_strength += 2;
+        whiteL_militancy += 0.03;
+    }
+
+!}
 
 We pursue and prosecute Klan leaders through federal courts, with backing from loyal law enforcement. White supremacist resistance weakens for now.
 
@@ -86,7 +114,7 @@ The Freedmen's Bureau reports mounting violence across the former Confederate st
 title: Send 1,000 soldiers to the South
 choose-if: occupation >= 2 and army_loyalty >= 0.6 and army_strength >= 1
 unavailable-subtitle: [? if occupation < 2: This action requires full federal occupation ?][? if army_loyalty < 0.6: The army is too unreliable ?][? if army_strength < 1: The federal army is too depleted for any redeployment ?]
-on-arrival: army_strength -= 1; South_army_strength += 1; army_militancy += 0.1; kkk_strength *= 0.95; kkk_militancy -= 0.01; Union_League_strength += 1; Union_League_militancy += 0.01; rural_dem += 1; unemployed_dem += 1; dem_relation -= 1; freedmen_rep += 1
+on-arrival: army_strength -= 1; South_army_strength += 1; army_militancy += 0.1; kkk_strength *= 0.95; kkk_militancy -= 0.01; whiteL_strength *= 0.99; Union_League_strength += 1; Union_League_militancy += 0.01; rural_dem += 1; unemployed_dem += 1; dem_relation -= 1; freedmen_rep += 1
 
 A modest contingent of federal soldiers boards the southbound trains. Whether a single regiment can make a meaningful difference across the vast interior remains to be seen — but the orders are cut, and the men are moving.
 
@@ -94,7 +122,7 @@ A modest contingent of federal soldiers boards the southbound trains. Whether a 
 title: Send 10,000 soldiers to the South
 choose-if: occupation >= 2 and army_loyalty >= 0.6 and army_strength >= 10
 unavailable-subtitle: [? if occupation < 2: This action requires full federal occupation ?][? if army_loyalty < 0.6: The army is too unreliable ?][? if army_strength < 10: The federal army is too depleted for a deployment of this size ?]
-on-arrival: army_strength -= 10; South_army_strength += 10; army_militancy += 0.25; kkk_strength *= 0.85; kkk_militancy -= 0.02; Union_League_strength += 3; Union_League_militancy += 0.02; rural_dem += 2; unemployed_dem += 2; dem_relation -= 4; freedmen_rep += 3
+on-arrival: army_strength -= 10; South_army_strength += 10; army_militancy += 0.25; kkk_strength *= 0.85; whiteL_strength *= 0.96; whiteL_militancy += 0.01; kkk_militancy -= 0.02; Union_League_strength += 3; Union_League_militancy += 0.02; rural_dem += 2; unemployed_dem += 2; dem_relation -= 4; freedmen_rep += 3
 
 Ten thousand soldiers are ordered south by rail and river. Republican governors have been notified; the Freedmen's Bureau is coordinating with local commanders on where the need is greatest. In Washington, Democrats are already sharpening their rhetoric. What this deployment will actually change on the ground, only time will tell.
 
@@ -102,6 +130,6 @@ Ten thousand soldiers are ordered south by rail and river. Republican governors 
 title: Send 50,000 soldiers to the South
 choose-if: occupation >= 2 and army_loyalty >= 0.6 and army_strength >= 50
 unavailable-subtitle: [? if occupation < 2: This action requires full federal occupation ?][? if army_loyalty < 0.6: The army is too unreliable ?][? if army_strength < 50: The federal army is too depleted for a deployment of this scale ?]
-on-arrival: army_strength -= 50; South_army_strength += 50; army_militancy += 0.5; kkk_strength *= 0.75; kkk_militancy -= 0.15; Union_League_strength += 6; Union_League_militancy += 0.04; rural_dem += 4; unemployed_dem += 4; dem_relation -= 10; freedmen_rep += 6
+on-arrival: army_strength -= 50; South_army_strength += 50; whiteL_strength *= 0.90; whiteL_militancy += 0.03; army_militancy += 0.5; kkk_strength *= 0.75; kkk_militancy -= 0.15; Union_League_strength += 6; Union_League_militancy += 0.04; rural_dem += 4; unemployed_dem += 4; dem_relation -= 10; freedmen_rep += 6
 
 Fifty thousand soldiers are mobilized for the South — the largest federal deployment since the war's end. Troop movements of this scale take weeks to complete, and how the occupied states will receive them is not yet known. The order is given. The army moves.
