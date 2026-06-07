@@ -391,10 +391,7 @@ for (let state of Q.southern_states) {
 
 }
 if (cls === "freemen") {
-    if (Q.fifthteen == 0) {
-        // 15th not passed — freemen cannot vote
-        continue;
-    }
+    if (Q.fifthteen == 0) continue;
 
     // --- Registration base ---
     // Starts low, grows with Union League presence and Bureau outreach
