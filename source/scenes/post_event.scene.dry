@@ -402,10 +402,7 @@ if (cls === "freemen") {
 
     // Violence suppresses turnout; education and occupation partially counter it
     let rawSuppression = Math.min(1, (Q.ViolencePenalty || 0) / 30);
-    let suppressionResistance = Math.min(0.5,
-        (Q.freedmen_education / 100) * 0.25
-        + (Q.occupation / 3) * 0.25
-    );
+    let suppressionResistance = Math.min(0.5,(Q.freedmen_education / 100) * 0.25 + (Q.occupation / 3) * 0.25);
     let effectiveSuppression = Math.max(0, rawSuppression - suppressionResistance);
     // --- Final turnout ---
     let freedmen_turnout = Math.max(0, Math.min(1, registrationRate * (1 - effectiveSuppression)));
