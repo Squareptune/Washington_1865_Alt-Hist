@@ -407,7 +407,6 @@ if (cls === "freemen") {
         + (Q.occupation / 3) * 0.25
     );
     let effectiveSuppression = Math.max(0, rawSuppression - suppressionResistance);
-
     // --- Final turnout ---
     let freedmen_turnout = Math.max(0, Math.min(1, registrationRate * (1 - effectiveSuppression)));
 
