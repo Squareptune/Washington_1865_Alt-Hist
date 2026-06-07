@@ -2,7 +2,7 @@ title: Freedmen's Bureau
 new-page: true
 is-card: true
 tags: potus_affairs
-view-if: rep_majority >= 1 and bureau_timer <= 0;
+view-if: rep_majority >= 1 and bureau_timer <= 0
 card-image: img/Oliver_Otis_Howard.jpg
 on-arrival:{! 
 

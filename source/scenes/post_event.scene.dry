@@ -390,26 +390,25 @@ for (let state of Q.southern_states) {
   Q[state + "_planName"] = planName;
 
 }
-if (cls === "freemen") {
-    if (Q.fifthteen == 0) {
-        Q.freedmen_turnout = 0;
-    } else {
-        let registrationRate = Math.min(1,
-            0.20
-            + (Q.Union_League_strength / 1000) * 0.40
-            + (Q.freedmen_education / 100) * 0.25
+if (Q.fifthteen == 0) {
+    Q.freedmen_turnout = 0;
+} else {
+    let registrationRate = Math.min(1,
+        0.20
+        + (Q.Union_League_strength / 1000) * 0.40
+        + (Q.freedmen_education / 100) * 0.25
     );
 
-    // Violence suppresses turnout; education and occupation partially counter it
     let rawSuppression = Math.min(1, (Q.ViolencePenalty || 0) / 30);
-    let suppressionResistance = Math.min(0.5,(Q.freedmen_education / 100) * 0.25 + (Q.occupation / 3) * 0.25);
+    let suppressionResistance = Math.min(0.5,
+        (Q.freedmen_education / 100) * 0.25
+        + ((Q.occupation || 0) / 3) * 0.25
+    );
     let effectiveSuppression = Math.max(0, rawSuppression - suppressionResistance);
-    // --- Final turnout ---
-    let freedmen_turnout = Math.max(0, Math.min(1, registrationRate * (1 - effectiveSuppression)));
 
-    Q.freedmen_turnout = Math.round(freedmen_turnout * 100); // store as % for display
-
-    pop = pop * freedmen_turnout;
+    Q.freedmen_turnout = Math.max(0, Math.min(100,
+        Math.round(registrationRate * (1 - effectiveSuppression) * 100)
+    ));
 }
 
 // 1. update dates

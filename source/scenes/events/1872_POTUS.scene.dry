@@ -85,8 +85,7 @@ for (let state of Q.states) {
     let pop = Q[state + "_" + cls] || 0;
 
     if (cls === "freemen") {
-      let suppressionRate = Math.min((Q.ViolencePenalty || 0) / 30, 1);
-      pop = pop * (1 - suppressionRate);
+      pop = pop * (Q.freedmen_turnout / 100);
     }
 
     if (pop <= 0) continue;
