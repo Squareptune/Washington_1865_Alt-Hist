@@ -342,7 +342,7 @@ for (let state of Q.southern_states) {
   let unionLeagueEffect = Math.min(100, (unionLeague / 500) * 100);
 
   let raceEqualitySupport =
-      (freedmen_education * 0.40)
+      (Q.freedmen_education * 0.40)
     + (unionLeagueEffect * 0.30)
     + (occupation * 10)
     + (judicial * 2)
