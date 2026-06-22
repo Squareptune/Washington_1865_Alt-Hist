@@ -1797,7 +1797,9 @@ Q.works_program = 0;
 Q.freedmen_education = 0;
 Q.freedmen_turnout = 0;
 Q.bureau_cost = 1;
-Q.bureau_target = ""; 
+Q.bureau_target = "";
+Q.enforcement_acts = 0;
+Q.habeas_suspended = 0;
 
 Q.europe_relation = 0;
 Q.french_mexico = 0;

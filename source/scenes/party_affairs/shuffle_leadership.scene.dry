@@ -4,7 +4,7 @@ is-card: true
 tags: party_affairs
 view-if: shuffle_leadership_timer = 0 and difficulty >= 0
 on-arrival: month_activities += 1; shuffle_leadership_timer = 8;
-card-image: img/advisors.jpg
+card-image: img/advisors.png
 go-to: rm_main
 
 Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
