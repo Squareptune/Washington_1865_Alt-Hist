@@ -1,0 +1,120 @@
+title: Democrats Sue
+subtitle: A challenge to federal authority
+tags: event
+new-page: true
+view-if: habeas_suspended = 1
+max-visits: 1
+
+= The Courts Push Back
+
+The mass prosecutions and military tribunals have drawn a legal counterattack. Democratic lawyers, joined by several conservative legal figures and at least one former Republican judge, have filed suits in federal circuit courts challenging the constitutionality of the military tribunals and the suspension of habeas corpus.
+
+Their argument is straightforward: the Constitution permits suspension only in cases of rebellion or invasion, and the war has been over for years. What is happening in the south is not a rebellion. It is, they argue, a peacetime military occupation of American citizens with no legal basis.
+
+The cases are working their way toward the Supreme Court. How we respond now will shape what the Court eventually sees.
+
+[? if judicial_reform >= 2 : Our reforms have placed enough reliable justices on the federal bench that the lower court rulings have so far gone in our favor. But the Supreme Court is another matter. ?]
+[? if judicial_reform < 2 : The lower courts are unpredictable. Several circuit judges have already ruled against us, and the cases climbing toward the Supreme Court carry real momentum. ?]
+
+- @fight_in_court: Defend the suspensions aggressively in federal court.
+- @narrow_the_scope: Quietly lift the suspension in some counties to reduce the legal exposure.
+- @lift_habeas: Lift the suspension entirely and move to civilian prosecutions.
+- @pack_the_argument: Use congressional authority to limit the Court's jurisdiction.
+
+@fight_in_court
+choose-if: judicial_reform >= 2
+unavailable-subtitle: [? if judicial_reform < 2: Our court reforms are not deep enough to give us confidence in a full legal fight. ?]
+on-arrival: {!
+    Q.court_fight = 1;
+    Q.radical_strength += 3;
+    Q.radical_dissent -= 2;
+    Q.liberal_dissent += 6;
+    Q.conservative_dissent += 4;
+    Q.moderate_dissent += 3;
+    Q.dem_relation -= 5;
+    Q.middle_class_dem += 3;
+    Q.freemen_rep += 2;
+
+    // Outcome depends on judicial reform depth
+    if (Q.judicial_reform >= 3) {
+        Q.court_ruling = "win";
+        Q.kkk_militancy += 0.04;
+    } else {
+        Q.court_ruling = "partial";
+        Q.habeas_suspended = 0;
+        Q.kkk_strength *= 1.10;
+    }
+!}
+go-to: court_outcome
+
+We instruct the Attorney General to defend the suspensions in full and argue that the ongoing paramilitary campaign in the South constitutes conditions sufficient to justify emergency measures. The case will go to the Supreme Court if necessary.
+
+@narrow_the_scope
+on-arrival: {!
+    Q.habeas_suspended = 0;
+    Q.court_fight = 0;
+    Q.court_ruling = "partial";
+    Q.moderate_dissent -= 3;
+    Q.conservative_dissent -= 2;
+    Q.liberal_dissent -= 4;
+    Q.radical_dissent += 4;
+    Q.dem_relation += 3;
+    Q.kkk_strength *= 1.05;
+    Q.freemen_rep -= 1;
+!}
+go-to: court_outcome
+
+We quietly restore civilian legal procedures in several of the less volatile counties, reducing the number of active suspensions and narrowing the legal target the Democrats are shooting at. It is a tactical retreat dressed as a policy refinement.
+
+Radicals are unhappy. But the legal exposure shrinks considerably.
+
+@lift_habeas
+on-arrival: {!
+    Q.habeas_suspended = 0;
+    Q.court_fight = 0;
+    Q.court_ruling = "drop";
+    Q.moderate_dissent -= 5;
+    Q.conservative_dissent -= 4;
+    Q.liberal_dissent -= 6;
+    Q.radical_dissent += 8;
+    Q.dem_relation += 6;
+    Q.kkk_strength *= 1.15;
+    Q.freemen_rep -= 3;
+    Q.reconstruction_support -= 2;
+!}
+go-to: court_outcome
+
+We restore full civilian legal procedures and transfer the military tribunal cases to federal district courts. The legal challenge largely collapses without its target. Democrats claim a victory. Radicals call it a surrender. On the ground in the South, the Klan begins reorganizing in the counties where military pressure has lifted.
+
+@pack_the_argument
+choose-if: rep_majority >= 1 and radical_strength >= 35
+unavailable-subtitle: [? if rep_majority < 1: We do not control Congress. ?][? if radical_strength < 35: The Radical faction is not strong enough to push this through. ?]
+on-arrival: {!
+    Q.court_ruling = "stripped";
+    Q.court_jurisdiction_stripped = 1;
+    Q.radical_strength += 4;
+    Q.radical_dissent -= 3;
+    Q.liberal_dissent += 12;
+    Q.conservative_dissent += 8;
+    Q.moderate_dissent += 6;
+    Q.dem_relation -= 10;
+    Q.middle_class_dem += 4;
+    Q.rural_dem += 3;
+    Q.reconstruction_support -= 3;
+    Q.freemen_rep += 3;
+!}
+go-to: court_outcome
+
+Congress passes legislation stripping the Supreme Court of jurisdiction over habeas corpus challenges arising from the Southern districts. The Court cannot rule on what it has no authority to hear. It is a constitutionally available move, if an aggressive one, and Congress has used it before.
+
+The reaction is fierce. The liberal press calls it the death of judicial independence. Conservative Republicans who might have tolerated the original suspensions draw the line here. But the prosecutions continue uninterrupted.
+
+@court_outcome
+
+[? if court_ruling = "win" : The federal courts uphold the suspensions. The Attorney General's argument that conditions in the South justify emergency measures carries the day, at least for now. The prosecutions continue with full legal backing. Paramilitary organizations face a federal apparatus with both the will and the authority to pursue them. ?]
+
+[? if court_ruling = "partial" : The courts issue a mixed ruling. Some of the military tribunal convictions are upheld, others are referred to civilian courts. The suspension itself is effectively ended by the litigation, but the prosecutions that already occurred largely stand. It is not a defeat, but it is not a victory either. ?]
+
+[? if court_ruling = "drop" : With the suspensions lifted, the legal challenge loses most of its force. The Democratic lawyers declare a political victory. On the ground, the effect of the prosecutions that already occurred remains, but the window for this kind of federal action has closed. ?]
+
+[? if court_ruling = "stripped" : The cases never reach a final ruling. Congress has removed the Court's authority to hear them. The prosecutions stand. But the political cost of stripping the Court's jurisdiction will linger. ?]

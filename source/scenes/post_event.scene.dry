@@ -677,7 +677,7 @@ if (Q.month_actions >= 1) {
     Q.kkk_militancy = Math.min(1.5, Math.max(0.01, Q.kkk_militancy));
     Q.kkk_history.push(Q.kkk_strength);
 
-    if (Q.kkk_history && Q.kkk_history.length >= 24) {
+    if (Q.kkk_history && Q.kkk_history.length >= 75) {
         let l = Q.kkk_history.length;
         if (Q.kkk_history[l-1] < Q.kkk_history[l-2] && Q.kkk_history[l-1] < Q.kkk_history[l-2]) {
             Q.white_league_trigger = 1;
