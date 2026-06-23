@@ -337,31 +337,30 @@ go-to: treaty_passes if dominican_passes = 1; treaty_fails if dominican_passes =
 
 {!<table>!}
 {!<tr><td>Vote</td><td>Count</td></tr>!}
-{!<tr><td><div class="box" style="background-color:#228B22; outline:2px solid;"></div> Yea</td><td>!}[+ dominican_yea +]{!</td></tr>!}
-{!<tr><td><div class="box" style="background-color:#8B0000; outline:2px solid;"></div> Nay</td><td>!}[+ dominican_nah +]{!</td></tr>!}
-{!<tr><td colspan="2">Two-thirds required: [+ dominican_required +] of [+ dominican_total_senate +]</td></tr>!}
+{!<tr><td><div class="box" style='background-color: #fc0303; outline: 2px solid;'> </div> !} Yea: {!</td><td>!} [+ dominican_yea +] votes {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: #1fa721; outline: 2px solid;'> </div> !} Nay: {!</td><td>!} [+ dominican_nah +] votes {!</td></tr>!}
+{!<tr><td colspan="2">!} Simple majority required: [+ dominican_required +] of [+ dominican_total_senate +] {!</td></tr>!}
 {!</table>!}
 
 @treaty_passes
 on-arrival: {!
 
 Q.dominican_annexed = 1;
-Q.budget         -= 2;
-Q.navy_strength  += 20;
+Q.budget -= 2;
+Q.navy_strength += 20;
 Q.samanabay_lease = 1;
 Q.europe_relation -= 2;
 
-Q.moderate_strength  += 4;
-Q.liberal_strength   += 3;
-Q.radical_dissent    += 6;
+Q.moderate_strength += 4;
+Q.liberal_strength += 3;
+Q.radical_dissent += 6;
 Q.conservative_dissent -= 2;
 
-Q.middle_class_rep        += 3;
-Q.workers_dem             += 2;
-Q.freemen_rep             -= 2;
+Q.middle_class_rep += 3;
+Q.workers_dem += 2;
+Q.freemen_rep -= 2;
 Q.immigrant_laborers_other += 1;
 
-// Passed despite our opposition — conservative/moderate wing feels emboldened
 if (!Q.dominican_pushed_hard) {
     Q.conservative_strength += 3;
     Q.moderate_dissent      += 2;
@@ -451,11 +450,11 @@ on-display: {!
 
 {!<table>!}
 {!<tr><td>Vote</td><td>Count</td></tr>!}
-{!<tr><td><div class="box" style="background-color:#228B22; outline:2px solid;"></div> Yea</td><td>!}[+ dominican_yea +]{!</td></tr>!}
-{!<tr><td><div class="box" style="background-color:#8B0000; outline:2px solid;"></div> Nay</td><td>!}[+ dominican_nah +]{!</td></tr>!}
-{!<tr><td colspan="2">Simple majority required: [+ dominican_required +] of [+ dominican_total_senate +]</td></tr>!}
+{!<tr><td><div class="box" style='background-color: #fc0303; outline: 2px solid;'> </div> !} Yea: {!</td><td>!} [+ dominican_yea +] votes {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: #1fa721; outline: 2px solid;'> </div> !} Nay: {!</td><td>!} [+ dominican_nah +] votes {!</td></tr>!}
+{!<tr><td colspan="2">!} Simple majority required: [+ dominican_required +] of [+ dominican_total_senate +] {!</td></tr>!}
 {!</table>!}
 
 [? if samanabay_lease = 1 : The Senate approves the Samaná Bay lease by a comfortable majority. American warships will have access to one of the finest natural harbors in the Caribbean, giving the Monroe Doctrine real teeth at a fraction of the political cost of annexation. Senator Sumner is displeased but mollified. The Dominican Republic receives $150,000 per year and keeps its sovereignty. ?]
 
-[? if samanabay_lease = 0 : Even the more modest lease proposal fails to clear a simple majority. The Dominican question is closed for now — the Republic remains independent, its harbors beyond American reach. ?]
+[? if samanabay_lease = 0 : Even the more modest lease proposal fails to clear a simple majority. The Dominican question is closed for now the Republic remains independent, its harbors beyond American reach. ?]

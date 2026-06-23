@@ -390,6 +390,14 @@ for (let state of Q.southern_states) {
   Q[state + "_planName"] = planName;
 
 }
+
+if ((Q.house_majority === 2 || Q.house_majority === 1) && (Q.sen_majority === 2 || Q.sen_majority === 1)) {
+    Q.rep_majority = 1;
+} else {
+    Q.rep_majority = 0;
+}
+
+
 if (Q.fifthteen == 0) {
     Q.freedmen_turnout = 0;
 } else {

@@ -1,7 +1,7 @@
 title: Election of the Speaker of the House
 new-page: true
 tags: event
-view-if: speaker_election_needed = 1
+view-if: speaker_election_needed = 1 and rep_majority = 1
 on-arrival: speaker_election_needed = 0;
 
 = Election of the Speaker
