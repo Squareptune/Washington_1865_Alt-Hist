@@ -1,0 +1,157 @@
+title: The Crédit Mobilier Scandal
+subtitle: An October Surprise
+tags: event
+view-if: year = 1872 and month = 10
+max-visits: 1
+on-arrival: {!
+    Q.liberal_dissent += 6;
+    Q.moderate_dissent += 4;
+    Q.conservative_dissent += 3;
+    Q.radical_dissent += 3;
+    Q.middle_class_dem += 4;
+    Q.workers_dem += 2;
+    Q.rural_dem += 2;
+    Q.dem_relation -= 6;
+!}
+
+= The Credit Mobilier Scandal
+
+The morning papers hit Washington like a cannonball. A major newspaper has obtained documents exposing a web of corruption tied to a construction company contracted to build the transcontinental railroad. The company had been wildly overcharging the federal government for years, funneling the surplus into the pockets of its executives.
+
+To keep Congress from investigating, discounted shares of stock were quietly distributed to key politicians. The list of implicated figures is long and cuts across the party's factions. Several prominent members of both the Radical and Moderate wings are named. So is the Vice Presidential nominee.
+
+[? if vice_president = "Colfax" : Worse still, the sitting Vice President himself is implicated. Schuyler Colfax is alleged to have received shares while serving as Speaker of the House. He denies it, but his denial is not convincing. ?]
+
+With the election weeks away, the timing could not be worse.
+
+[? if liberal_split = 1 : The Liberal Republicans are calling it proof of everything they have argued for years. The Democrats are not far behind. Both are treating this as a gift. ?]
+
+[? if liberal_split = 0 : Within the party, the reformist wing that has been quietly building dissent now has exactly the ammunition it needed. ?]
+
+How do we respond to this crisis?
+
+- @cover_up: Dismiss the reporting and hold the line.
+- @sacrifice: Cut loose the implicated members and put distance between the administration and the scandal.
+- @sacrifice_vp: Cut loose the implicated members and push Colfax out.
+- @independent_investigation: Get ahead of it. Support a full independent investigation.
+
+@cover_up
+on-arrival: {!
+    Q.liberal_dissent += 8;
+    Q.moderate_dissent += 3;
+    Q.conservative_dissent -= 2;
+    Q.middle_class_dem += 4;
+    Q.middle_class_rep -= 3;
+    Q.workers_dem += 2;
+    Q.rural_dem += 2;
+    Q.dem_relation -= 4;
+!}
+
+We instruct party organs to treat the story as a partisan fabrication timed to damage us before the election. Friendly newspapers run counter-pieces questioning the sourcing. The implicated members are advised to say nothing and let the news cycle move on.
+
+In the short term it holds. Our core voters are not deserting us over a newspaper story. The campaign machinery keeps running.
+
+But the reformist wing of the party is furious. They did not leave their old affiliations to become the party of railroad swindlers. Liberal-leaning members who had been wavering now have a reason to move. And the Democrats, whatever we say about their motives, have a story that is true. It will not go away.
+
+[? if liberal_split = 1 : The Liberal Republicans are using this in every speech and pamphlet between now and November. ?]
+
+@sacrifice
+on-arrival: {!
+    Q.liberal_dissent -= 3;
+    Q.moderate_dissent -= 2;
+    Q.conservative_dissent += 4;
+    Q.radical_dissent += 3;
+    Q.middle_class_rep += 2;
+    Q.middle_class_dem += 2;
+    Q.dem_relation += 3;
+    Q.resources -= 1;
+!}
+
+We move quickly. Several of the more visibly implicated figures are quietly encouraged to step back from public roles or decline to seek reelection. The administration issues a statement expressing concern and calling for a full accounting. We do not wait for the Democrats to define the story.
+
+The response draws mixed reactions. Reformers give us partial credit for acting rather than stonewalling. The implicated members and their allies feel betrayed, and they are not quiet about it. Conservative and Radical factions who were counting on those figures take the hit personally.
+
+The political damage is real but bounded. We have shown some willingness to hold our own accountable, which takes some of the edge off the Democratic messaging. The story is not over, but we are no longer entirely on the defensive.
+
+@sacrifice_vp
+view-if: vice_president = "Colfax"
+on-arrival: {!
+    Q.liberal_dissent -= 5;
+    Q.moderate_dissent += 2;
+    Q.conservative_dissent += 3;
+    Q.radical_dissent += 2;
+    Q.middle_class_rep += 3;
+    Q.dem_relation += 4;
+    Q.resources -= 1;
+!}
+go-to: kick_out
+
+We cut loose the implicated rank and file, but the Vice President is the real problem. Colfax's denials have not held up and his presence as vice president is becoming a liability that outweighs his usefulness. We begin the process of pushing him out.
+
+@independent_investigation
+choose-if: budget >= 1
+unavailable-subtitle: You don't have the Budget for this
+on-arrival: {!
+    Q.liberal_dissent -= 6;
+    Q.liberal_strength += 3;
+    Q.moderate_dissent -= 3;
+    Q.conservative_dissent += 6;
+    Q.radical_dissent += 4;
+    Q.middle_class_rep += 5;
+    Q.middle_class_dem -= 2;
+    Q.dem_relation += 4;
+    Q.reconstruction_support -= 1;
+    Q.budget -= 1;
+!}
+
+We get in front of it. The administration calls for an immediate independent congressional investigation with full subpoena power and no limits on where it can look. We acknowledge publicly that the reporting appears credible and that the party has a responsibility to the public trust.
+
+The reformist wing responds warmly. This is what they have been arguing the party should look like. Liberal-leaning members who were drifting stop drifting. The Democratic message that we are unreformable is harder to land against a party that has voluntarily opened itself to scrutiny.
+
+The cost is real. The investigation will find things. Several prominent members will be implicated by their own party's committee. Conservative and Radical members who benefited from the old arrangements feel exposed and betrayed. The proceedings will drag into the new year regardless of what happens in November.
+
+But we have staked out the position that the party is bigger than any individual's corruption. Whether the voters believe it will depend on what the investigation actually turns up.
+
+@kick_out
+
+The Vice President must go. The question is how.
+
+- @Dropped: Have the President pressure Colfax to step aside.
+- @Slap: Give Colfax a slap on the wrist for the media
+
+@Dropped
+on-arrival: {!
+    Q.vice_president = "";
+    Q.liberal_dissent -= 4;
+    Q.moderate_dissent -= 2;
+    Q.conservative_dissent += 5;
+    Q.radical_dissent += 3;
+    Q.middle_class_rep += 4;
+    Q.freemen_rep += 1;
+    Q.dem_relation += 5;
+!}
+
+The President makes clear, through intermediaries, that Colfax's continued presence is untenable. Colfax resists briefly, then relents. He releases a statement citing his health and the demands of the office. Nobody believes the stated reason, but the story moves on.
+
+The scandal's most visible symbol is gone, and we can at least argue we acted when it counted. The reformist wing takes this as a sign that the party is still capable of self-correction.
+
+Conservative allies of Colfax are enraged. They call it a public execution of a loyal party man to save the administration's skin. They are not entirely wrong.
+
+@Slap
+on-arrival: {!
+    Q.liberal_dissent += 5;
+    Q.moderate_dissent += 2;
+    Q.conservative_dissent -= 3;
+    Q.middle_class_dem += 3;
+    Q.middle_class_rep -= 2;
+    Q.dem_relation -= 2;
+!}
+
+We issue a formal statement expressing disappointment in Colfax's conduct while making clear he remains in office. He is advised to make a public apology and to limit his campaign appearances. It is the minimum response, and it shows.
+
+Reformers see it as protecting a corrupt official because he is politically useful. The Democratic press treats it as confirmation that we care more about winning than about accountability. The story stays alive longer than it needed to.
+
+Colfax limps through the campaign as a liability we have chosen not to cut.
+
+
+

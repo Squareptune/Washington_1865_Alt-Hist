@@ -321,24 +321,25 @@ for (let state of Q.southern_states) {
   let whiteL = Q.whiteL_strength || 0;
   let unionLeague = Q.Union_League_strength || 0;
 
-  if (Q.Union_League_strength > 0) 
-  {
+  if (Q.Union_League_strength > 0) {
     Q.whiteL_strength -= (Q.Union_League_strength / 1000) * Q.Union_League_militancy;
   }
 
   // --- Resistance Suppression Logic ---
   let normalizedResistance = ((kkk + whiteL) / 2) / 1000;
   let suppression_modifier = Math.max(0, normalizedResistance * (1 - (white_loyalty / 100)) * 20);
-  
+
   // --- State loyalty ---
   let state_loyalty = white_loyalty + (occupation * 5) + judicial - (normalizedResistance * 5);
- 
+
+  // Amendment loyalty bonus
+  if (Q.fourteenth == 1) state_loyalty += 5;
+  if (Q.fifthteen == 1)  state_loyalty += 3;
+
   state_loyalty = Math.max(0, Math.min(100, Math.round(state_loyalty)));
   Q[state + "_loyalty"] = state_loyalty;
 
   // --- Race equality support ---
-  let freedmen_rep = Q[state + "_freemen_rep"] || 0;
-
   let unionLeagueEffect = Math.min(100, (unionLeague / 500) * 100);
 
   let raceEqualitySupport =
@@ -348,8 +349,12 @@ for (let state of Q.southern_states) {
     + (judicial * 2)
     - suppression_modifier;
 
-  raceEqualitySupport = Math.max(0, Math.min(100, Math.round(raceEqualitySupport)));
+  // Amendment equality bonus
+  raceEqualitySupport += 5;
+  if (Q.fourteenth == 1) raceEqualitySupport += 15;
+  if (Q.fifthteen == 1)  raceEqualitySupport += 10;
 
+  raceEqualitySupport = Math.max(0, Math.min(100, Math.round(raceEqualitySupport)));
   Q[state + "_raceEqualitySupport"] = raceEqualitySupport;
 
   // --- Reconstruction score ---
@@ -358,20 +363,19 @@ for (let state of Q.southern_states) {
   let planName = "";
 
   if (Q.Johnson_plan === 1) {
-    threshold = 30;
+    threshold = 20;
     planName = "Johnson";
-  } 
+  }
   else if (Q.Moderate_plan === 1) {
-    threshold = 55;
+    threshold = 35;
     planName = "Moderate";
-  } 
+  }
   else if (Q.Radical_plan === 1) {
-    threshold = 75;
+    threshold = 50;
     planName = "Radical";
   }
-  
-  let loyaltyWeight  = Q.Radical_plan ? 0.40 : 0.55;
 
+  let loyaltyWeight  = Q.Radical_plan ? 0.40 : 0.55;
   let equalityWeight = Q.Radical_plan ? 0.60 : 0.45;
 
   score = (state_loyalty * loyaltyWeight) + (raceEqualitySupport * equalityWeight);
@@ -380,7 +384,7 @@ for (let state of Q.southern_states) {
   Q[state + "_reconstructionScore"] = score;
   Q[state + "_canReadmit"] = score >= threshold ? 1 : 0;
 
-  // --- Percent relative to plan difficulty (safe guard) ---
+  // --- Percent relative to plan difficulty ---
   if (threshold > 0) {
     Q[state + "_percentOfThreshold"] = Math.min(100, Math.round((score / threshold) * 100));
   } else {
