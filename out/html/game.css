@@ -197,7 +197,7 @@ blockquote + blockquote.attribution {
 }
 .tools.right {
   float: right;
-  right: 0.4em;
+  right: 2em;
 }
 #qualities {
   text-indent: 0;
