@@ -177,12 +177,12 @@ blockquote + blockquote.attribution {
   position: relative;
 }
 #tools_wrapper {
-  position: absolute;
-  width: 100%;
-  max-width: 69em;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    max-width: 80em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 .tools {
   padding: 0.6em;
@@ -579,7 +579,7 @@ table {
     width: 20rem;
 }
 #mid_panel {
-    margin: 0 22rem 0 16rem;
+    margin: 0 24rem 0 16rem;
 }
 #south_panel p {
     text-indent: 0;
