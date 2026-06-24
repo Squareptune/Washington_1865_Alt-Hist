@@ -575,6 +575,7 @@ table {
 #south_sidebar {
     position: sticky;
     top: 0.4em;
+    font-size: 2em;
 }
 #south_panel p {
     text-indent: 0;

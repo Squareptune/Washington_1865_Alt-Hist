@@ -241,7 +241,7 @@
     html += '<p style="margin:0 0 10px; text-indent:0;"><span style="display:inline-block; padding:2px 10px; border-radius:3px; font-size:0.85em; font-weight:bold; background:' + sitColor + '33; color:' + sitColor + ';">● ' + situation + '</span></p>';
 
     // Semicircle arc chart
-    html += '<canvas id="southArc" width="180" height="100" style="display:block; margin:0 auto 4px;"></canvas>';
+    html += '<canvas id="southArc" width="360" height="200" style="display:block; margin:0 auto 4px;"></canvas>';
     html += '<div style="display:flex; justify-content:space-between; font-size:0.7em; color:var(--text-color); margin-bottom:10px; text-indent:0;">';
     html += '<span style="color:#A32D2D;">Para</span><span style="color:#185FA5;">Federal</span><span style="color:#3B6D11;">League</span></div>';
 
@@ -280,7 +280,7 @@
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
     var W = canvas.width, H = canvas.height;
-    var cx = W / 2, cy = H - 8, r = 80;
+    var cx = W / 2, cy = H - 16, r = 160;
     var segments = [
         { val: para, color: '#A32D2D' },
         { val: fed,  color: '#185FA5' },
