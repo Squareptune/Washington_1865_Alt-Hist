@@ -208,6 +208,114 @@
       window.updateSidebar();
   };
 
+  window.updateSouthPanel = function() {
+    var Q = window.dendryUI.dendryEngine.state.qualities;
+    if (!Q) return;
+
+    var para = Math.round((Q.kkk_strength || 0) + (Q.whiteL_strength || 0));
+    var fed  = Math.round((Q.South_army_strength || 0) + (Q.Us_police_strength || 0));
+    var ul   = Math.round(Q.Union_League_strength || 0);
+    var total = para + fed + ul || 1;
+
+    var vp = Q.ViolencePenalty || 0;
+    var situation, sitColor;
+    if (vp < 5)       { situation = "Calm";      sitColor = "#639922"; }
+    else if (vp < 15) { situation = "Turbulent"; sitColor = "#BA7517"; }
+    else if (vp < 25) { situation = "Violent";   sitColor = "#D85A30"; }
+    else              { situation = "Critical";   sitColor = "#A32D2D"; }
+
+    var paraW  = Math.round((para / total) * 100);
+    var fedW   = Math.round((fed  / total) * 100);
+    var ulW    = Math.round((ul   / total) * 100);
+
+    var readmitted = 0;
+    var southern = ['VA','NC','SC','GA','AL','FL','MS','AK','TX','LA'];
+    southern.forEach(function(s) { if (Q[s + '_admitted']) readmitted++; });
+
+    var turnout = Q.freedmen_turnout || 0;
+    var enf = Q.enforcement_acts ? 'Active' : 'Not passed';
+    var enfColor = Q.enforcement_acts ? '#639922' : '#A32D2D';
+
+    var html = '<p style="font-size:0.75em; font-weight:bold; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px; text-indent:0;">Situation in the South</p>';
+
+    html += '<p style="margin:0 0 10px; text-indent:0;"><span style="display:inline-block; padding:2px 10px; border-radius:3px; font-size:0.85em; font-weight:bold; background:' + sitColor + '33; color:' + sitColor + ';">● ' + situation + '</span></p>';
+
+    // Semicircle arc chart
+    html += '<canvas id="southArc" width="180" height="100" style="display:block; margin:0 auto 4px;"></canvas>';
+    html += '<div style="display:flex; justify-content:space-between; font-size:0.7em; color:var(--text-color); margin-bottom:10px; text-indent:0;">';
+    html += '<span style="color:#A32D2D;">Para</span><span style="color:#185FA5;">Federal</span><span style="color:#3B6D11;">League</span></div>';
+
+    // Bars
+    function bar(label, val, maxVal, color) {
+        var w = Math.min(100, Math.round((val / (maxVal || 1)) * 100));
+        return '<div style="margin-bottom:7px;">' +
+            '<div style="display:flex; justify-content:space-between; font-size:0.8em; margin-bottom:2px; text-indent:0;">' +
+            '<span>' + label + '</span><span style="font-weight:bold; color:' + color + ';">' + val + '</span></div>' +
+            '<div style="height:5px; background:var(--unavailable-bg-color); border-radius:3px;">' +
+            '<div style="height:100%; width:' + w + '%; background:' + color + '; border-radius:3px;"></div></div></div>';
+    }
+
+    html += bar('Paramilitary', para, 1000, '#A32D2D');
+    html += bar('Federal forces', fed, 1000, '#185FA5');
+    html += bar('Union League', ul, 1000, '#3B6D11');
+
+    // Stats
+    html += '<div style="border-top:1px solid var(--border-color); padding-top:8px; margin-top:4px; font-size:0.8em;">';
+    function row(label, val, color) {
+        color = color || 'var(--text-color)';
+        return '<div style="display:flex; justify-content:space-between; margin-bottom:4px; text-indent:0;">' +
+            '<span style="color:var(--text-color);">' + label + '</span>' +
+            '<span style="font-weight:bold; color:' + color + ';">' + val + '</span></div>';
+    }
+    html += row('Freedmen turnout', turnout + '%');
+    html += row('Enforcement Acts', enf, enfColor);
+    html += row('States readmitted', readmitted + ' / 10');
+    html += row('Freedmen education', Math.round(Q.freedmen_education || 0));
+    html += '</div>';
+
+    document.getElementById('south_panel').innerHTML = html;
+
+    // Draw arc
+    var canvas = document.getElementById('southArc');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var cx = W / 2, cy = H - 8, r = 80;
+    var segments = [
+        { val: para, color: '#A32D2D' },
+        { val: fed,  color: '#185FA5' },
+        { val: ul,   color: '#3B6D11' }
+    ];
+    var start = Math.PI;
+    ctx.clearRect(0, 0, W, H);
+    segments.forEach(function(seg) {
+        var sweep = (seg.val / total) * Math.PI;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.arc(cx, cy, r, start, start + sweep);
+        ctx.closePath();
+        ctx.fillStyle = seg.color;
+        ctx.fill();
+        start += sweep;
+    });
+    ctx.beginPath();
+    ctx.arc(cx, cy, r * 0.50, Math.PI, 2 * Math.PI);
+    ctx.fillStyle = window.dendryUI.dark_mode ? '#242424' : '#f3f3f3';
+    ctx.fill();
+    ctx.font = 'bold 14px Georgia, serif';
+    ctx.fillStyle = '#A32D2D';
+    ctx.textAlign = 'center';
+    ctx.fillText(paraW + '%', cx, cy - 22);
+    ctx.font = '10px Georgia, serif';
+    ctx.fillStyle = window.dendryUI.dark_mode ? '#fff' : '#431';
+    ctx.fillText('paramilitary', cx, cy - 8);
+};
+
+window.onDisplayContent = function() {
+    window.updateSidebar();
+    window.updateSouthPanel();
+};
+
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *

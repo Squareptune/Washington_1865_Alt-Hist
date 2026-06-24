@@ -571,3 +571,11 @@ table {
     text-decoration: underline;
     text-decoration-style: dotted;
 }
+
+#south_sidebar {
+    position: sticky;
+    top: 0.4em;
+}
+#south_panel p {
+    text-indent: 0;
+}
