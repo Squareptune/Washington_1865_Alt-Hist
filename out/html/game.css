@@ -575,7 +575,11 @@ table {
 #south_sidebar {
     position: sticky;
     top: 0.4em;
-    font-size: 2em;
+    font-size: 1.4em;
+    width: 20rem;
+}
+#mid_panel {
+    margin: 0 22rem 0 16rem;
 }
 #south_panel p {
     text-indent: 0;
