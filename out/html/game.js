@@ -236,9 +236,9 @@
     var enf = Q.enforcement_acts ? 'Active' : 'Not passed';
     var enfColor = Q.enforcement_acts ? '#639922' : '#A32D2D';
 
-    var html = '<p style="font-size:0.75em; font-weight:bold; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px; text-indent:0;">Situation in the South</p>';
+    html += '<p style="font-size:0.9em; font-weight:bold; text-transform:uppercase; letter-spacing:0.1em; text-align:center; margin:0 0 8px; text-indent:0; border-bottom:1px solid var(--border-color); padding-bottom:4px;">Situation in the South</p>';
 
-    html += '<p style="margin:0 0 10px; text-indent:0;"><span style="display:inline-block; padding:2px 10px; border-radius:3px; font-size:0.85em; font-weight:bold; background:' + sitColor + '33; color:' + sitColor + ';">● ' + situation + '</span></p>';
+    html += '<p style="margin:0 0 10px; text-indent:0;"><span style="display:inline-block; padding:2px 8px; border:1px solid ' + sitColor + '; font-size:0.85em; color:' + sitColor + ';">● ' + situation + '</span></p>';
 
     // Semicircle arc chart
     html += '<canvas id="southArc" width="320" height="200" style="display:block; margin:0 auto 4px;"></canvas>';
@@ -251,8 +251,8 @@
         return '<div style="margin-bottom:7px;">' +
             '<div style="display:flex; justify-content:space-between; font-size:0.8em; margin-bottom:2px; text-indent:0;">' +
             '<span>' + label + '</span><span style="font-weight:bold; color:' + color + ';">' + val + '</span></div>' +
-            '<div style="height:5px; background:var(--unavailable-bg-color); border-radius:3px;">' +
-            '<div style="height:100%; width:' + w + '%; background:' + color + '; border-radius:3px;"></div></div></div>';
+            '<div style="height:4px; background:#ccc; border-radius:0;">' +
+            '<div style="height:100%; width:' + w + '%; background:' + color + '; border-radius:0;"></div></div>';
     }
 
     html += bar('Paramilitary', para, 1000, '#A32D2D');
@@ -260,7 +260,7 @@
     html += bar('Union League', ul, 1000, '#3B6D11');
 
     // Stats
-    html += '<div style="border-top:1px solid var(--border-color); padding-top:8px; margin-top:4px; font-size:0.8em;">';
+    html += '<div style="border-top:1px solid #876; padding-top:8px; margin-top:4px; font-size:0.8em;">';
     function row(label, val, color) {
         color = color || 'var(--text-color)';
         return '<div style="display:flex; justify-content:space-between; margin-bottom:4px; text-indent:0;">' +
