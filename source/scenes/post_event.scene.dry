@@ -395,7 +395,7 @@ for (let state of Q.southern_states) {
 
 }
 
-if ((Q.house_majority === 2 || Q.house_majority === 1) && (Q.sen_majority === 2 || Q.sen_majority === 1)) {
+if ((Q.house_majority === 3 || Q.house_majority === 2) && (Q.sen_majority === 3 || Q.sen_majority === 2)) {
     Q.rep_majority = 1;
 } else {
     Q.rep_majority = 0;

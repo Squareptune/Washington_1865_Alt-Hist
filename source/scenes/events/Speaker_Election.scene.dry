@@ -32,16 +32,14 @@ on-arrival: {!
     if (!wasSpeaker) {
         Q.moderate_strength += 4;
         Q.moderate_dissent -= 3;
-        Q.radical_dissent += 2; // radicals wanted Stevens
+        Q.radical_dissent += 2;
         Q.conservative_dissent -= 2;
         Q.liberal_dissent -= 2;
         Q.middle_class_rep += 2;
     } else {
-        // Re-electing: stability bonus
         Q.moderate_dissent -= 2;
         Q.conservative_dissent -= 1;
     }
-
     // Colfax unlocks: smooth legislative operations
     Q.speaker_unlocks_civil_service = 0;
     Q.speaker_unlocks_impeachment_boost = 0;
