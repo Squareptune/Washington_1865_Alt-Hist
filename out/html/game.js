@@ -209,6 +209,7 @@
   };
 
   window.updateSouthPanel = function() {
+    var html = '';
     var Q = window.dendryUI.dendryEngine.state.qualities;
     if (!Q) return;
 
