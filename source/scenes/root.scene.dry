@@ -1819,6 +1819,10 @@ Q.dominican_passes = 0;
 Q.dominican_pushed_hard = 0;
 Q.dominican_statehood_debate = 0;
 Q.samanabay_lease = 0;
+Q.amnesty_act = 0;
+Q.amnesty_conditions = 0;
+Q.amnesty_act_seen = 0;
+Q.amnesty_civil_rights_bonus = 0;
 
 Q.lower_tax_rates = 0;
 Q.upper_tax_rates = 0;

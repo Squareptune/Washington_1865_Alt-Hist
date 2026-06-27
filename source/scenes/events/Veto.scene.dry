@@ -1,71 +1,74 @@
-title: A Presidential Veto 
-subtitle: Johnson strikes back against Congress.
-view-if: veto > 0 and president = "Johnson"
-tags: event
+title: Civil Rights
+new-page: true
+is-card: true
+tags: cotus_affairs, cabinet
+view-if: civil_rights_act_passed != 1 and rep_majority = 1
+card-image: img/Freedmen.jpg
+on-arrival: civil_rights_timer += 6;
+
+= Radicals Demand a Civil Rights Act
+
+Radical Republicans are pushing for sweeping civil rights legislation to protect freedmen from the Black Codes spreading across the South and establish federal guarantees of citizenship, due process, and equal protection under the law.
+
+[? if amnesty_civil_rights_bonus = 1 : The groundwork laid during the amnesty debate has left some members more receptive to this than they might otherwise have been. ?]
+
+Moderates are divided. Some warn it will provoke a confrontation with the executive and alienate conservative allies. Others say the time for half-measures has passed.
+
+[? if president = "Johnson" : President Johnson has made clear he will veto any legislation of this kind. The question is whether we have the votes to override him. ?]
+[? if president != "Johnson" : With a Republican in the White House, a veto is not the obstacle it once was. The fight is in Congress, not the executive mansion. ?]
+
+- @pass_civil_rights: Back the Radical push and pass the Act.
+- @stall_civil_rights: Delay action for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@pass_civil_rights
+subtitle: -2 budget. Requires congressional majority.
+choose-if: budget >= 2 and house_majority > 1 and sen_majority > 1
+unavailable-subtitle: [? if budget < 2: Not enough budget. ?][? if house_majority < 2: We lack a House majority. ?][? if sen_majority < 2: We lack a Senate majority. ?]
 on-arrival: {!
-  if (veto_reason === "Civil Rights Act") {
-    Q.civil_rights_act_passed = 0;
-  }
-  if (veto_reason === "Military Reconstruction Act") {
-    Q.occupation = 0;
-  }
-  if (veto_reason === "Tenure of Office Act") {
-    Q.tenure_act = 0;
-  }
-!}
+    Q.civil_rights_act_passed = 1;
+    Q.budget -= 2;
+    Q.PoliticalCostPenalty += 2;
+    Q.freedmen_rep += Q.amnesty_civil_rights_bonus ? 7 : 5;
+    Q.radical_strength += 5;
+    Q.radical_dissent -= 3;
+    Q.moderate_dissent += 3;
+    Q.conservative_dissent += 4;
+    Q.liberal_dissent += 3;
 
-= A Presidential Veto
-
-President Andrew Johnson has vetoed the [+ veto_reason +], declaring it an unconstitutional assault and “an invitation to tyranny.”
-
-Radical Republicans are outraged. They see this as further proof that Johnson is siding with the former slaveowners and obstructing the goals of Reconstruction. Moderate Republicans are split—some urge an override, others warn of political overreach.
-
-With the Radical base demanding action and the President daring Congress to respond, the veto becomes a moment of truth.
-
-- @override: Attempt to override the veto. 
-- @stand_down: Let the veto stand, for now.
-
-@override  
-subtitle: Requires 2/3 in both chambers.
-choose-if: house_majority = 3 and sen_majority = 3
-unavailable-subtitle: [? if house_majority < 3 or sen_majority < 3: We lack the supermajority needed to override. ?]
-on-arrival: {! 
-  Q.veto -= 1
-  Q.radical_strength += 5
-  Q.conservative_dissent += 3
-  Q.freedmen_rep += 2
-  if (veto_reason === "Civil Rights Act") {
-    Q.civil_rights_act_passed = 1
-  }
-  if (veto_reason === "Military Reconstruction Act") {
-    if (Moderate_plan == 1)
-    {
-      Q.occupation = 2
+    // Boost reconstruction scores — the law gives freedmen legal tools
+    for (let state of Q.southern_states) {
+        Q[state + "_raceEqualitySupport"] = Math.min(100,
+            (Q[state + "_raceEqualitySupport"] || 0) + (Q.amnesty_civil_rights_bonus ? 8 : 5));
     }
-    else
-    {
-      Q.occupation = 1
+
+    // Johnson veto path
+    if (Q.president === "Johnson") {
+        Q.veto += 1;
+        Q.veto_reason = "Civil Rights Act";
     }
-  }
-  if (veto_reason === "Tenure of Office Act") {
-    Q.tenure_act = 2
-  }
 !}
 
-We move swiftly to override the President’s veto. With overwhelming support in Congress, the law is enacted anyway. Johnson’s influence shrinks—and our Radical base cheers.
+[? if president = "Johnson" : Congress passes the Civil Rights Act. Johnson's veto is expected and the override fight begins immediately. ?]
+[? if president != "Johnson" : Congress passes the Civil Rights Act. With a Republican president, it moves quickly to signature. For the first time, citizenship and equal protection are federal law. ?]
 
-@stand_down
-subtitle: Political caution.
-on-arrival: {! 
-  Q.veto -= 1; 
-  Q.moderate_strength += 2; 
-  Q.radical_dissent += 4; 
-  Q.freedmen_rep -= 2;
-  if (Moderates == 1 || Radical_plan == 1){
-    Q.Johnson_plan = 1
-    Q.Moderate_plan = 0
-    Q.Radical_plan = 0
-  }
+[? if amnesty_civil_rights_bonus = 1 : The civil rights provisions negotiated during the amnesty debate gave this bill a foundation to build on. The final legislation is stronger for it. ?]
+
+Freedmen communities across the South receive the news with cautious hope. The law is only as strong as its enforcement, and enforcement depends on everything else we have built or failed to build.
+
+@stall_civil_rights
+subtitle: Delay action for now.
+on-arrival: {!
+    Q.radical_dissent += Q.amnesty_civil_rights_bonus ? 8 : 5;
+    Q.moderate_strength += 3;
+    Q.freedmen_rep -= 3;
+    Q.reconstruction_support -= 1;
+    if (Q.amnesty_civil_rights_bonus) {
+        // Stalling after the amnesty deal feels like a broken promise
+        Q.freemen_rep -= 2;
+        Q.radical_dissent += 3;
+    }
 !}
 
-We are force to back down as Johnson has won this time. Moderates defend our decision as strategic—but to many, it looks like cowardice. The veto holds.
+We hold back. Moderates appreciate the restraint, but Radical members and freedmen communities grow increasingly impatient.[? if amnesty_civil_rights_bonus = 1 : The civil rights protections that were promised as part of the amnesty debate have not materialized. That is being noticed. ?]

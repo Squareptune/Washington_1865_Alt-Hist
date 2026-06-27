@@ -1,0 +1,170 @@
+title: The Amnesty Act
+subtitle: Forgiveness or forgetting?
+tags: event
+new-page: true
+view-if: year = 1872 and month >= 3
+max-visits: 1
+on-arrival: amnesty_act_seen = 1
+
+= The Amnesty Act
+
+Congress is debating a bill that would restore full political rights to most former Confederates, allowing them to hold federal and state office once again. The push comes from members who argue that a decade after the war, continued political exclusion only breeds resentment and keeps the South ungovernable.
+
+The numbers are not small. Around 150,000 men currently barred from office would regain their rights. Most of them are prominent figures in their communities. Most of them are Democrats.
+
+The Radical wing is opposed. Their position is that any amnesty must come paired with new civil rights guarantees, or it amounts to handing political power back to the same men who enforced the Black Codes and rode with paramilitary organizations. The moderates want the amnesty clean and simple, arguing that conditions will kill the bill entirely.
+
+[? if liberal_split = 1 : The Liberal Republicans have made this a centerpiece of their platform, calling continued political exclusion an obstacle to genuine national reconciliation. ?]
+[? if reconstruction_support < 30 : Enthusiasm for Reconstruction has been fading in the North for some time. The amnesty bill has genuine popular support, and the political winds are not in our favor. ?]
+[? if radical_strength >= 40 : The Radical wing is strong enough that attaching conditions to the bill is a real possibility, not just a gesture. ?]
+
+- @support_clean: Back the bill as written, no conditions.
+- @support_conditions: Back amnesty only if paired with civil rights protections.
+- @oppose: Come out against the bill.
+- @let_it_pass: Stay out of it and let Congress decide.
+
+@support_clean
+on-arrival: {!
+    Q.amnesty_act = 1;
+    Q.amnesty_conditions = 0;
+
+    Q.conservative_dissent -= 5;
+    Q.conservative_strength += 3;
+    Q.liberal_dissent -= 6;
+    Q.liberal_strength += 3;
+    Q.moderate_dissent -= 2;
+    Q.radical_dissent += 10;
+    Q.radical_strength -= 3;
+
+    Q.dem_relation += 6;
+    Q.reconstruction_support -= 4;
+    Q.freemen_rep -= 5;
+    Q.middle_class_rep += 2;
+    Q.rural_dem -= 2;
+
+    for (let state of Q.southern_states) {
+        Q[state + "_rural_dem"] = Math.min(100, (Q[state + "_rural_dem"] || 0) + 8);
+        Q[state + "_middle_class_dem"] = Math.min(100, (Q[state + "_middle_class_dem"] || 0) + 5);
+        Q[state + "_rural_rep"] = Math.max(0, (Q[state + "_rural_rep"] || 0) - 5);
+    }
+
+    Q.kkk_strength = Math.min(1000, (Q.kkk_strength || 0) + 15);
+    Q.whiteL_strength = Math.min(1000, (Q.whiteL_strength || 0) + 10);
+!}
+
+We back the bill without conditions. The amnesty passes.
+
+The moderate and conservative wings are relieved. The Liberal Republican press calls it overdue.
+
+The Radical wing does not take it quietly. Freedmen communities across the South receive the news with dread, and they are not wrong to. The men returning to political eligibility are not reformed. They are simply patient. They will run for office, win, and use that office the same way they used it before the war. The South will feel this before the North does.
+
+@support_conditions
+on-arrival: {!
+    let supportStrength = (Q.radical_strength || 0) + (Q.moderate_strength || 0);
+    let oppositionStrength = (Q.conservative_strength || 0) + (Q.liberal_strength || 0);
+
+    Q.radical_dissent -= 3;
+    Q.moderate_dissent -= 2;
+    Q.conservative_dissent += 5;
+    Q.liberal_dissent += 4;
+    Q.dem_relation -= 3;
+
+    if (supportStrength > oppositionStrength) {
+        Q.amnesty_act = 1;
+        Q.amnesty_conditions = 1;
+        Q.freemen_rep += 4;
+        Q.reconstruction_support += 2;
+        Q.middle_class_rep += 2;
+        Q.radical_dissent -= 3;
+        Q.dem_relation -= 4;
+        Q.amnesty_civil_rights_bonus = 1;
+
+        for (let state of Q.southern_states) {
+            Q[state + "_rural_dem"] = Math.min(100, (Q[state + "_rural_dem"] || 0) + 4);
+            Q[state + "_raceEqualitySupport"] = Math.min(100, (Q[state + "_raceEqualitySupport"] || 0) + 5);
+        }
+
+        Q.kkk_strength = Math.min(1000, (Q.kkk_strength || 0) + 8);
+
+    } else {
+        Q.amnesty_act = 1;
+        Q.amnesty_conditions = 0;
+        Q.freemen_rep -= 3;
+        Q.reconstruction_support -= 3;
+        Q.radical_dissent += 6;
+        Q.moderate_dissent += 3;
+
+        for (let state of Q.southern_states) {
+            Q[state + "_rural_dem"] = Math.min(100, (Q[state + "_rural_dem"] || 0) + 7);
+            Q[state + "_rural_rep"] = Math.max(0, (Q[state + "_rural_rep"] || 0) - 4);
+        }
+
+        Q.kkk_strength = Math.min(1000, (Q.kkk_strength || 0) + 12);
+    }
+!}
+go-to: conditions_result
+
+We make our position clear. Amnesty can pass, but only alongside meaningful civil rights protections. Former Confederates can have their political rights back when freedmen have a genuine guarantee of theirs.
+
+@conditions_result
+
+[? if amnesty_conditions = 1 : The paired bill holds together. Former Confederates regain political eligibility, but the civil rights provisions that accompany the amnesty give freedmen new legal standing to defend themselves. Neither side is satisfied, which may mean the compromise is about as fair as these things get. ?]
+
+[? if amnesty_conditions = 0 : The conditions are stripped out before the bill reaches the floor. Conservative and Liberal members gut the civil rights provisions in committee and the amnesty passes clean. We tried for something better and came away with nothing to show for it. The Radical wing blames the attempt. They are not entirely wrong, but the votes were never there. ?]
+
+@oppose
+on-arrival: {!
+    Q.amnesty_act = 0;
+
+    Q.radical_dissent -= 4;
+    Q.radical_strength += 3;
+    Q.conservative_dissent += 6;
+    Q.liberal_dissent += 7;
+    Q.moderate_dissent += 3;
+    Q.dem_relation -= 6;
+
+    Q.freemen_rep += 3;
+    Q.middle_class_dem += 3;
+    Q.rural_dem += 2;
+    Q.reconstruction_support += 1;
+
+    Q.kkk_militancy = Math.min(1.5, (Q.kkk_militancy || 0.1) + 0.06);
+    Q.whiteL_militancy = Math.min(1.5, (Q.whiteL_militancy || 0.35) + 0.04);
+
+    if (Q.liberal_split === 0) {
+        Q.liberal_dissent += 5;
+    }
+!}
+
+We come out against the bill. A decade is not long enough. The men who led secession, commanded Confederate forces, and returned home to build paramilitary organizations and enforce racial terror through law have not demonstrated the kind of loyalty that earns back political power.
+
+The Radical wing is relieved. Freedmen communities take note.
+
+The Liberal Republicans treat this as confirmation of everything they have been arguing. Conservative members are quietly frustrated. In the South, paramilitary organizations that had been watching Congress grow angrier.
+
+@let_it_pass
+on-arrival: {!
+    Q.amnesty_act = 1;
+    Q.amnesty_conditions = 0;
+
+    Q.moderate_dissent -= 1;
+    Q.radical_dissent += 5;
+    Q.liberal_dissent -= 3;
+    Q.conservative_dissent -= 2;
+    Q.dem_relation += 3;
+    Q.reconstruction_support -= 2;
+    Q.freemen_rep -= 2;
+
+    for (let state of Q.southern_states) {
+        Q[state + "_rural_dem"] = Math.min(100, (Q[state + "_rural_dem"] || 0) + 6);
+        Q[state + "_rural_rep"] = Math.max(0, (Q[state + "_rural_rep"] || 0) - 3);
+    }
+
+    Q.kkk_strength = Math.min(1000, (Q.kkk_strength || 0) + 10);
+!}
+
+We say nothing. The bill moves through Congress on its own momentum.
+
+It passes. It was always going to pass. Our silence buys goodwill with members who did not want an executive fight over this, and spares us the Radical fury that an open endorsement would have drawn.
+
+The practical result is the same as if we had backed it outright. Former Confederates are returning to political eligibility across the South, and we chose not to say a word about it. Freedmen leaders who were watching for a signal from Washington got none.

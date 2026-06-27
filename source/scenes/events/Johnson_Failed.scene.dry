@@ -7,9 +7,103 @@ max-visits: 1
 
 = The South Resists Reform
 
-The 1866 elections have shown the limits of President Johnson’s lenient approach to Reconstruction. Southern state governments are filling with **Redeemers** and **former Confederates**, and violence against freedmen is rising.
+The 1866 elections have delivered a verdict the Radical Republicans refuse to accept. Across the former Confederate states, voters have sent former rebels, Confederate officers, and open opponents of Reconstruction to Washington. Several of the men elected to the House and Senate served in the Confederate army or government. One was the Confederate Vice President himself.
 
-Faced with this reactionary resurgence, Congressional Republicans are now forced to act. Will the federal government take control of Reconstruction—and the South itself?
+Under Johnson's plan, these men are entitled to their seats. Under any standard of loyalty to the Union, they are not.
+
+The Joint Committee on Reconstruction has been meeting in closed session. These delegations were elected under conditions that cannot be called free under states that have not demonstrated loyalty to the federal government. The committee recommends that Congress exercise its constitutional authority to judge the qualifications of its own members and refuse to seat them.
+
+The choice now falls to us.
+
+- @Refuse: Refuse to seat the Southern delegations in Congress.
+- @allow_seating: Allow the Southern members to take their seats.
+
+@Refuse
+on-arrival: {!    
+    let seatsRemoved = 0;
+    let senateSeatsRemoved = 0;
+    
+    for (let state of Q.southern_states) {
+        if (Q.states.indexOf(state) === -1) continue;
+        
+        let statePop = 0;
+        let demVotes = 0;
+        let totalVotes = 0;
+        
+        for (let cls of Q.classes) {
+            let pop = Q[state + "_" + cls] || 0;
+            let dem = Q[state + "_" + cls + "_dem"] || 0;
+            let rep = Q[state + "_" + cls + "_rep"] || 0;
+            let other = Q[state + "_" + cls + "_other"] || 0;
+            statePop += pop;
+            demVotes += pop * dem;
+            totalVotes += pop * (dem + rep + other);
+        }
+        
+        let demShare = totalVotes > 0 ? demVotes / totalVotes : 0.6;
+        
+        let stateHouseSeats = 6;
+        let stateDemSeats = Math.round(stateHouseSeats * demShare);
+        let stateRepSeats = stateHouseSeats - stateDemSeats;
+        
+        Q.dem_r = Math.max(0, (Q.dem_r || 0) - stateDemSeats);
+        Q.rep_r = Math.max(0, (Q.rep_r || 0) - stateRepSeats);
+        seatsRemoved += stateHouseSeats;
+        
+        let stateDemSenate = Math.round(2 * demShare);
+        let stateRepSenate = 2 - stateDemSenate;
+        Q.dem_senate_r = Math.max(0, (Q.dem_senate_r || 0) - stateDemSenate);
+        Q.rep_senate_r = Math.max(0, (Q.rep_senate_r || 0) - stateRepSenate);
+        senateSeatsRemoved += 2;
+    }
+    
+    Q.southern_seats_refused = 1;
+    Q.seats_removed = seatsRemoved;
+    Q.senate_seats_removed = senateSeatsRemoved;
+    
+    let totalHouse = Q.rep_r + Q.dem_r + (Q.lib_r || 0) + (Q.other_r || 0);
+    let repPct = (Q.rep_r / totalHouse) * 100;
+    if (repPct >= 66.7) { Q.house_majority = 3; }
+    else if (repPct >= 50) { Q.house_majority = 2; }
+    else { Q.house_majority = 0; }
+    
+    let totalSenate = Q.rep_senate_r + Q.dem_senate_r + (Q.other_senate_r || 0);
+    let repSenPct = (Q.rep_senate_r / totalSenate) * 100;
+    if (repSenPct >= 66.7) { Q.sen_majority = 3; }
+    else if (repSenPct >= 50) { Q.sen_majority = 2; }
+    else { Q.sen_majority = 0; }
+    
+    Q.radical_strength += 5;
+    Q.radical_dissent -= 3;
+    Q.moderate_strength += 3;
+    Q.conservative_dissent += 4;
+    Q.dem_relation -= 8;
+!}
+go-to: Occupation
+
+The Joint Committee moves immediately. The clerk of the House is instructed not to call the names of Southern members when the roll is taken. They are not recognized. They are not given the oath. They stand in the gallery and watch as Congress organizes without them.
+
+The Democrats and President Johnson calls it unconstitutional but we don't give a shit about them.
+
+With [+ seats_removed +] House seats and [+ senate_seats_removed +] Senate seats set aside, the arithmetic of Congress shifts dramatically in our favor.
+
+@allow_seating
+on-arrival: {!
+    Q.radical_dissent += 8;
+    Q.radical_strength -= 3;
+    Q.moderate_strength += 2;
+    Q.conservative_strength += 3;
+    Q.dem_relation += 4;
+!}
+go-to: Occupation
+
+The Southern delegations are sworn in. Former Confederates take their seats alongside the men who fought to preserve the Union. Radical Republicans are furious. Several walk out of the chamber in protest.
+
+Johnson's allies celebrate. The Democratic caucus, suddenly swelled with Southern members, becomes a far more formidable opposition.
+
+@Occupation
+
+Faced with this reactionary resurgence, Congressional Republicans are now forced to act. Will the federal government take control of Reconstruction and the South itself?
 
 - @full_plan: Enact full military occupation of the south!
 - @limited_plan: Enact limited federal oversight
