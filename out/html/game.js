@@ -209,14 +209,6 @@ window.onDisplayContent = function() {
     window.updateSouthPanel();
 };
 
-  /*
-   * This function copied from the code for Infinite Space Battle Simulator
-   *
-   * quality - a number between max and min
-   * qualityName - the name of the quality
-   * max and min - numbers
-   * colors - if true/1, will use some color scheme - green to yellow to red for high to low
-   * */
   window.generateBar = function(quality, qualityName, max, min, colors) {
       var bar = document.createElement('div');
       bar.className = 'bar';
