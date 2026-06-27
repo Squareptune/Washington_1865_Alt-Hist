@@ -572,12 +572,6 @@ table {
     text-decoration-style: dotted;
 }
 
-#south_sidebar {
-    position: sticky;
-    top: 0.4em;
-    font-size: 1.4em;
-    width: 20rem;
-}
 #mid_panel {
     margin: 0 24rem 0 16rem;
 }
