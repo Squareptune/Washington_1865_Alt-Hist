@@ -203,7 +203,6 @@
       window.statusTab = newTab;
       window.updateSidebar();
   };
-};
 
 window.onDisplayContent = function() {
     window.updateSidebar();
