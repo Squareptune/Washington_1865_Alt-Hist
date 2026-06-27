@@ -206,7 +206,6 @@
 
 window.onDisplayContent = function() {
     window.updateSidebar();
-    window.updateSouthPanel();
 };
 
   window.generateBar = function(quality, qualityName, max, min, colors) {
