@@ -442,6 +442,10 @@ if (Q.month_actions >= 1) {
     for (timer of Q.timers) {
         if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
             Q[timer+'_timer'] -= 1;
+            if (timer === Q.speaker_boosted_committee && Q[timer+'_timer'] > 0) {
+                Q[timer+'_timer'] -= Q.speaker_boost_amount;
+                if (Q[timer+'_timer'] < 0) Q[timer+'_timer'] = 0;
+            }
         }
     }
     // append to historical party support records

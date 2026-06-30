@@ -246,7 +246,8 @@ title: Republicans won the election!
 subtitle: Republicans: [+ repEVTotal +] electoral votes
 view-if: potus_winner = "rep"
 on-arrival: {!
-    president = Candidate; 
+    Q.president = Candidate;
+    Q.vice_president = Q.VPCandidate; 
     president_party = "rep";
     
     // GRANT CABINET
@@ -311,8 +312,9 @@ title: The Democrats have won the presidency.
 subtitle: Democrats: [+ demEVTotal +] electoral votes
 view-if: potus_winner = "dem"
 on-arrival: {!
-    president = "Horatio Seymour"; 
-    president_party = "dem";
+    Q.president = "Horatio Seymour";
+    Q.vice_president = Q.VPCandidate; 
+    Q.president_party = "dem";
     
     // SEYMOUR CABINET
     Q.sect_state = "James Guthrie";

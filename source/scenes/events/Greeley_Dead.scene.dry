@@ -1,0 +1,139 @@
+title: The Death of Horace Greeley
+subtitle: ....Oh shit
+tags: event
+new-page: true
+view-if: year = 1872 and month = 11 and liberal_split = 1 and potus_winner != "" and greeley_dead != 1
+max-visits: 1
+on-arrival: greeley_dead = 1;
+go-to: greeley_loss; crisis_menu if potus_winner = "lib"
+
+= The Death of Horace Greeley
+
+Horace Greeley is dead. Exhausted by the campaign, humiliated at the polls, and broken by his wife's death only weeks before, the editor of the *New York Tribune* has succumbed within days of the election. The electors who pledged themselves to him have not yet met — under the Constitution, the formal vote of the Electoral College does not take place until December.
+
+[? if potus_winner != "lib" : His death changes little politically. He lost, and the question of his electors is a footnote rather than a crisis. ?]
+
+[? if potus_winner = "lib" : But here, his death is not a footnote. Greeley did not lose. His ticket carried a majority of the Electoral College, and the man who was to be President of the United States will never take the oath. No elector in the nation's history has faced this question with the presidency itself at stake. ?]
+
+@greeley_loss
+
+We may have won the election but we aren't monsters. We should pay our respect to our fellow American.
+
+-@Prayers: Send our prayers to Horace Greeley and his team
+
+@Prayers
+on-arrival: radical_dissent -= 1; moderate_dissent -= 1; conservative_dissent -= 1; liberal_dissent -= 3;
+
+The papers run respectful obituaries. Our editors recall his decades crusading against slavery and his dedication to the republican party (before his betrayal). R.I.P Horace Greeley.
+
+@crisis_menu
+
+The electors are in chaos. Some want to cast their ballots for Greeley's running mate, B. Gratz Brown, as the only way to honor the outcome of the election. Others argue no elector can be bound to a dead man and that the question must be settled by the courts or by Congress before December's elector meetings make matters worse.
+
+- @demand_court_intervention: Petition the Supreme Court for an emergency ruling.
+- @push_congress: Push the question to the House under the Twelfth Amendment.
+- @let_electors_decide: Do nothing and let the electors sort it out themselves in December.
+
+@demand_court_intervention
+on-arrival: {!
+    if (Q.judicial_reform >= 3) {
+        Q.court_ruled_rep = 1;
+    } else if (Q.judicial_reform >= 2) {
+        Q.court_ruled_rep = (Math.random() < 0.6) ? 1 : 0;
+    } else {
+        Q.court_ruled_rep = 0;
+    }
+!}
+go-to: court_ruling_favorable if court_ruled_rep = 1; court_ruling_against if court_ruled_rep = 0
+
+@court_ruling_favorable
+on-arrival: {!
+    Q.president = Q.Candidate;
+    Q.president_party = "rep";
+    Q.vice_president = Q.VPCandidate;
+    Q.liberal_split = 0;
+    Q.liberal_reunion_triggered = 1;
+    Q.dem_relation -= 15;
+    Q.liberal_dissent += 10;
+    Q.conservative_strength += 3;
+!}
+go-to: greeley_end
+
+The Court, stacked over years with justices who owe their seats to this administration, rules swiftly: electoral votes cast for a deceased candidate cannot be lawfully certified, and with no surviving candidate able to claim a majority of valid votes, the Constitution's remedy is to install the candidate who *did* receive a lawful plurality. [+ Candidate +] will be President.
+
+The ruling is legally creative, to put it gently that even some Republicans wince. But the Court has spoken, and the country exhausted by four months of scandal and a dead president-elect largely accepts it rather than face a second crisis on top of the first.
+
+The years of careful judicial appointments have paid off in the only currency that mattered.
+
+@court_ruling_against
+on-arrival: {!
+    Q.president = "Brown";
+    Q.president_party = "lib";
+    Q.radical_dissent += 6;
+    Q.moderate_dissent += 6;
+    Q.conservative_dissent += 4;
+    Q.dem_relation += 6;
+    Q.middle_class_rep -= 3;
+!}
+go-to: greeley_end
+
+The Court will not be rushed into rewriting the Constitution on the administration's behalf. The bench still thick with holdovers unmoved by reform rules that the electors are bound by their state's popular result and free to cast their ballots for whichever living man they judge their pledge most honors. In state after state, the opposing electors coalesce behind B. Gratz Brown.
+
+The attempt to intervene is now part of the story. Democratic papers brand it an attempted judicial coup, and the charge sticks. Brown will be inaugurated in March.
+
+@push_congress
+on-arrival: {!
+    Q.congress_ruled_rep = (Q.house_majority >= 2) ? 1 : 0;
+!}
+go-to: congress_ruling_favorable if congress_ruled_rep = 1; congress_ruling_against if congress_ruled_rep = 0
+
+@congress_ruling_favorable
+on-arrival: {!
+    Q.president = Q.Candidate;
+    Q.president_party = "rep";
+    Q.vice_president = Q.VPCandidate;
+    Q.liberal_split = 0;
+    Q.liberal_reunion_triggered = 1;
+    Q.dem_relation -= 6;
+    Q.liberal_dissent += 4;
+!}
+go-to: greeley_end
+
+We argue that with no living candidate holding a certifiable majority, the contingent election procedure of the Twelfth Amendment applies, and the question falls to the House, voting by state delegation. With a Republican majority of delegations, the outcome is not seriously in doubt. [+ Candidate +] is elected President by the House.
+
+It is a narrower, less dramatic path than a court ruling, and it draws correspondingly less outrage — Congress settling a presidential election is, after all, a remedy the Constitution explicitly provides for.
+
+@congress_ruling_against
+on-arrival: {!
+    Q.president = "Brown";
+    Q.president_party = "lib";
+    Q.moderate_dissent += 3;
+    Q.radical_dissent += 4;
+    Q.dem_relation += 4;
+!}
+go-to: greeley_end
+
+The argument goes nowhere. Without a Republican majority of state delegations behind us, pushing the question to the House only hands the opposition a forum to ratify what was already happening in the states. The electors cast their ballots for B. Gratz Brown, and Congress, when it counts them in February, raises no objection.
+
+@let_electors_decide
+on-arrival: {!
+    Q.president = "Brown";
+    Q.president_party = "lib";
+!}
+go-to: greeley_end
+
+We choose not to intervene. It is the path of least chaos, and perhaps the most honest one the Constitution gives the electors discretion, and discretion is what they exercise. State by state, the electors settle on B. Gratz Brown as the only candidate who can plausibly inherit the mandate Greeley won. There is no court fight, no charge of a stolen election, and no precedent broken beyond the one already broken by a dead man winning the presidency in the first place.
+
+It is also, unambiguously, a loss.
+
+@greeley_end
+
+-@Resolved: Crisis Resolved
+
+@Resolved
+
+[? if potus_winner = "lib" and president_party = "rep" : The Republic has its answer, however uneasy. [+ Candidate +] will take the oath in March, in a term that began under a cloud no one can quite dispel. ?]
+
+[? if potus_winner = "lib" and president_party = "lib" : Horace Greeley's running mate, a man few Americans could have named in October, will be inaugurated President in March. The coalition holds the White House after all not through Greeley's vision, but through the accident of his death and the law's strange mechanics. ?]
+
+[? if potus_winner != "lib" : Whatever else can be said of the 1872 campaign, it will be remembered as the one that killed Horace Greeley. ?]

@@ -1,0 +1,20 @@
+title: The New Departure
+subtitle: Democrats change tack.
+tags: event
+view-if: year = 1871 and month = 2
+max-visits: 1
+on-arrival: {!
+    Q.dem_relation += 8;
+    Q.liberal_relation += 5;
+    Q.radical_dissent += 2;
+!}
+
+= The New Departure
+
+A faction of Northern Democrats, tired of losing on the same ground every cycle, is trying something new. Led by men like August Belmont and amplified by the *New York World*, they are urging the party to quietly accept the changes as settled law and stop running on Reconstruction's reversal.
+
+Their argument is revolves that the war is over and that the amendments are already ratified and opposing them at the ballot box has cost Democrats multiple elections in a row. Better to concede the past and fight the future on the ground where Republicans are vulnerable.
+
+It is not universally welcomed. Old-guard Bourbon Democrats, particularly in the South, see it as surrender. But the "New Departure" men are gaining ground in state conventions across the North, and the shift is being watched closely by reform-minded Republicans who have grown disillusioned with their own party.
+
+Within our coalition, Radicals view the development with open suspicion as a Democratic Party that no longer sounds like the party of redemption is a Democratic Party that might start peeling off respectable allies.

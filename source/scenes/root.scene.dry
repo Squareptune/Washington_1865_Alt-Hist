@@ -77,7 +77,7 @@ Q.Moderate_plan = 0;
 Q.Radical_plan = 0;
 Q.veto = 0;
 Q.veto_reason = "";
-Q.civil_rights_act_passed = 0;
+Q.civil_rights_act = 0;
 
 // inter-party relations
 Q.dem_relation = 5;
@@ -116,6 +116,8 @@ Q.navy_strength = 200;
 Q.navy_loyalty = 0.8;
 
 Q.speaker_election_needed = 0;
+Q.speaker_boosted_committee = "";
+Q.speaker_boost_amount = 0;
 
 Q.constitutional_reform = 0;
 Q.fifth_A = 0;
@@ -321,6 +323,10 @@ Q.VT_EV_1872 = 5;
 Q.VA_EV_1872 = 11;
 Q.WV_EV_1872 = 5;
 Q.WI_EV_1872 = 10;
+Q.AR_EV_1872 = 6;
+Q.KY_EV_1872 = 12;
+Q.LA_EV_1872 = 8;
+Q.MO_EV_1872 = 15;
 
 Q.AL_EV_1876 = 10;
 Q.AR_EV_1876 = 6;
@@ -1819,10 +1825,6 @@ Q.dominican_passes = 0;
 Q.dominican_pushed_hard = 0;
 Q.dominican_statehood_debate = 0;
 Q.samanabay_lease = 0;
-Q.amnesty_act = 0;
-Q.amnesty_conditions = 0;
-Q.amnesty_act_seen = 0;
-Q.amnesty_civil_rights_bonus = 0;
 
 Q.lower_tax_rates = 0;
 Q.upper_tax_rates = 0;
@@ -1926,6 +1928,7 @@ Q.schurz_advisor = 0;
 Q.trumbull_advisor = 0;
 Q.cox_advisor = 0;
 Q.douglass_advisor = 0;
+Q.greeley_dead = 0;
 
 !}
 set-bg: img/Background.jpg

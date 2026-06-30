@@ -2,7 +2,7 @@ title: Civil Rights
 new-page: true
 is-card: true
 tags: cotus_affairs, cabinet
-view-if: civil_rights_act_passed != 1 and rep_majority = 1
+view-if: civil_rights_act = 0 and rep_majority = 1
 card-image: img/Freedmen.jpg
 on-arrival: civil_rights_timer += 6;
 
