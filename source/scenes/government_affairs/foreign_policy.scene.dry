@@ -2,7 +2,17 @@ title: Foreign Policy
 new-page: true
 is-card: true
 tags: potus_affairs, cabinet
-on-arrival: month_actions += 1; foreign_policy_timer += 8
+on-arrival: {!
+    Q.month_actions += 1;
+    Q.foreign_policy_timer += 8;
+
+    // Without direct American military intervention, Juárez's forces push
+    // the French out on their own within a couple of years. If the player
+    // hasn't resolved it by 1868, it resolves itself, quietly, off-screen.
+    if (Q.french_mexico < 2 && Q.year >= 1868) {
+        Q.french_mexico = 2;
+    }
+!}
 view-if: sect_state_party = "R" and foreign_policy_timer <= 0
 card-image: img/portraits/Seward.jpg
 go-to: fp_menu
@@ -21,10 +31,20 @@ What should our foreign policy priority be?
 - @british_reconciliation
 - @british_reconciliation2
 - @british_reconciliation3
+- @san_juan_arbitration
 - @recognize_haiti
 - @continue_haiti
+- @expand_liberia
+- @continue_liberia
 - @expel_fenians
 - @support_fenians
+- @french_trade
+- @german_trade
+- @recognize_cuban_belligerency
+- @maintain_cuban_neutrality
+- @cuban_filibusters
+- @asia_trade
+- @latam_trade
 - @easy_discard
 - @cancel_advisor_action
 
@@ -106,6 +126,35 @@ We signed the *Treaty of Washington*, a landmark diplomatic success. The Alabama
 
 The money goes straight into the Treasury. Border disputes are resolved peacefully. Moderates hail it as a statesmanlike triumph, and even nationalists acknowledge the treaty upheld American honor — and paid for it, too.
 
+@san_juan_arbitration
+title: Press our claim in the San Juan Boundary arbitration.
+subtitle: Kaiser Wilhelm I has agreed to arbitrate.
+view-if: treaty_Washington >= 3 and san_juan_resolved != 1
+choose-if: year >= 1871
+unavailable-subtitle: Arbitration cannot proceed until 1871.
+on-arrival: {!
+    Q.san_juan_resolved = 1;
+    let chance = 0.55 + (Q.europe_relation / 100);
+    Q.san_juan_won = (Math.random() < chance) ? 1 : 0;
+    if (Q.san_juan_won === 1) {
+        Q.navy_strength += 5;
+        Q.middle_class_rep += 2;
+        Q.europe_relation += 1;
+    } else {
+        Q.europe_relation -= 1;
+        Q.moderate_dissent += 1;
+    }
+!}
+go-to: san_juan_won if san_juan_won = 1; san_juan_lost if san_juan_won = 0
+
+The Treaty of Washington left one border question unresolved: which channel around the San Juan Islands marks the true boundary between Washington Territory and British Columbia. Both nations, unwilling to fight over a scattering of Puget Sound islands, have agreed to submit the dispute to the German Kaiser as a neutral arbiter.
+
+@san_juan_won
+Kaiser Wilhelm I rules in favor of the United States. The San Juan Islands, jointly occupied by British and American troops for over a decade since the so-called "Pig War," are confirmed as American territory without a shot fired. Puget Sound's anchorages are secure, and the last open border dispute with Britain is closed.
+
+@san_juan_lost
+The Kaiser rules for British sovereignty over the islands. The loss stings less in practice than in principle — the islands are of modest value — but it is a rare arbitration defeat, and critics in the press wonder aloud whether a stronger hand could have drawn a better line.
+
 @recognize_haiti
 title: Normalize relations with Haiti.
 view-if: haiti_support = 0
@@ -126,6 +175,26 @@ on-arrival: freedmen_rep += 3; radical_strength += 1; economic_growth += 0.1; eu
 
 We continue relations with Haiti, which is seen as a beacon of hope to the Freedmen of the party and the rest of the United States.
 
+@expand_liberia
+title: Deepen ties with Liberia.
+view-if: liberia_support = 0
+choose-if: conservative_strength < 30
+unavailable-subtitle: The Conservative Republicans sway the party away from this
+on-arrival: freedmen_rep += 2; radical_strength += 1; liberia_support += 1; conservative_dissent -= 5
+
+The American Colonization Society still promotes emigration to Liberia as an answer to the "Negro Question," an idea Frederick Douglass and most Black leaders reject outright — freedom, they insist, means citizenship here, not exile there.
+
+Short of endorsing emigration, we can still expand consular support, mission schools, and trade with Monrovia, treating Liberia as a partner rather than a dumping ground.
+
+@continue_liberia
+title: Continue building ties with Liberia.
+view-if: liberia_support = 1
+choose-if: conservative_strength < 30
+unavailable-subtitle: The Conservative Republicans sway the party away from this
+on-arrival: freedmen_rep += 2; radical_strength += 1; conservative_dissent -= 2
+
+Trade in palm oil and coffee grows modestly, and mission schools continue their work. It is a small relationship, but a genuine one, and freedmen across the South take note of a Black republic treated as a diplomatic equal.
+
 @expel_fenians
 title: Crack down on the Fenian raids.
 view-if: year >= 1866
@@ -145,6 +214,97 @@ on-arrival: immigrant_laborers_rep += 3; europe_relation -= 2; radical_strength 
 Irish-American war veterans organize cross-border raids into Canada, aiming to pressure Britain into freeing Ireland. Officially, we do nothing. Unofficially, we let it happen.
 
 This earns us praise from Irish communities and condemnation from London.
+
+@french_trade
+title: Build trade with the French Republic.
+view-if: franco_prussian_stance != ""
+choose-if: budget >= 1
+subtitle: -1 budget
+unavailable-subtitle: We lack the budget to pursue new trade agreements.
+on-arrival: france_relation += 3; economic_growth += 0.1; budget -= 1;
+
+The new French Republic, humbled but intact, is eager for friends after its defeat. We pursue expanded commercial ties — French wine and manufactured luxury goods flow one way, American grain and machinery the other.
+
+@german_trade
+title: Sign a naturalization convention with the German Empire.
+view-if: franco_prussian_stance != ""
+choose-if: budget >= 1
+subtitle: -1 budget
+unavailable-subtitle: We lack the budget to pursue new trade agreements.
+on-arrival: germany_relation += 3; immigrant_laborers_rep += 2; budget -= 1;
+
+Modeled on Bancroft's earlier treaties with the German states, we negotiate an agreement protecting naturalized German-Americans from being conscripted into Prussian military service should they visit family back home. It is a small legal document that means a great deal to a very large community of voters.
+
+@recognize_cuban_belligerency
+title: Recognize the Cuban insurgents as a belligerent power.
+subtitle: Spain will not thank us for it.
+view-if: cuban_recognition = 0 and ten_years_war_started = 1
+on-arrival: {!
+    Q.cuban_recognition = 1;
+    Q.spain_relation -= 4;
+    Q.radical_strength += 2;
+    Q.liberal_dissent -= 1;
+    Q.conservative_dissent += 2;
+!}
+
+Cuban rebels have been fighting Spanish colonial rule since 1868 in what promises to be a long, grinding war. Recognizing their belligerency would let American arms and volunteers reach the rebellion more openly — a moral stand against the last major slaveholding power in the hemisphere, and a headache for Madrid.
+
+Radicals, still flush with abolitionist conviction, are enthusiastic. Spain lodges a furious protest.
+
+@maintain_cuban_neutrality
+title: Maintain strict neutrality on Cuba.
+view-if: cuban_recognition = 0 and ten_years_war_started = 1
+on-arrival: {!
+    Q.cuban_recognition = 2;
+    Q.spain_relation += 1;
+!}
+
+We decline to take sides in Spain's colonial war. Trade with Havana continues undisturbed, and Madrid has no complaint to lodge.
+
+@cuban_filibusters
+title: Turn a blind eye to filibustering expeditions supplying the rebels.
+view-if: cuban_recognition = 1 and virginius_crisis != 1
+choose-if: navy_strength >= 150
+unavailable-subtitle: Our Navy is stretched too thin to risk the consequences.
+on-arrival: {!
+    Q.spain_relation -= 3;
+    Q.filibuster_risk = (Q.filibuster_risk || 0) + 1;
+    if (Q.filibuster_risk >= 2 && Math.random() < 0.5) {
+        G.goto("virginius_affair");
+    }
+!}
+
+American ports have become quiet staging grounds for gunrunning ships slipping arms and volunteers to the Cuban rebels. We look the other way. Spanish patrol boats grow more aggressive by the month, and it is only a matter of time before one of these ships is caught.
+
+
+@asia_trade
+title: Expand trade relations with Japan and the East.
+subtitle: Steamship lines across the Pacific.
+view-if: year >= 1869
+choose-if: navy_strength >= 100 and budget >= 1
+unavailable-subtitle: We lack the naval presence and budget to expand Pacific trade.
+on-arrival: {!
+    Q.asia_relation += 3;
+    Q.economic_growth += 0.15;
+    Q.budget -= 1;
+    Q.middle_class_rep += 2;
+!}
+
+Meiji Japan, having opened itself to the West only a few years ago, is sending diplomatic missions abroad seeking trade and treaty revision. Building on Seward's earlier Burlingame Treaty with China, we push to expand Pacific steamship lines and open new markets for American manufactured goods in Yokohama and Shanghai alike.
+
+@latam_trade
+title: Pursue reciprocal trade treaties with the South American republics.
+view-if: year >= 1870
+choose-if: budget >= 1
+subtitle: -1 budget
+unavailable-subtitle: We lack the budget to pursue new trade agreements.
+on-arrival: {!
+    Q.latam_relation += 3;
+    Q.economic_growth += 0.1;
+    Q.budget -= 1;
+!}
+
+With the War of the Triple Alliance finally ending Paraguay's ruinous war against its neighbors, South America's Atlantic coast republics — and Dom Pedro II's Brazilian Empire — are hungry for markets beyond London. We pursue reciprocal trade agreements, hoping to displace British commercial dominance in the hemisphere with American manufactured goods and machinery.
 
 @navy_fight
 

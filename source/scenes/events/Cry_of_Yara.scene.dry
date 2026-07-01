@@ -1,0 +1,14 @@
+title: The Cry of Yara
+subtitle: Rebellion breaks out in Cuba.
+tags: event
+view-if: year = 1868 and month = 10 and ten_years_war_started != 1
+max-visits: 1
+on-arrival: ten_years_war_started = 1;
+
+= The Cry of Yara
+
+In eastern Cuba, the planter Carlos Manuel de Céspedes has freed his slaves, armed them, and declared Cuban independence from Spain at his sugar estate near Yara. Within days the revolt has spread across Oriente province, and what began as one planter's uprising is fast becoming a war the start of what Cubans are already calling the Ten Years' War.
+
+Spain, distracted by its own domestic upheaval, has few troops to spare and is scrambling to reinforce the island. American newspapers, particularly in the port cities with ties to Cuban sugar and tobacco, are covering it closely. Cuban exile committees have opened offices in New York and New Orleans, soliciting funds and arms for the rebellion, and looking to Washington for recognition.
+
+The administration will need to decide, sooner or later, where it stands.

@@ -1,0 +1,73 @@
+title: The Virginius Affair
+subtitle: A captured ship, and executions at Santiago.
+tags: event
+new-page: true
+view-if: year = 1873 and month = 11 and cuban_recognition = 1 and virginius_crisis != 1
+max-visits: 1
+on-arrival: virginius_crisis = 1;
+
+= The Virginius Affair
+
+A Spanish gunboat has captured the *Virginius*, an American-flagged steamer running arms to the Cuban rebellion, in international waters off Jamaica. The Spanish governor at Santiago de Cuba, without waiting for instructions from Madrid, has summarily executed dozens of the crew and passengers as pirates including American and British citizens. Word is only now reaching Washington, and the country is furious.
+
+How do we respond?
+
+@Menu
+
+- @demand_reparations: Demand reparations from Spain for this offense
+- @accept_arbitration: Begin international arbitration to settle this
+- @Sure: Strike while the Iron is hot! **TO WAR!!!**
+
+@demand_reparations
+on-arrival: {!
+    Q.spain_relation -= 2;
+    Q.budget += 3;
+    Q.moderate_strength += 2;
+    Q.middle_class_rep += 2;
+!}
+
+We demand a formal apology, the return of the surviving prisoners, salute to the American flag, and indemnity payments for the families of the executed. Spain, eager to avoid a war it cannot afford while still fighting the Cuban rebellion, agrees to the terms within weeks. It is a diplomatic win, if a grim one.
+
+@accept_arbitration
+on-arrival: {!
+    Q.spain_relation += 2;
+    Q.moderate_dissent -= 1;
+    Q.radical_dissent += 2;
+!}
+
+We refer the matter to international arbitration rather than press Spain directly. It cools tempers on both sides and avoids the risk of war, though Radicals in Congress accuse the administration of going soft on a slaveholding power over the deaths of American citizens.
+
+
+@Sure
+subtitle: Are you sure this is a good decision?
+on-arrival: //something
+go-to: War
+
+We have only just come out of a brutal civil war eight years ago and are still rebuilding the nation from it. Our own generals in the Cabinet advise against a second war so soon, this time against a European power, over an island that is not ours to begin with.
+
+@War
+
+- @BackDown: ...lets back down
+- @mobilize_for_war: **Declare war on Spain!!**
+
+@BackDown
+go-to: Menu
+
+Cooler heads prevail, for now. We step back from the brink and return our attention to the matter as it stands. The crew of the *Virginius* are still dead, and Spain is still waiting for an answer.
+
+@mobilize_for_war
+view-if: rep_majority >= 2
+on-arrival: {!
+    Q.spain_relation -= 8;
+    Q.budget -= 3;
+    Q.PoliticalCostPenalty += 3;
+    Q.radical_strength += 3;
+    Q.middle_class_dem += 2;
+    Q.spain_war = 1;
+!}
+
+We have formally declared war on a major European power over the Cuban question. Congress rallies behind the flag, and volunteers muster in Northern cities within days, but the middle class, still counting the cost of the last war, watches with real unease. Spain, already stretched thin fighting the Cuban rebellion at home, cannot easily fight the United States as well, but a declared war is a declared war. It will have to be fought, or ended, one way or another.
+
+The nation is now formally at war with Spain.
+
+

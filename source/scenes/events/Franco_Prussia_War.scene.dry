@@ -1,0 +1,48 @@
+title: The Franco-Prussian War
+subtitle: Europe's balance of power is remade.
+tags: event
+new-page: true
+view-if: year = 1870 and month = 7 and franco_prussian_stance = ""
+max-visits: 1
+
+= The Franco-Prussian War
+
+Napoleon III has marched France into war against Prussia and its German allies, and the results have stunned the world. Prussian arms have crushed the French at Sedan and captured Napoleon III is a prisoner. The Second French Empire has collapsed into a new French Republic overnight. The Prussian King was proclaimed German Emperor at Versailles itself in a humiliating ceremony for the French.
+
+American opinion is split. Sympathy for republican France runs deep, especially among Irish and Catholic communities who have no love for Prussian Protestantism. But the country's large German-American population (a growing and organized bloc), especially across the Midwest watches the birth of a unified Fatherland with pride, and expects Washington to notice.
+
+Where do our sympathies lie?
+
+@Choose
+
+- @favor_france: Support the new French Republic
+- @favor_prussia: Side with the new nation of Germany
+- @stay_neutral: We have no intrest in European Affairs
+
+@favor_france
+on-arrival: {!
+    Q.franco_prussian_stance = "france";
+    Q.france_relation += 5;
+    Q.germany_relation -= 3;
+    Q.immigrant_laborers_dem += 2;
+!}
+
+We lean toward Paris, extending informal sympathy to the beleaguered French Republic and quietly criticizing the harshness of Prussia's terms. It plays well with Irish and Catholic voters. German-American papers are considerably less pleased.
+
+@favor_prussia
+on-arrival: {!
+    Q.franco_prussian_stance = "prussia";
+    Q.germany_relation += 5;
+    Q.france_relation -= 3;
+    Q.immigrant_laborers_rep += 2;
+!}
+
+We lean toward Berlin, with administration figures offering warm public toasts to German unification. The country's German-American community, a serious voting bloc, takes notice and takes it well. Irish and French-sympathizing voters take notice too, less happily.
+
+@stay_neutral
+on-arrival: {!
+    Q.franco_prussian_stance = "neutral";
+    Q.moderate_strength += 1;
+!}
+
+We stay carefully, deliberately neutral, declining to take sides in a European war that is none of America's business. It is the safe choice, and the unremarkable one.

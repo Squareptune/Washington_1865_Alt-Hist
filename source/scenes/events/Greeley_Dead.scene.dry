@@ -2,7 +2,7 @@ title: The Death of Horace Greeley
 subtitle: ....Oh shit
 tags: event
 new-page: true
-view-if: year = 1872 and month = 11 and liberal_split = 1 and potus_winner != "" and greeley_dead != 1
+view-if: year = 1872 and month = 11 and liberal_split = 1
 max-visits: 1
 on-arrival: greeley_dead = 1;
 go-to: greeley_loss; crisis_menu if potus_winner = "lib"
