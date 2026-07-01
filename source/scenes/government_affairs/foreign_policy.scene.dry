@@ -150,9 +150,11 @@ go-to: san_juan_won if san_juan_won = 1; san_juan_lost if san_juan_won = 0
 The Treaty of Washington left one border question unresolved: which channel around the San Juan Islands marks the true boundary between Washington Territory and British Columbia. Both nations, unwilling to fight over a scattering of Puget Sound islands, have agreed to submit the dispute to the German Kaiser as a neutral arbiter.
 
 @san_juan_won
+
 Kaiser Wilhelm I rules in favor of the United States. The San Juan Islands, jointly occupied by British and American troops for over a decade since the so-called "Pig War," are confirmed as American territory without a shot fired. Puget Sound's anchorages are secure, and the last open border dispute with Britain is closed.
 
 @san_juan_lost
+
 The Kaiser rules for British sovereignty over the islands. The loss stings less in practice than in principle — the islands are of modest value — but it is a rare arbitration defeat, and critics in the press wonder aloud whether a stronger hand could have drawn a better line.
 
 @recognize_haiti
