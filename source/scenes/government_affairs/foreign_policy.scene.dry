@@ -5,10 +5,6 @@ tags: potus_affairs, cabinet
 on-arrival: {!
     Q.month_actions += 1;
     Q.foreign_policy_timer += 8;
-
-    // Without direct American military intervention, Juárez's forces push
-    // the French out on their own within a couple of years. If the player
-    // hasn't resolved it by 1868, it resolves itself, quietly, off-screen.
     if (Q.french_mexico < 2 && Q.year >= 1868) {
         Q.french_mexico = 2;
     }
@@ -16,7 +12,6 @@ on-arrival: {!
 view-if: sect_state_party = "R" and foreign_policy_timer <= 0
 card-image: img/portraits/Seward.jpg
 go-to: fp_menu
-#subtitle: Diplomacy in a postwar world.
 
 = Foreign Policy
 

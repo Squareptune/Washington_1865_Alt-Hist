@@ -58,19 +58,13 @@ view-if: year <= 1868 and stevens_advisor = 1
 on-arrival: {!
     Q.speaker = "Stevens";
     Q.speaker_party = "R";
-
     Q.moderate_dissent += 5;
     Q.conservative_dissent += 8;
     Q.radical_strength += 8;
     Q.radical_dissent -= 6;
     Q.liberal_dissent += 4;
-
     Q.freemen_rep += 4;
     Q.rural_dem -= 2;
-
-    // Stevens drives impeachment hard
-    Q.impeachment_unlocked = 1;
-
     Q.speaker_boosted_committee = "civil_rights";
     Q.speaker_boost_amount = 3;
 !}
@@ -79,8 +73,6 @@ go-to: speaker_end
 Thaddeus Stevens storms into the Speaker's chair like a force of nature. His iron control of the House floor and committee assignments transforms the chamber into an engine of Radical Reconstruction. Democrats are apoplectic. Conservative Republicans are alarmed. Radicals are finally satisfied.
 
 His dual role as Speaker and party advisor means he cannot devote his full attention to either — his advisor actions will come more slowly.
-
-[? if impeachment_unlocked = 1 : Stevens, as Speaker, will drive the impeachment process with particular ferocity. ?]
 
 
 @Blaine

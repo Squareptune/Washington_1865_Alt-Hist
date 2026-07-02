@@ -5,6 +5,7 @@ new-page: true
 view-if: year = 1873 and month = 11 and cuban_recognition = 1 and virginius_crisis != 1
 max-visits: 1
 on-arrival: virginius_crisis = 1;
+go-to: Menu
 
 = The Virginius Affair
 
