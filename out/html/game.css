@@ -22,9 +22,9 @@ body.dark-mode {
   --bg-color: #000;
   --border-color: #fff;
   --content-bg-color: #242424;
-  --text-color: #fff;
+  --text-color: #efefef;
   --link-color: #ff8080;
-  --link-hover-color: rgba(100, 100, 100, 0.1);
+  --link-hover-color: rgba(255, 255, 255, 0.06);
   --tab-bg-color: #555555;
   --tab-color: #505050;
   --tab-hover-color: #242424;
@@ -177,12 +177,12 @@ blockquote + blockquote.attribution {
   position: relative;
 }
 #tools_wrapper {
-    position: absolute;
-    width: 100%;
-    max-width: 80em;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+  position: absolute;
+  width: 100%;
+  max-width: 69em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 .tools {
   padding: 0.6em;
@@ -197,7 +197,7 @@ blockquote + blockquote.attribution {
 }
 .tools.right {
   float: right;
-  right: 2em;
+  right: 0.4em;
 }
 #qualities {
   text-indent: 0;
@@ -256,6 +256,9 @@ blockquote + blockquote.attribution {
     left: 0;
     z-index: 2;
     overflow: scroll;
+}
+.options {
+    text-align: right;
 }
 .overlay_top {
     position: relative;
@@ -543,7 +546,7 @@ table {
     stroke-width: 1.5px;
 }
 .seat.ddp {
-    fill: #575014;
+    fill: #DCCA4A;
 }
 .seat.z {
     fill: #000;
