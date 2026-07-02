@@ -571,12 +571,3 @@ table {
     text-decoration: underline;
     text-decoration-style: dotted;
 }
-
-@media screen and (min-width: 561px) {
-  #mid_panel {
-      margin: 0 auto 0 16rem;
-  }
-}
-#south_panel p {
-    text-indent: 0;
-}
