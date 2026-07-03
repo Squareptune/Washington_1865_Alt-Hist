@@ -1,0 +1,161 @@
+title: The Battle of Liberty Place
+subtitle: New Orleans braces for an armed uprising.
+tags: event
+new-page: true
+view-if: year = 1874 and month = 9 and whiteL_strength >= 200
+max-visits: 1
+on-arrival: {!
+    Q.liberty_war_choices = 0;
+!}
+go-to: muster
+
+= The Battle of Liberty Place
+
+The White League has mobilized openly in New Orleans, drilling in the streets and stockpiling arms in broad daylight. Today, some five thousand of them march on the city, aiming to seize the statehouse, the arsenal, and the police headquarters, and to install McEnery's shadow government by force.
+
+Governor Kellogg's defenders, the Metropolitan Police, whatever state militia can be called up, and armed members of the Union League, must hold the city or lose it.
+
+@muster
+
+The White League's forces number in the thousands, well-armed and openly organized. What can be mustered to meet them?
+
+- @rally_police: Call up the Metropolitan Police in full force.
+- @rally_unionleague: Call on the Union League to take up arms in the city's defense.
+- @mobilize_militia: Mobilize the state militia, if not already active.
+- @to_battle: Enough preparation. Meet them in the streets.
+
+@rally_police
+max-visits: 1
+go-to: muster
+on-arrival: {!
+    Q.liberty_war_choices += 1;
+    Q.Us_police_strength += 4;
+    Q.Us_police_militancy += 0.05;
+!}
+
+The Metropolitan Police mobilize in full strength to hold the statehouse and arsenal. [? if Us_police_loyalty < 0.4 : Their loyalty to Kellogg's government is shaky at best, and some officers may not show up at all. ?][? if Us_police_loyalty >= 0.4 and Us_police_loyalty < 0.7 : Most officers report for duty, though a few quietly stay home rather than fight their neighbors. ?][? if Us_police_loyalty >= 0.7 : The force turns out nearly to a man, loyal to the government they serve. ?]
+
+@rally_unionleague
+max-visits: 1
+go-to: muster
+on-arrival: {!
+    Q.liberty_war_choices += 1;
+    Q.Union_League_strength += 10;
+    Q.Union_League_militancy += 0.05;
+!}
+
+Word spreads through the city's Black neighborhoods, and Union League members turn out armed to defend the government that gave them the vote. [? if Union_League_militancy < 0.3 : They are courageous, but poorly organized and lightly armed for what is coming. ?][? if Union_League_militancy >= 0.3 and Union_League_militancy < 0.6 : They form up in reasonably organized companies, armed with what weapons they could gather. ?][? if Union_League_militancy >= 0.6 : Well-drilled from prior confrontations, they take up defensive positions with real discipline. ?]
+
+@mobilize_militia
+max-visits: 1
+go-to: muster
+choose-if: state_militia_formed = 0
+unavailable-subtitle: They have been disbanded since 1865
+on-arrival: {!
+    Q.liberty_war_choices += 1;
+    Q.state_militia_formed = 1;
+    Q.state_militia_strength = Q.enforcement_acts ? 55 : 40;
+!}
+
+Governor Kellogg formally calls up the state militia to defend the city. [? if enforcement_acts = 1 : With the Enforcement Acts already in force, federal backing lends the call-up real teeth. ?][? if enforcement_acts = 0 : Without federal enforcement powers behind it, the call-up carries only the state's own limited authority. ?]
+
+@to_battle
+choose-if: liberty_war_choices >= 2
+unavailable-subtitle: Gather more forces before committing to a fight you cannot take back.
+on-arrival: {!
+    Q.defender_power = (Q.Us_police_strength * Q.Us_police_militancy * Q.Us_police_loyalty * 2)
+        + (Q.Union_League_strength * Q.Union_League_militancy)
+        + (Q.state_militia_formed ? Q.state_militia_strength * 3 : 0);
+
+    Q.attacker_power = (Q.whiteL_strength * Q.whiteL_militancy * 1.5)
+        + (Q.kkk_strength * Q.kkk_militancy * 0.25);
+
+    if (Q.defender_power > Q.attacker_power * 1.1) {
+        Q.liberty_place_outcome = "victory";
+    } else if (Q.defender_power / Q.attacker_power >= 0.6) {
+        Q.liberty_place_outcome = "holdout";
+    } else {
+        Q.liberty_place_outcome = "defeat";
+    }
+!}
+go-to: lp_victory if liberty_place_outcome = "victory"; lp_holdout if liberty_place_outcome = "holdout"; lp_defeat if liberty_place_outcome = "defeat"
+
+= The Battle
+
+The White League advances on Canal Street. [+ Us_police_strength +] police, [+ Union_League_strength +] armed Union League members, and [? if state_militia_formed = 1 : [+ state_militia_strength +] state militia ?][? if state_militia_formed = 0 : no mobilized state militia ?] move to meet them.
+
+@lp_victory
+on-arrival: {!
+    Q.whiteL_strength = Math.max(0, Q.whiteL_strength - 60);
+    Q.whiteL_militancy = Math.max(0, Q.whiteL_militancy - 0.15);
+    Q.Union_League_strength += 15;
+    Q.radical_strength += 3;
+!}
+
+= The City Holds
+
+Against every expectation, the defenders hold the line. The White League's assault breaks against organized, disciplined resistance, and by nightfall their columns are in retreat. Kellogg's government stands, and for the first time, a Reconstruction government in the Deep South has met an armed insurrection and won outright, without waiting for Washington to save it.
+
+The White League will not soon forget the defeat. But neither will anyone else who doubted that Reconstruction could defend itself.
+
+- @lp_end: Continue.
+
+@lp_holdout
+on-arrival: {!
+    Q.whiteL_strength = Math.max(0, Q.whiteL_strength - 15);
+    Q.Union_League_strength -= 10;
+    Q.radical_dissent += 4;
+!}
+go-to: lp_federal_appeal
+
+= A City Divided
+
+The fighting is brutal and the lines hold only just. By the second day, the White League controls the statehouse and the arsenal, but Kellogg's forces still hold the Custom House and refuse to yield the rest of the city. New Orleans sits divided between two armed camps, and neither side can dislodge the other without help.
+
+@lp_defeat
+on-arrival: {!
+    Q.whiteL_strength += 10;
+    Q.Union_League_strength -= 25;
+    Q.Us_police_strength = Math.max(0, Q.Us_police_strength - 10);
+    Q.LA_reconstructionScore -= 15;
+    Q.radical_dissent += 8;
+!}
+go-to: lp_federal_appeal
+
+= The City Falls
+
+The defense collapses within hours. The White League storms the statehouse and the arsenal, and Kellogg's government flees to the Custom House under federal protection, the only building in the city they still control. McEnery is installed as governor over a city occupied by an armed insurrection. For three days, an armed paramilitary force will govern the largest city in the South, waiting to see whether Washington will act at all.
+
+@lp_federal_appeal
+
+- @call_federal_troops: Appeal to President [+ President +] for federal troops to restore the government.
+- @accept_status_quo: Accept the new arrangement rather than risk further bloodshed.
+
+@call_federal_troops
+choose-if: occupation >= 1 and budget >= 2
+unavailable-subtitle: [? if occupation < 1: Federal presence in the region is too limited to intervene quickly. ?][? if budget < 2: The budget cannot support an emergency deployment. ?]
+on-arrival: {!
+    Q.budget -= 2;
+    Q.Us_police_strength += 5;
+    Q.whiteL_strength = Math.max(0, Q.whiteL_strength - 30);
+    Q.whiteL_militancy = Math.max(0, Q.whiteL_militancy - 0.1);
+    Q.conservative_dissent += 3;
+!}
+go-to: lp_end
+
+Federal troops and naval gunboats arrive within days, and the White League withdraws rather than face the U.S. Army directly. Kellogg's government is restored, propped up openly now by federal bayonets rather than any claim to have defended itself. Democrats across the country point to it as proof that Reconstruction survives only by military occupation, not by popular consent.
+
+@accept_status_quo
+on-arrival: {!
+    Q.LA_reconstructionScore -= 20;
+    Q.radical_dissent += 12;
+    Q.dem_relation += 6;
+    Q.Union_League_strength -= 10;
+!}
+go-to: lp_end
+
+Washington declines to intervene. The arrangement in New Orleans is left to stand for now, an open admission that an armed paramilitary force can topple a Reconstruction government and face no federal response at all. Radicals call it the death of Reconstruction in Louisiana in all but name.
+
+@lp_end
+
+- @return: Continue.

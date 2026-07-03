@@ -1,0 +1,79 @@
+title: The Louisiana Question
+subtitle: Two governors, two legislatures, one state.
+tags: event
+new-page: true
+view-if: year = 1872 and month = 12 and kkk_strength + whiteL_strength >= 400
+max-visits: 1
+on-arrival: louisiana_crisis = 1;
+
+= The Louisiana Question
+
+Louisiana's gubernatorial election has produced not a winner, but two of them. Incumbent Governor Warmoth's Returning Board has certified a fusion Democratic-Republican ticket under John McEnery. A rival board, backed by a federal court ruling, has certified the Radical Republican candidate, William Pitt Kellogg as the new Governor. Both men have been sworn in and work with there own legislature. Now Louisiana now has two governments, each insisting the other is illegitimate.
+
+Armed men are gathering on both sides. Every day this goes unanswered, it grows harder to resolve without bloodshed.
+
+How does the administration respond?
+
+- @full_backing: Recognize Kellogg and deploy federal troops to secure his government
+- @recognize_no_troops: Recognize Kellogg, but decline to commit additional troops
+- @broker_investigation: Refer the dispute to a congressional investigation before taking sides
+- @recognize_mcenery: Recognize the McEnery fusion government instead
+
+@full_backing
+choose-if: occupation >= 1 and budget >= 2
+unavailable-subtitle: [? if occupation < 1: Federal occupation is not established enough to project force into Louisiana. ?][? if budget < 2: The budget cannot support a troop deployment. ?]
+on-arrival: {!
+    Q.budget -= 2;
+    Q.Us_police_strength += 3;
+    Q.Union_League_strength += 5;
+    Q.whiteL_militancy += 0.10;
+    Q.kkk_militancy += 0.05;
+    Q.radical_strength += 2;
+    Q.conservative_dissent += 3;
+    Q.LA_reconstructionScore += 5;
+    Q.colfax_pending = 1;
+!}
+
+Federal troops move to secure the statehouse in New Orleans, and Kellogg's government is installed by force of arms rather than force of argument. Radicals call it a necessary defense of the ballot. Democrats across the South call it a military occupation of a duly elected government, and the White Leagues take the deployment as proof they were right to organize. Tensions in Grant Parish and across rural Louisiana are rising fast.
+
+@recognize_no_troops
+on-arrival: {!
+    Q.Union_League_strength += 2;
+    Q.whiteL_strength += 4;
+    Q.kkk_strength += 2;
+    Q.radical_dissent += 3;
+    Q.moderate_strength += 1;
+    Q.LA_reconstructionScore += 1;
+    Q.colfax_pending = 1;
+!}
+
+Washington recognizes Kellogg's government but stops short of sending troops to enforce it. Radicals call this recognition without teeth, a half-measure that leaves Kellogg's government to fend for itself against a well-armed and organized opposition. In Louisiana, the White Leagues read federal hesitation as federal weakness.
+
+@broker_investigation
+choose-if: radical_strength + moderate_strength >= 40
+unavailable-subtitle: [? if radical_strength + moderate_strength < 40: Congress lacks the votes to sustain a formal investigation instead of an immediate decision. ?]
+on-arrival: {!
+    Q.radical_dissent += 3;
+    Q.conservative_dissent += 1;
+    Q.moderate_dissent -= 1;
+    Q.whiteL_strength += 6;
+    Q.kkk_strength += 3;
+    Q.colfax_pending = 1;
+!}
+
+Congress opens a formal investigation rather than picking a side. It buys time and lets moderates avoid an immediate, politically costly commitment, but it satisfies no one on the ground. Both governments continue to operate in parallel while the committee deliberates, and armed men on both sides grow more confident that Washington will not act before they do.
+
+@recognize_mcenery
+choose-if: conservative_strength + liberal_strength >= 40
+unavailable-subtitle: [? if conservative_strength + liberal_strength < 40: There is not enough support in the party to abandon Kellogg's government. ?]
+on-arrival: {!
+    Q.Union_League_strength -= 8;
+    Q.whiteL_strength -= 4;
+    Q.kkk_strength -= 2;
+    Q.radical_strength -= 4;
+    Q.radical_dissent += 8;
+    Q.LA_reconstructionScore -= 15;
+    Q.dem_relation += 4;
+!}
+
+Washington declines to back Kellogg and recognizes the McEnery fusion government instead. It defuses the immediate crisis. It also amounts to the federal government walking away from a Republican state government under direct threat, the first time it has done so outright. Radicals are outraged, calling it the beginning of the end for Reconstruction in the Gulf states. Democrats across the South take note of exactly how far Washington is willing to go before it backs down.

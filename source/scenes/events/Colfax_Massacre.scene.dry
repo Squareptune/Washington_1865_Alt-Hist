@@ -1,0 +1,109 @@
+title: The Colfax Massacre
+subtitle: Easter Sunday, Grant Parish
+tags: event
+new-page: true
+view-if: year = 1873 and month = 4 and colfax_pending = 1
+max-visits: 1
+on-arrival: {!
+    Q.colfax_massacre = 1;
+    Q.Union_League_strength -= 12;
+    Q.Union_League_militancy += 0.05;
+    Q.whiteL_strength += 4;
+    Q.kkk_strength += 2;
+!}
+
+= The Colfax Massacre
+
+On Easter Sunday, a force of armed white Democrats and White League militants surrounded the courthouse at Colfax, Louisiana, where a company of Black militia had gathered to defend Kellogg's government against a rumored takeover by supporters of McEnery. After a day-long siege, the building was set ablaze. Those inside who surrendered were shot. Estimates of the dead run from sixty to over a hundred and fifty men, making it the deadliest single act of racial violence of the Reconstruction era.
+
+Word reaches Washington within days. Northern newspapers are calling it a massacre. Southern Democratic papers are calling it the suppression of an armed insurrection. Congress wants to know what the federal government intends to do about it.
+
+- @full_prosecution: Prosecute the perpetrators under the Enforcement Acts
+- @troop_deployment: Deploy federal troops to occupy Grant Parish
+- @local_authorities: Defer to Louisiana's state courts to prosecute
+- @downplay: Downplay the massacre publicly to limit the political fallout
+
+@full_prosecution
+choose-if: enforcement_acts = 1 and budget >= 1
+unavailable-subtitle: [? if enforcement_acts = 0: Stronger legistation are required to bring federal charges of this kind. ?][? if budget < 1: We don't the budget to afford such an objective?]
+on-arrival: {!
+    Q.PoliticalCostPenalty += 2;
+    Q.budget -= 1;
+    Q.radical_strength += 3;
+    Q.conservative_dissent += 4;
+    Q.whiteL_militancy += 0.05;
+    Q.kkk_militancy += 0.05;
+    Q.Union_League_strength += 4;
+    Q.cruikshank_pending = 1;
+!}
+
+Federal marshals arrest dozens of participants and bring charges under the Enforcement Acts, the first real test of the law's reach into a mass atrocity rather than isolated Klan violence. [? if WhiteL_formed = 1: White Leagues and ?] Democratics call it federal tyranny reaching into a local dispute, and vow to fight the prosecutions in every court they can reach.
+
+@troop_deployment
+choose-if: occupation >= 1 and army_loyalty >= 0.5
+unavailable-subtitle: [? if occupation < 1: Federal occupation is not established enough to garrison the parish. ?][? if army_loyalty < 0.5: The Army cannot be relied on for this deployment. ?]
+on-arrival: {!
+    Q.budget -= 2;
+    Q.Us_police_strength += 4;
+    Q.Union_League_strength += 3;
+    Q.whiteL_strength -= 2;
+    Q.kkk_strength -= 1;
+    Q.moderate_strength += 1;
+    Q.conservative_dissent += 2;
+!}
+
+Federal troops move into Grant Parish to restore order and prevent further reprisals. It's a visible show of force, but no arrests follow, and no one is held to account. It buys calm in the short term without answering the question of who will be punished, or whether anyone will be.
+
+@local_authorities
+on-arrival: {!
+    Q.LA_total_pop = Q.LA_workers + Q.LA_middle_class + Q.LA_rural + Q.LA_freemen + Q.LA_immigrant_laborers + Q.LA_unemployed;
+    Q.LA_freedmen_share = Q.LA_freemen / Q.LA_total_pop;
+
+    Q.local_justice_score = (Q.LA_reconstructionScore * 1.5)
+        + (Q.LA_freedmen_share * 100)
+        - ((Q.kkk_strength + Q.whiteL_strength) / 20);
+
+    if (Q.local_justice_score >= 60) {
+        Q.colfax_local_outcome = "convictions";
+        Q.Union_League_strength += 6;
+        Q.radical_strength += 2;
+        Q.whiteL_strength += 1;
+        Q.LA_reconstructionScore += 3;
+    } else if (Q.local_justice_score >= 30) {
+        Q.colfax_local_outcome = "mixed";
+        Q.Union_League_strength -= 2;
+        Q.whiteL_strength += 3;
+        Q.kkk_strength += 1;
+        Q.radical_dissent += 3;
+    } else {
+        Q.colfax_local_outcome = "acquittal";
+        Q.Union_League_strength -= 6;
+        Q.whiteL_strength += 5;
+        Q.kkk_strength += 3;
+        Q.radical_dissent += 6;
+        Q.LA_reconstructionScore -= 8;
+    }
+!}
+
+Washington leaves prosecution to Louisiana's own courts.
+
+[? if colfax_local_outcome = "convictions" : With Reconstruction institutions still holding real strength in the state and a Republican-leaning electorate to draw juries from, prosecutors actually secure convictions against several of the men involved. It is not the whole reckoning Radicals wanted, but it is more than Grant Parish expected, and it sends its own message to the White Leagues. ?]
+
+[? if colfax_local_outcome = "mixed" : Grand juries in Grant Parish and the surrounding countryside are split. A handful of indictments go forward; most are quietly dropped or end in acquittal, as intimidated witnesses recant or fail to appear. It is a half-measure that satisfies no one, and paramilitary organizations note exactly which counties they can still operate in freely. ?]
+
+[? if colfax_local_outcome = "acquittal" : Grand juries drawn from the surrounding parishes decline to indict, or acquit outright, in case after case. Louisiana's Reconstruction government is too weak here, and the local white majority too dominant, for any jury to convict. It becomes clear within weeks that no one will face consequences for Colfax. The White Leagues take note, and so does every Black community in the state watching to see whether the federal government will actually protect them. ?]
+
+
+@downplay
+choose-if: conservative_strength + liberal_strength >= 40
+unavailable-subtitle: [? if conservative_strength + liberal_strength < 40: There is not enough support in the party to downplay a massacre this widely reported. ?]
+on-arrival: {!
+    Q.PoliticalCostPenalty -= 1;
+    Q.radical_dissent += 10;
+    Q.moderate_dissent += 3;
+    Q.whiteL_strength += 3;
+    Q.middle_class_rep -= 2;
+    Q.LA_freemen_rep -= 5;
+!}
+
+Administration allies in the press describe the killings as regrettable but characterize the militia's presence at the courthouse as provocative, muddying the public account of who bears responsibility. It limits the immediate political damage. It also draws accusations, including from within the party, that the administration would rather manage the story than confront what happened.
