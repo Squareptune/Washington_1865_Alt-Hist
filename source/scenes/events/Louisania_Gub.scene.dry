@@ -67,13 +67,22 @@ Congress opens a formal investigation rather than picking a side. It buys time a
 choose-if: conservative_strength + liberal_strength >= 40
 unavailable-subtitle: [? if conservative_strength + liberal_strength < 40: There is not enough support in the party to abandon Kellogg's government. ?]
 on-arrival: {!
-    Q.Union_League_strength -= 8;
-    Q.whiteL_strength -= 4;
-    Q.kkk_strength -= 2;
+    Q.Union_League_strength -= 6;
+    Q.whiteL_strength += 8;
+    Q.whiteL_militancy += 0.05;
+    Q.kkk_strength += 4;
     Q.radical_strength -= 4;
     Q.radical_dissent += 8;
-    Q.LA_reconstructionScore -= 15;
     Q.dem_relation += 4;
+    Q.colfax_pending = 0;
+    Q.LA_rural_dem += 4;
+    Q.LA_rural_rep -= 4;
+    Q.LA_workers_dem += 3;
+    Q.LA_workers_rep -= 3;
+    Q.LA_middle_class_dem += 3;
+    Q.LA_middle_class_rep -= 3;
+    Q.LA_freemen_other += 3;
+    Q.LA_freemen_rep -= 3;
 !}
 
-Washington declines to back Kellogg and recognizes the McEnery fusion government instead. It defuses the immediate crisis. It also amounts to the federal government walking away from a Republican state government under direct threat, the first time it has done so outright. Radicals are outraged, calling it the beginning of the end for Reconstruction in the Gulf states. Democrats across the South take note of exactly how far Washington is willing to go before it backs down.
+Washington declines to back Kellogg and recognizes the McEnery fusion government instead. It defuses the immediate crisis, and the White Leagues take it as total vindication rather than a reason to stand down, emboldened rather than satisfied. Across the state, white voters who had drifted toward the Republicans over Reconstruction's practical benefits see a government that folded the moment it was tested, and shift back toward the Democracy in response. Freedmen who had counted on federal protection find themselves newly unsure it exists at all. Radicals call it the beginning of the end for Reconstruction in the Gulf states.

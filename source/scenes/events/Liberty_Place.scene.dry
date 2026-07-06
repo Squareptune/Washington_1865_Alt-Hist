@@ -2,7 +2,7 @@ title: The Battle of Liberty Place
 subtitle: New Orleans braces for an armed uprising.
 tags: event
 new-page: true
-view-if: year = 1874 and month = 9 and whiteL_strength >= 200
+view-if: year = 1874 and month = 9 and whiteL_strength >= 200 and colfax_massacre = 1
 max-visits: 1
 on-arrival: {!
     Q.liberty_war_choices = 0;
