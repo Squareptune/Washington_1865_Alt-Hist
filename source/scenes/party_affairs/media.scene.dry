@@ -24,7 +24,7 @@ title: Commercialize the <span style="color: #c00000;">**Republican**</span> pre
 subtitle: We broaden our appeal, risking ideological clarity.
 on-arrival: resources += 1; europe_relations += 1; conservative_strength += 4; moderate_strength += 2; liberal_strength += 2; radical_dissent += 5; middle_class_rep += 4; immigrant_laborers_rep += 3; rural_rep += 2; workers_rep += 1
 
-Our newspapers shift toward patriotic business owners and loyal moderates. The party brings in more funds, but radicals decry the dilution of our Reconstruction values.
+Our newspapers shift toward patriotic business owners and loyal <span style="color: #9D2933;">Moderates</span>. The party brings in more funds, but <span style="color: #7A1F5C;">radicals</span> decry the dilution of our Reconstruction values.
 
 @campaign
 title: Focus our press on campaigning

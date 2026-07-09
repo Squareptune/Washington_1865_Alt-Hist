@@ -62,13 +62,13 @@ go-to: menu
 
 **1828**: Andrew Jackson forms the <span style="color: #0015bc;">**Democrats**</span>, emphasizing populism, white male suffrage, and states' rights. He defeats Adams in a landslide, marking the rise of the Second Party System.
 
-**1834**: The <span style="color: #F0DC82;">**Whig Party**</span> is formed in opposition to Jackson's executive overreach. It unites economic nationalists, reformers, and anti-Jackson Southerners.
+**1834**: The <span style="color: #c4b369;">**Whig Party**</span> is formed in opposition to Jackson's executive overreach. It unites economic nationalists, reformers, and anti-Jackson Southerners.
 
 **1846–1848**: The Mexican-American War results in the U.S. annexing vast southwestern territory. Tensions rise over whether these new lands will allow slavery.
 
 **1850**:  The Compromise of 1850, engineered by Henry Clay and Stephen Douglas, tries to maintain a North-South balance. California enters as a free state; the Fugitive Slave Act enrages Northerners.
 
-**1854**: The Kansas-Nebraska Act allows territories to decide slavery via popular sovereignty. Violent conflict erupts in "Bleeding Kansas." The <span style="color: #F0DC82;">**Whig Party**</span> collapses, and the <span style="color: #c00000;">**Republican**</span> is founded as an anti-slavery party.
+**1854**: The Kansas-Nebraska Act allows territories to decide slavery via popular sovereignty. Violent conflict erupts in "Bleeding Kansas." The <span style="color: #c4b46b;">**Whig Party**</span> collapses, and the <span style="color: #c00000;">**Republican**</span> is founded as an anti-slavery party.
 
 **1857**: The Dred Scott decision by the Supreme Court declares that African Americans are not citizens and that Congress cannot prohibit slavery in the territories. The North reacts with outrage.
 
@@ -128,15 +128,15 @@ go-to: menu
 
 **Demographic Groups**
 
-**Freedmen**: Formerly enslaved African Americans in the South. Newly emancipated, they overwhelmingly support the <span style="color: #c00000;">**Republican**</span> Party, especially its Radical faction, which promises civil rights, protection from white supremacist violence, and land reform. Freedmen often participate actively in Southern <span style="color: #c00000;">**Republican**</span> politics, serving in local, state, and even national office during Reconstruction. They face constant threats from groups like the Ku Klux Klan and hostile Southern elites. They make up about 12–15% of the total U.S. population, concentrated in the Deep South.
+**Freedmen**: Formerly enslaved African Americans in the South. Newly emancipated, they overwhelmingly support the <span style="color: #c00000;">**Republican**</span> Party, especially its <span style="color: #7A1F5C;">**Radical**</span> faction, which promises civil rights, protection from white supremacist violence, and land reform. Freedmen often participate actively in Southern <span style="color: #c00000;">**Republican**</span> politics, serving in local, state, and even national office during Reconstruction. They face constant threats from groups like the Ku Klux Klan and hostile Southern elites. They make up about 12–15% of the total U.S. population, concentrated in the Deep South.
 
-**Urban Workers**: Urban laborers and industrial wage workers, especially in the North. This group includes both native-born and immigrant populations, employed in manufacturing, transportation, and trades. Their political loyalties are divided—Radical <span style="color: #c00000;">**Republican**</span>, early labor reformers, and <span style="color: #0015bc;">**Democrats**</span> all vie for their support. Some lean toward moderate reformism; others are suspicious of Black civil rights, fearing job competition. They make up around 25–30% of the national population.
+**Urban Workers**: Urban laborers and industrial wage workers, especially in the North. This group includes both native-born and immigrant populations, employed in manufacturing, transportation, and trades. Their political loyalties are divided—<span style="color: #7A1F5C;">**Radical-Republicans**</span>, early labor reformers, and <span style="color: #0015bc;">**Democrats**</span> all vie for their support. Some lean toward <span style="color: #9D2933;">**moderate**</span> reformism; others are suspicious of Black civil rights, fearing job competition. They make up around 25–30% of the national population.
 
-**Middle Class**: White-collar professionals, small business owners, and educated elites. This group includes lawyers, teachers, clerks, and merchants—predominantly Northern, with strong influence in newspapers and civic organizations. They are the backbone of Moderate <span style="color: #c00000;">**Republican**</span>s and some Liberal Republicans, supporting Reconstruction in principle but often wary of radical measures like land confiscation or racial integration. They represent 10–15% of the population.
+**Middle Class**: White-collar professionals, small business owners, and educated elites. This group includes lawyers, teachers, clerks, and merchants—predominantly Northern, with strong influence in newspapers and civic organizations. They are the backbone of <span style="color: #9D2933;">**Moderate Republican**</span>s and some Liberal Republicans, supporting Reconstruction in principle but often wary of radical measures like land confiscation or racial integration. They represent 10–15% of the population.
 
 **Rural**: Smallholding farmers, planters, and tenant farmers, especially in the South and Midwest. In the North and West, many support the <span style="color: #c00000;">**Republican**</span> Party due to its pro-farmer and homesteading policies. In the South, most white rural voters are <span style="color: #0015bc;">**Democrats**</span> and strongly oppose Reconstruction. This group is deeply divided by region and race. Rural Americans make up 30–40% of the population.
 
-**Immigrant Laborers**: A growing group of Irish, German, and other European immigrants concentrated in Northern cities. They work in labor-intensive, often low-wage jobs. Irish immigrants in particular lean <span style="color: #0015bc;">**Democratic**</span>, especially in opposition to Reconstruction and in defense of Catholic schools. German immigrants are more mixed, with some radical and liberal factions supporting <span style="color: #c00000;">**Republican**</span>s or early Socialist movements. Immigrant laborers comprise 10–15% of the population.
+**Immigrant Laborers**: A growing group of Irish, German, and other European immigrants concentrated in Northern cities. They work in labor-intensive, often low-wage jobs. Irish immigrants in particular lean <span style="color: #0015bc;">**Democratic**</span>, especially in opposition to Reconstruction and in defense of Catholic schools. German immigrants are more mixed, with some <span style="color: #7A1F5C;">**radical**</span> and liberal factions supporting <span style="color: #c00000;">**Republican**</span>s or early Socialist movements. Immigrant laborers comprise 10–15% of the population.
 
 **Unemployed & Displaced**: A transient, politically volatile group composed of war veterans, former slaves denied land, displaced workers, and refugees from the Civil War. Many are mobile, poor, and desperate—susceptible to populist or radical appeals, but often disengaged from formal politics due to disenfranchisement or instability. This group is small but significant in times of crisis, making up around 5–8% of the population.
 
@@ -177,9 +177,9 @@ Support for Reconstruction: [+ reconstruction_support +]%
 @parties
 go-to: menu
 
-<span style="color: #c00000;">**Republican**</span> **Party** – The party of Lincoln and the Union: We are the dominant force in Washington following the Civil War. Our coalition includes Radical Republicans, who seek full equality and Reconstruction in the South, as well as Moderates who are more cautious but still oppose secession and slavery. We are the party of emancipation, the Freedmen's Bureau, and constitutional reform. Our base includes Northern industrialists, African Americans, and many reform-minded middle-class citizens.
+<span style="color: #c00000;">**Republican**</span> **Party** – The party of Lincoln and the Union: We are the dominant force in Washington following the Civil War. Our coalition includes <span style="color: #7A1F5C;">**Radical Republicans**</span>, who seek full equality and Reconstruction in the South, as well as <span style="color: #9D2933;">**Moderates**</span> who are more cautious but still oppose secession and slavery. We are the party of emancipation, the Freedmen's Bureau, and constitutional reform. Our base includes Northern industrialists, African Americans, and many reform-minded middle-class citizens.
 
-<span style="color: #0015bc;">**Democratic Party**</span> - The opposition party: The <span style="color: #0015bc;">**Democrats**</span> represent a mix of Northern conservatives and Southern ex-Confederates. Though weakened by the war, they remain a force in Congress and dominate Southern state politics where federal troops are absent. They oppose Radical Reconstruction and civil rights for freedmen, and many <span style="color: #0015bc;">**Democrats**</span> advocate for a swift return to “home rule” in the South.
+<span style="color: #0015bc;">**Democratic Party**</span> - The opposition party: The <span style="color: #0015bc;">**Democrats**</span> represent a mix of Northern conservatives and Southern ex-Confederates. Though weakened by the war, they remain a force in Congress and dominate Southern state politics where federal troops are absent. They oppose <span style="color: #7A1F5C;">**Radical**</span> Reconstruction and civil rights for freedmen, and many <span style="color: #0015bc;">**Democrats**</span> advocate for a swift return to “home rule” in the South.
 
 Current relations: [+ dem_relation : relationships +]
 
@@ -219,7 +219,7 @@ Police loyalty: [+ Us_police_loyalty : loyalty +]
 
 Overall dissent: [+ dissent_percent : dissent +]
 
-**Radicals**
+**<span style="color: #7A1F5C;">**Radicals**</span>**
 
 They are the most extreme wing of the party who supported immediate, complete, and permanent eradication of slavery in the United States. But now the war is over, they are increasing pushing  to establish civil rights for former slaves and fully implement emancipation as well as making the South be punished for what they did.
 
@@ -227,23 +227,23 @@ Strength: [+ radical_dissent : strength +]
 
 Dissent: [+ radical_dissent : dissent +]
 
-**Moderates**
+**<span style="color: #9D2933;">Moderates</span>**
 
-This is the faction of Lincoln and and opposed the more militant stances advocated by the Radical Republicans. Moderate Republicans are less enthusiastic than Radical Republicans about Black suffrage, even though they otherwise embraced civil equality and the expansion of federal authority during the American Civil War.
+This is the faction of Lincoln and and opposed the more militant stances advocated by the <span style="color: #7A1F5C;">**Radical Republicans**</span>. <span style="color: #9D2933;">**Moderate Republicans**</span> are less enthusiastic than <span style="color: #7A1F5C;">**Radical Republicans**</span> about Black suffrage, even though they otherwise embraced civil equality and the expansion of federal authority during the American Civil War.
 
 Strength: [+ moderate_strength : strength +]
 
 Dissent: [+ moderate_dissent : dissent +]
 
-**Conservative**
+**<span style="color: #B5651D;">Conservatives</span>**
 
-This factions advocated for a lenient, conciliatory policy towards the South in contrast to the harsher attitudes emphasized by Radical Republicans. generally opposed efforts by Radical Republicans to rebuild the Southern U.S. under an economically mobile, free-market system.
+This factions advocated for a lenient, conciliatory policy towards the South in contrast to the harsher attitudes emphasized by <span style="color: #7A1F5C;">**Radical Republicans**</span>. generally opposed efforts by <span style="color: #7A1F5C;">**Radical Republicans**</span> to rebuild the Southern U.S. under an economically mobile, free-market system.
 
 Strength: [+ conservative_strength : strength +]
 
 Dissent: [+ conservative_dissent : dissent +]
 
-<span style="color: #DAA520;">**Liberals**</span>
+<span style="color: #DAA520;">Liberals</span>
 
 The <span style="color: #DAA520;">**Liberal Republicans**</span> were small in the early parts of reconstruction and grew thorugh out the late 1860s and wanted to end federal intervention in the South, promoting a more hands-off approach to governing, and emphasizing issues like civil service reform and limited government. 
 

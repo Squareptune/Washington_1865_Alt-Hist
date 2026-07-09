@@ -22,7 +22,7 @@ In our media and campaign materials, who should we consider as our main opponent
 @confederates
 on-arrival: enemies = "confederates"; radical_strength += 5; moderate_strength += 5; conservative_dissent += 5; workers_dem -= 2; middle_class_rep -= 2; freemen_rep -= 2; liberal_dissent += 2
 
-Aiming our focus at the former Confederates amongst our midst is popular among the entire party, although the conservative republicans are worried that we are too aggressive against a now defeated enemy.
+Aiming our focus at the former Confederates amongst our midst is popular among the entire party, although the <span style="color: #B5651D;">Conservative Republicans</span> are worried that we are too aggressive against a now defeated enemy.
 
 @KKK
 on-arrival: enemies = "KKK"; radical_strength += 5; radical_dissent -= 5; moderate_dissent += 5; rural_dem -= 3; unemployed_dem -= 3; liberal_strength += 2; liberal_dissent -= 1

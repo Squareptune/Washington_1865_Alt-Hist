@@ -8,13 +8,13 @@ on-arrival: civil_rights_timer += 6;
 
 = Radicals Demand a Civil Rights Act
 
-Radical Republicans are demanding that Congress pass sweeping civil rights legislation to protect freedmen from Southern "Black Codes" and ensure equality before the law.
+<span style="color: #7A1F5C;">Radical Republicans</span> are demanding that Congress pass sweeping civil rights legislation to protect freedmen from Southern "Black Codes" and ensure equality before the law.
 
 They argue that Reconstruction means nothing without federal guarantees of citizenship, due process, and equal protection.
 
-Moderates are divided. Some warn it will provoke a presidential veto and alienate conservative allies. Others say the time for compromise has passed.
+<span style="color: #9D2933;">Moderates</span> are divided. Some warn it will provoke a presidential veto and alienate <span style="color: #B5651D;">Conservatives</span> allies. Others say the time for compromise has passed.
 
-- @pass_civil_rights: Back the Radical push and pass the Act.
+- @pass_civil_rights: Back the <span style="color: #7A1F5C;">Radical</span> push and pass the Act.
 - @stall_civil_rights: Delay action for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -25,13 +25,13 @@ unavailable-subtitle: [? if budget < 2: Not enough budget. ?][? if house_majorit
 choose-if: budget >= 2 and house_majority > 1 and sen_majority > 1
 on-arrival: civil_rights_act_passed = 1; budget -= 2; PoliticalCostPenalty += 2; veto += 1; veto_reason = "Civil Rights Act"; freedmen_rep += 5; radical_strength += 5; moderate_dissent += 3; conservative_dissent += 4; liberal_dissent += 3;
 
-You endorse the Radicals’ initiative and pass the Civil Rights Act through Congress. It marks a bold stand for equality—but may force a veto showdown with the President.
+You endorse the <span style="color: #7A1F5C;">Radicals'</span> initiative and pass the Civil Rights Act through Congress. It marks a bold stand for equality—but may force a veto showdown with the President.
 
 @stall_civil_rights
-subtitle: Moderate Stability
+subtitle: <span style="color: #9D2933;">Moderate</span> Stability
 on-arrival: radical_dissent += 5; moderate_strength += 3; freedmen_rep -= 3;
 
-You decide not to move forward—yet. Moderates appreciate your restraint, but Radical allies and Black communities grow increasingly impatient.
+You decide not to move forward—yet. <span style="color: #9D2933;">Moderates</span> appreciate your restraint, but <span style="color: #7A1F5C;">Radical Republicans</span> allies and Black communities grow increasingly impatient.
 
 
 

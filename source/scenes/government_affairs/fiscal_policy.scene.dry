@@ -70,7 +70,7 @@ unavailable-subtitle: Tax floor reached or insufficient funds.
 choose-if: budget >= 2 and lower_tax_rates >= -5
 on-arrival: budget -= 2; lower_tax_rates -= 1; workers_rep += 5*(1-dissent); inflation += 0.6; economic_growth += 0.4; radical_strength += 1
 
-Cutting consumption taxes helps the poor, boosts support from labor, and strengthens the Radical coalition.
+Cutting consumption taxes helps the poor, boosts support from labor, and strengthens the <span style="color: #7A1F5C;">Radical</span> coalition.
 
 
 @cut_rich

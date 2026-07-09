@@ -29,7 +29,7 @@ With <span style="color: #c00000;">**Republican**</span> control of Congress, we
 title: Pass the Enforcement Acts
 view-if: enforcement_acts = 0 and kkk_strength + whiteL_strength >= 400
 choose-if: rep_majority >= 1 and radical_strength + moderate_strength >= 50
-unavailable-subtitle: [? if rep_majority < 1: We do not control Congress. ?][? if radical_strength + moderate_strength < 50: The Radical and Moderate factions are not strong enough to push this through. ?]
+unavailable-subtitle: [? if rep_majority < 1: We do not control Congress. ?][? if radical_strength + moderate_strength < 50: The Radi<span style="color: #7A1F5C;">Radical</span> and <span style="color: #9D2933;">Moderate</span> factions are not strong enough to push this through. ?]
 on-arrival: {!
     Q.enforcement_acts = 1;
     Q.judicial_reform += 1;
@@ -47,13 +47,13 @@ on-arrival: {!
 
 Congress passes legislation giving federal courts and marshals direct authority over election interference and organized violence in the South. States that cannot or will not protect their citizens will now face federal intervention without waiting on local cooperation.
 
-The reaction is immediate. <span style="color: #0015bc;">**Democrats**</span> condemn it as military tyranny. Radical Republicans celebrate it as the law finally having teeth. Southern paramilitary groups are emboldened in their anger but now face real federal consequences for the first time.
+The reaction is immediate. <span style="color: #0015bc;">**Democrats**</span> condemn it as military tyranny. <span style="color: #7A1F5C;">Radical Republicans</span> celebrate it as the law finally having teeth. Southern paramilitary groups are emboldened in their anger but now face real federal consequences for the first time.
 
 @Reform
 title: Reform the Military Occupation Act of 1867
 view-if: occupation = 1
 choose-if: rep_majority = 1 and conservative_strength <= 35
-unavailable-subtitle: [? if rep_majority < 1: We don't control Congress. ?][? if conservative_strength > 35: The Conservatives will block this. ?]
+unavailable-subtitle: [? if rep_majority < 1: We don't control Congress. ?][? if conservative_strength > 35: The <span style="color: #B5651D;">Conservatives</span> will block this. ?]
 on-arrival: occupation = 2
 
 We managed to reform the Military Occupation Act of 1867 to allow full military forces to be directed south to reinforce Reconstruction.

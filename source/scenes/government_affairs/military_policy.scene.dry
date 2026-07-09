@@ -44,7 +44,7 @@ choose-if: budget >= 1
 unavailable-subtitle: We do not have the budget.
 on-arrival: budget -= 1; PoliticalCostPenalty += 1; coalition_dissent -= 1 if coalition_dissent > 0; army_loyalty += 0.07 if army_loyalty < 1; army_strength += 20; radical_dissent += 3;  moderate_dissent += 2; conservative_strength += 5; conservative_dissent -= 3; dem_relation += 1; reconstruction_support += 1; economic_growth += 0.1
 
-The decision to increase funding for the Army reassures conservative Republicans and moderates who favor strong federal enforcement in the South. However, many Radical Republicans and anti-military factions view it as a betrayal of civilian primacy. European observers are wary of American military expansion during such a volatile time.
+The decision to increase funding for the Army reassures <span style="color: #B5651D;">Conservative Republicans</span> and <span style="color: #9D2933;">Moderates</span> who favor strong federal enforcement in the South. However, many <span style="color: #7A1F5C;">Radical Republicans</span> and anti-military factions view it as a betrayal of civilian primacy. European observers are wary of American military expansion during such a volatile time.
 
 @decrease_funding
 subtitle: +1 budget
@@ -62,7 +62,7 @@ on-arrival: army_loyalty += 0.15; army_militancy -= 0.5 if army_loyalty < 0.5; b
 
 Reforms are underway to democratize the Army. Officers with known Confederate sympathies are dismissed, and new recruitment targets the Unionist and freedmen communities. While progress is uneven, this marks a significant shift in the Army’s alignment with Reconstruction goals.
 
-Many conservatives view this as the dangerous politicization of the military, and Democrats accuse us of provoking instability.
+Many <span style="color: #B5651D;">Conservatives</span> view this as the dangerous politicization of the military, and Democrats accuse us of provoking instability.
 
 @Navy
 

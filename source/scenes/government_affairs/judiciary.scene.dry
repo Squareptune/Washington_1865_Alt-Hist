@@ -8,9 +8,9 @@ tags: cotus_affairs, cabinet
 
 = Judiciary Reform
 
-The federal judiciary remains one of the greatest obstacles to Reconstruction. Many judges are holdovers from antebellum days, sympathetic to states’ rights and hostile to civil rights enforcement. Radical legislation is regularly struck down or obstructed by conservative courts.
+The federal judiciary remains one of the greatest obstacles to Reconstruction. Many judges are holdovers from antebellum days, sympathetic to states’ rights and hostile to civil rights enforcement. <span style="color: #7A1F5C;">Radical</span> legislation is regularly struck down or obstructed by conservative courts.
 
-[? if judicial_reform <= 0 : Pressure is mounting to bring the courts in line with the goals of Reconstruction, but such a move would trigger fierce opposition from moderates and conservative allies. ?]
+[? if judicial_reform <= 0 : Pressure is mounting to bring the courts in line with the goals of Reconstruction, but such a move would trigger fierce opposition from <span style="color: #9D2933;">Moderates</span> and <span style="color: #B5651D;">Conservative</span> allies. ?]
 [? if judicial_reform == 1 : We have begun reshaping the courts, replacing some of the worst obstructionists. But many remain who would block land redistribution or civil rights enforcement. ?] 
 [? if judicial_reform >= 2 : Our reforms have largely succeeded. The courts now lean toward upholding Reconstruction laws, and more transformative policies are within reach. ?]
 
@@ -27,7 +27,7 @@ unavailable-subtitle: Not enough budget.
 choose-if: budget >= 1
 on-arrival: judicial_reform += 1; budget -= 1; PoliticalCostPenalty += 1; radical_strength += 5; conservative_dissent += 5; moderate_dissent += 5; freemen_rep += 5;
 
-Radical Republicans launch a full-scale campaign to overhaul the judiciary—impeaching obstructionist judges, appointing new justices, and passing legislation to expand the court's size. The move unleashes conservative backlash but opens the door for ambitious reform.
+<span style="color: #7A1F5C;">Radical Republicans</span> launch a full-scale campaign to overhaul the judiciary—impeaching obstructionist judges, appointing new justices, and passing legislation to expand the court's size. The move unleashes <span style="color: #B5651D;">Conservative</span> backlash but opens the door for ambitious reform.
 
 @Act
 subtitle: -2 budget
@@ -35,7 +35,7 @@ unavailable-subtitle: Not enough budget.
 choose-if: budget >= 2
 on-arrival: budget -= 2; PoliticalCostPenalty += 2; judicial_reform += 2; conservative_dissent += 5; moderate_dissent += 4; radical_strength += 3; freemen_rep += 4; middle_class_rep += 1;
 
-Congress passes the Judicial Circuits Act, dramatically expanding federal court districts and enabling the appointment of dozens of loyal judges. Conservative factions decry it as court-packing, but the legislation survives constitutional challenge and shifts the judiciary firmly in favor of Reconstruction.
+Congress passes the Judicial Circuits Act, dramatically expanding federal court districts and enabling the appointment of dozens of loyal judges. <span style="color: #B5651D;">Conservative</span> factions decry it as court-packing, but the legislation survives constitutional challenge and shifts the judiciary firmly in favor of Reconstruction.
 
 @minor_reforms
 on-arrival: judicial_reform += 0.5; moderate_dissent += 2; radical_strength += 2; judiciary_timer += 6

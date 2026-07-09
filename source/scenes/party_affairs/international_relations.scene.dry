@@ -23,7 +23,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; europe_relation += 1; moderate_strength += 1; liberal_strength += 2;
 
-British liberals and abolitionist networks have long supported our cause. Sustaining these ties bolsters the party’s moderate wing and increases our standing abroad.
+British liberals and abolitionist networks have long supported our cause. Sustaining these ties bolsters the party’s <span style="color: #9D2933;">moderate wing</span> and increases our standing abroad.
 
 @germany
 subtitle: -1 resources
