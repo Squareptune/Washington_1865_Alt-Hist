@@ -7,7 +7,7 @@ on-arrival: month_actions += 1; international_relations_timer += 12;
 card-image: img/international.jpg
 max-visits: 4
 
-As the Republican Party emerges as a force for liberty and union, we have a chance to build relationships with foreign allies who share our ideals—radicals, abolitionists, and republicans across the globe.
+As the <span style="color: #c00000;">**Republican**</span> Party emerges as a force for liberty and union, we have a chance to build relationships with foreign allies who share our ideals—radicals, abolitionists, and republicans across the globe.
 
 - @britain: Correspond with British Liberals and anti-slavery reformers. 
 - @germany: Observe the German Forty-Eighters and support constitutionalism. 

@@ -8,7 +8,7 @@ card-image: img/reconstruction_media.webp
 
 = Media Strategy
 
-The Republican Party maintains a growing network of newspapers and loyal publications throughout the Union. With our message in high demand after the war, we must decide how to wield our media power.
+The <span style="color: #c00000;">**Republican**</span> Party maintains a growing network of newspapers and loyal publications throughout the Union. With our message in high demand after the war, we must decide how to wield our media power.
 
 - @commercial
 - @campaign
@@ -20,7 +20,7 @@ The Republican Party maintains a growing network of newspapers and loyal publica
 - @cancel_advisor_action
 
 @commercial
-title: Commercialize the Republican press
+title: Commercialize the <span style="color: #c00000;">**Republican**</span> press
 subtitle: We broaden our appeal, risking ideological clarity.
 on-arrival: resources += 1; europe_relations += 1; conservative_strength += 4; moderate_strength += 2; liberal_strength += 2; radical_dissent += 5; middle_class_rep += 4; immigrant_laborers_rep += 3; rural_rep += 2; workers_rep += 1
 
@@ -31,7 +31,7 @@ title: Focus our press on campaigning
 subtitle: Target loyal Republican voters and shore up our base.
 on-arrival: moderate_strength += 3; liberal_strength += 2; radical_strength += 1; conservative_strength += 1; dissent -= 2; workers_rep += 3; middle_class_rep += 2; rural_rep += 1; freemen_rep += 2
 
-Election coverage strengthens enthusiasm among Republicans and mobilizes our base across the North and border states.
+Election coverage strengthens enthusiasm among <span style="color: #c00000;">**Republican**</span> and mobilizes our base across the North and border states.
 
 @ideological
 title: Promote vibrant internal debate
@@ -58,7 +58,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; TX_middle_class_rep += 7; TX_rural_rep += 7; TX_immigrant_laborers_rep += 5; dem_relation -= 1
 
-We invested political capital and money into a sustained campaign across Texas. Republican speakers, Union League organizers, and federal officials worked to undermine reactionary narratives and promote Reconstruction policies. The effort strengthens loyal institutions, but fuels resentment among Southern Democrats.
+We invested political capital and money into a sustained campaign across Texas. <span style="color: #c00000;">**Republican**</span> speakers, Union League organizers, and federal officials worked to undermine reactionary narratives and promote Reconstruction policies. The effort strengthens loyal institutions, but fuels resentment among Southern <span style="color: #0015bc;">**Democrats**</span>.
 
 @DeepSouth
 subtitle: -1 resources
@@ -66,7 +66,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; AL_middle_class_rep += 3; AL_rural_rep += 3; MS_middle_class_rep += 3; MS_rural_rep += 3; GA_middle_class_rep += 3; GA_rural_rep += 3; FL_middle_class_rep += 3; FL_rural_rep += 3; Union_League_strength += 3; dem_relation -= 2
 
-Republican newspapers, Union League speakers, and federal allies coordinated a media and political push across the Deep South. While deeply hostile territory limits immediate gains, the effort strengthens loyal networks and challenges reactionary dominance at the cost of further inflaming Southern Democrats.
+<span style="color: #c00000;">**Republican**</span> newspapers, Union League speakers, and federal allies coordinated a media and political push across the Deep South. While deeply hostile territory limits immediate gains, the effort strengthens loyal networks and challenges reactionary dominance at the cost of further inflaming Southern <span style="color: #0015bc;">**Democrats**</span>.
 
 @Carolinas
 subtitle: -1 resources
@@ -74,7 +74,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; NC_middle_class_rep += 4; NC_rural_rep += 3; SC_middle_class_rep += 3; SC_rural_rep += 2; Union_League_strength += 2; dem_relation -= 1
 
-Republican organizers fanned out across the Carolinas, holding rallies, registering voters, and defending Reconstruction governments against Democratic obstruction.
+<span style="color: #c00000;">**Republican**</span> organizers fanned out across the Carolinas, holding rallies, registering voters, and defending Reconstruction governments against <span style="color: #0015bc;">**Democratic**</span> obstruction.
 
 @MississippiValley
 subtitle: -1 resources
@@ -82,10 +82,10 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; LA_middle_class_rep += 4; LA_rural_rep += 2; AR_middle_class_rep += 3; AR_rural_rep += 3; Union_League_strength += 3; dem_relation -= 2
 
-Party agents mobilized freedmen and loyalists along the Mississippi, strengthening Union Leagues while provoking fierce resistance from Democratic machines.
+Party agents mobilized freedmen and loyalists along the Mississippi, strengthening Union Leagues while provoking fierce resistance from <span style="color: #0015bc;">**Democratic**</span> machines.
 
 @borderlands
-title: Expand Republican messaging into border states
+title: Expand <span style="color: #c00000;">**Republican**</span> messaging into border states
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.

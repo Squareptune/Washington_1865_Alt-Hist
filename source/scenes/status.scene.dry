@@ -20,11 +20,9 @@ if (Q.economic_growth) {
 
 Resources available: [+ resources +]
 
-Republican position: [? if rep_majority = 1 : Majority government ?][? if rep_majority != 1 : Minority government ?]
+<span style="color: #c00000;">**Republican**</span> position: [? if rep_majority = 1 : Majority government ?][? if rep_majority != 1 : Minority government ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
-
-State 3/4: [? if amendmentResult = 1 : True ?][? if amendmentResult = 0 : False ?]
 
 = Government
 
@@ -71,7 +69,7 @@ Tariff rate: [+ tariffs +]
 
 = Inter-party Relations
 
-{!<span class="tooltip-text" title="Democratic Party">Dem</span>!}: [+ dem_relation : relationships +]
+{!<span class="tooltip-text" title="Democratic Party" style="color: #0015bc;">**Democrats**</span>!}: [+ dem_relation : relationships +]
 
 [? if liberal_split = 1 : {!<span class="tooltip-text" title="Liberal Republican Party">Lib. Rep.</span>!}: [+ liberal_relation : relationships +] ?]
 
@@ -99,7 +97,7 @@ KKK_Militarization: [+ kkk_militancy : militancy +]
 
 [? if whiteL_formed = 1 : White League Militarization: [+ whiteL_militancy : militancy +] ?]
 
-{!<span class="tooltip-text" title=" The Union League is a Republican-aligned patriotic society defending Black civil rights and Reconstruction.">Union League</span>!} Strength: [+ Union_League_strength +] thousand
+{!<span class="tooltip-text" title=" The Union League is a <span style="color: #c00000;">**Republican**</span>-aligned patriotic society defending Black civil rights and Reconstruction.">Union League</span>!} Strength: [+ Union_League_strength +] thousand
 
 Union League Militancy: [+ Union_League_militancy : militancy +]
 
@@ -127,37 +125,37 @@ Police loyalty: [+ Us_police_loyalty : loyalty +]
 
 Senate:
 
-Republicans: [+ rep_senate_pro +] seats
+<span style="color: #c00000;">**Republican**</span>: [+ rep_senate_pro +] seats
 
-Democrats: [+ dem_senate_pro +] seats
+<span style="color: #0015bc;">**Democrats**</span>: [+ dem_senate_pro +] seats
 
-[? if liberal_split = 1 : Liberal Republicans: [+ lib_senate_pro +] seats ?]
+[? if liberal_split = 1 : <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ lib_senate_pro +] seats ?]
 
-Others: [+ other_senate_pro +] seats
+<span style="color: #00cc00;">**Other**</span>: [+ other_senate_pro +] seats
 
 House:
 
-Republicans: [+ rep_r_pro +] seats
+<span style="color: #c00000;">**Republican**</span>: [+ rep_r_pro +] seats
 
-Democrats: [+ dem_r_pro +] seats
+<span style="color: #17181a;">**Democrats**</span>: [+ dem_r_pro +] seats
 
-[? if liberal_split = 1 : Liberal Republicans: [+ lib_r_pro +] seats ?]
+[? if liberal_split = 1 : <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ lib_r_pro +] seats ?]
 
-Others: [+ other_r_pro +] seats
+<span style="color: #00cc00;">**Other**</span>: [+ other_r_pro +] seats
 
 **Detailed results for each demographic**
 
-Workers: Republican: [+ workers_rep +]%, Democrat: [+ workers_dem +]%[? if liberal_split = 1 : , Liberal Republican: [+ workers_lib +]% ?], Other: [+ workers_other +]%
+Workers: <span style="color: #c00000;">**Republican**</span>: [+ workers_rep +]%, <span style="color: #0015bc;">**Democrats**</span>: [+ workers_dem +]%[? if liberal_split = 1 : , <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ workers_lib +]% ?], <span style="color: #00cc00;">**Other**</span>: [+ workers_other +]%
 
-Rural: Republican: [+ rural_rep +]%, Democrat: [+ rural_dem +]%[? if liberal_split = 1 : , Liberal Republican: [+ rural_lib +]% ?], Other: [+ rural_other +]%
+Rural: <span style="color: #c00000;">**Republican**</span>: [+ rural_rep +]%, <span style="color: #0015bc;">**Democrats**</span>: [+ rural_dem +]%[? if liberal_split = 1 : , <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ rural_lib +]% ?], <span style="color: #00cc00;">**Other**</span>: [+ rural_other +]%
 
-Middle Class: Republican: [+ middle_class_rep +]%, Democrat: [+ middle_class_dem +]%[? if liberal_split = 1 : , Liberal Republican: [+ middle_class_lib +]% ?], Other: [+ middle_class_other +]%
+Middle Class: <span style="color: #c00000;">**Republican**</span>: [+ middle_class_rep +]%, <span style="color: #0015bc;">**Democrats**</span>: [+ middle_class_dem +]%[? if liberal_split = 1 : , <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ middle_class_lib +]% ?], <span style="color: #00cc00;">**Other**</span>: [+ middle_class_other +]%
 
-Freemen: Republican: [+ freemen_rep +]%, Democrat: [+ freemen_dem +]%[? if liberal_split = 1 : , Liberal Republican: [+ freemen_lib +]% ?], Other: [+ freemen_other +]%
+Freemen: <span style="color: #c00000;">**Republican**</span>: [+ freemen_rep +]%, <span style="color: #0015bc;">**Democrats**</span>: [+ freemen_dem +]%[? if liberal_split = 1 : , <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ freemen_lib +]% ?], <span style="color: #00cc00;">**Other**</span>: [+ freemen_other +]%
 
-Immigrant Laborers: Republican: [+ immigrant_laborers_rep +]%, Democrat: [+ immigrant_laborers_dem +]%[? if liberal_split = 1 : , Liberal Republican: [+ immigrant_laborers_lib +]% ?], Other: [+ immigrant_laborers_other +]%
+Immigrant Laborers: <span style="color: #c00000;">**Republican**</span>: [+ immigrant_laborers_rep +]%, <span style="color: #0015bc;">**Democrats**</span>: [+ immigrant_laborers_dem +]%[? if liberal_split = 1 : , <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ immigrant_laborers_lib +]% ?], <span style="color: #00cc00;">**Other**</span>: [+ immigrant_laborers_other +]%
 
-Unemployed: Republican: [+ unemployed_rep +]%, Democrat: [+ unemployed_dem +]%[? if liberal_split = 1 : , Liberal Republican: [+ unemployed_lib +]% ?], Other: [+ unemployed_other +]%
+Unemployed: <span style="color: #c00000;">**Republican**</span>: [+ unemployed_rep +]%, <span style="color: #0015bc;">**Democrats**</span>: [+ unemployed_dem +]%[? if liberal_split = 1 : , <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ unemployed_lib +]% ?], <span style="color: #00cc00;">**Other**</span>: [+ unemployed_other +]%
 
 @cabinet
 

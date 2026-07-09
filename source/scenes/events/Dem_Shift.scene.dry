@@ -1,12 +1,14 @@
 title: The New Departure
 subtitle: Democrats change tack.
 tags: event
-view-if: year = 1871 and month = 2
+view-if: year = 1871 and month = 2 and potus_winner != "dem" and house_majority != 0 and sen_majority != 0
 max-visits: 1
 on-arrival: {!
-    Q.dem_relation += 8;
+    Q.dem_relation += 3;
     Q.liberal_relation += 5;
     Q.radical_dissent += 2;
+    Q.dem_reform_strength += 8; 
+    Q.dem_bourbon_dissent += 4;
 !}
 
 = The New Departure

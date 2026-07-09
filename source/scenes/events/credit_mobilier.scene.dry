@@ -12,6 +12,7 @@ on-arrival: {!
     Q.workers_dem += 2;
     Q.rural_dem += 2;
     Q.dem_relation -= 6;
+    Q.dem_reform_strength += 2;
 !}
 
 = The Credit Mobilier Scandal

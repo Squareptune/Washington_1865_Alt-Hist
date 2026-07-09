@@ -61,7 +61,7 @@ if (Q.ideology && Q.ideology != "liberal") {
 go-to: changed if changed = 1
 on-departure: ideology = "liberal"; liberal_strength += 10; liberal_dissent -= 5; conservative_dissent += 3; middle_class_rep += 3; moderate_dissent -= 2; radical_dissent += 2;
 
-Liberals favor institutions, civil liberties, constitutional reforms, and a rules-based path to justice and equality.
+<span style="color: #DAA520;">**Liberals**</span> favor institutions, civil liberties, constitutional reforms, and a rules-based path to justice and equality.
 
 @changed  
 on-arrival: radical_dissent += 5; moderate_dissent += 5; conservative_dissent += 5; liberal_dissent += 4;

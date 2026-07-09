@@ -29,7 +29,7 @@ go-to: Police
 
 @Army
 
-Even after Appomattox, the Army remains a decisive tool of national authority in the former Confederate states. Federal troops guard courthouses, oversee voter registration, and protect freedmen from white supremacist violence. But public opinion is divided. Some demand a more forceful hand against Southern resistance, while others insist on returning power to local governments and curbing military spending. Reformers within the Republican Party argue that the officer corps must be purged of lingering Confederate sympathizers to make the Army a true instrument of Reconstruction.
+Even after Appomattox, the Army remains a decisive tool of national authority in the former Confederate states. Federal troops guard courthouses, oversee voter registration, and protect freedmen from white supremacist violence. But public opinion is divided. Some demand a more forceful hand against Southern resistance, while others insist on returning power to local governments and curbing military spending. Reformers within the <span style="color: #c00000;">**Republican**</span> Party argue that the officer corps must be purged of lingering Confederate sympathizers to make the Army a true instrument of Reconstruction.
 
 - @increase_funding: Increase military funding to strengthen federal enforcement in the South.
 - @decrease_funding: Reduce military spending in favor of civilian programs.

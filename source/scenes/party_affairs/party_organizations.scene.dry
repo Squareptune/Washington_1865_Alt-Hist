@@ -6,7 +6,7 @@ view-if: party_organizations_timer <= 0
 on-arrival: month_actions += 1; party_organizations_timer = 6;
 card-image: img/organization.jpg
 max-visits: 5
-#subtitle: Outside of electoral politics, the Republican Party runs a social world.
+#subtitle: Outside of electoral politics, the <span style="color: #c00000;">**Republican**</span> Party runs a social world.
 
 = Party Organizations
 
@@ -43,7 +43,7 @@ unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
 on-arrival: resources -= 1; cultural_organizations += 1; radical_dissent -= 6; moderate_dissent -= 6; conservative_dissent -= 4; liberal_strength += 3; liberal_dissent -= 3;
 
-Education, oration, and loyalist clubs provide spiritual glue in a nation torn by war. These civic efforts show that the Republican Party stands for more than elections—it stands for civilization.
+Education, oration, and loyalist clubs provide spiritual glue in a nation torn by war. These civic efforts show that the <span style="color: #c00000;">**Republican**</span> Party stands for more than elections—it stands for civilization.
 
 @veterans  
 choose-if: resources > 0  
@@ -59,10 +59,10 @@ unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
 on-arrival: resources -= 1; youth_clubs += 1; radical_strength += 5; moderate_strength += 2; workers_rep += 2; liberal_strength += 2; radical_dissent -= 2; liberal_dissent -= 2;
 
-When given purpose, young Republicans—apprentices, veterans, and civic-minded youth—flock to our cause. But this next generation often pushes for deeper Reconstruction and more radical change.
+When given purpose, young <span style="color: #c00000;">**Republican**</span>—apprentices, veterans, and civic-minded youth—flock to our cause. But this next generation often pushes for deeper Reconstruction and more radical change.
 
 @nothing
 
-We avoid funding any non-electoral Republican organizations at this time.
+We avoid funding any non-electoral <span style="color: #c00000;">**Republican**</span> organizations at this time.
 
 - @return: Continue...

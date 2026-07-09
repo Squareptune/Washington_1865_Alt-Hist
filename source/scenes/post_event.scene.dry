@@ -735,51 +735,60 @@ if (Q.month_actions >= 1) {
         Q.rural_rep -= pressure * 2;
     }
     
-    ////////////////////////// annual support changes
-    }
+    let demReformDominant = (Q.dem_reform_strength > Q.dem_bourbon_strength) &&(Q.dem_reform_dissent < Q.dem_bourbon_dissent);
+    let demGrowthStates = demReformDominant ? Q.states : Q.southern_states;
+
     if (Q.year == 1869) {
         if (Q.radical_strength > 30) {
             Q.liberal_strength += 5/12;
             Q.liberal_dissent += 5/12;
         }
-        Q.workers_dem += 5/12;
-        Q.middle_class_dem += 5/12;
-        Q.rural_dem += 5/12;
-        Q.immigrant_laborers_dem += 5/12;
-        Q.unemployed_dem += 5/12;
+        for (let state of demGrowthStates) {
+            Q[state + '_workers_dem'] = (Q[state + '_workers_dem'] || 0) + 5/12;
+            Q[state + '_middle_class_dem'] = (Q[state + '_middle_class_dem'] || 0) + 5/12;
+            Q[state + '_rural_dem'] = (Q[state + '_rural_dem'] || 0) + 5/12;
+            Q[state + '_immigrant_laborers_dem'] = (Q[state + '_immigrant_laborers_dem'] || 0) + 5/12;
+            Q[state + '_unemployed_dem'] = (Q[state + '_unemployed_dem'] || 0) + 5/12;
+        }
     }
     if (Q.year == 1870) {
         if (Q.radical_strength > 30) {
             Q.liberal_strength += 6/12;
             Q.liberal_dissent += 6/12;
         }
-        Q.workers_dem += 3/12;
-        Q.middle_class_dem += 3/12;
-        Q.rural_dem += 3/12;
-        Q.immigrant_laborers_dem += 3/12;
-        Q.unemployed_dem += 3/12;
+        for (let state of demGrowthStates) {
+            Q[state + '_workers_dem'] = (Q[state + '_workers_dem'] || 0) + 6/12;
+            Q[state + '_middle_class_dem'] = (Q[state + '_middle_class_dem'] || 0) + 6/12;
+            Q[state + '_rural_dem'] = (Q[state + '_rural_dem'] || 0) + 6/12;
+            Q[state + '_immigrant_laborers_dem'] = (Q[state + '_immigrant_laborers_dem'] || 0) + 6/12;
+            Q[state + '_unemployed_dem'] = (Q[state + '_unemployed_dem'] || 0) + 6/12;
+        }
     }
     if (Q.year == 1871) {
         if (Q.radical_strength > 30) {
             Q.liberal_strength += 4/12;
             Q.liberal_dissent += 4/12;
         }
-        Q.workers_dem += 2/12;
-        Q.middle_class_dem += 2/12;
-        Q.rural_dem += 2/12;
-        Q.immigrant_laborers_dem += 2/12;
-        Q.unemployed_dem += 2/12;
+        for (let state of demGrowthStates) {
+            Q[state + '_workers_dem'] = (Q[state + '_workers_dem'] || 0) + 4/12;
+            Q[state + '_middle_class_dem'] = (Q[state + '_middle_class_dem'] || 0) + 4/12;
+            Q[state + '_rural_dem'] = (Q[state + '_rural_dem'] || 0) + 4/12;
+            Q[state + '_immigrant_laborers_dem'] = (Q[state + '_immigrant_laborers_dem'] || 0) + 4/12;
+            Q[state + '_unemployed_dem'] = (Q[state + '_unemployed_dem'] || 0) + 4/12;
+        }
     }
     if (Q.year == 1872) {
         if (Q.radical_strength > 30) {
             Q.liberal_strength += 3/12;
             Q.liberal_dissent += 3/12;
         }
-        Q.workers_dem += 2/12;
-        Q.middle_class_dem += 2/12;
-        Q.rural_dem += 2/12;
-        Q.immigrant_laborers_dem += 2/12;
-        Q.unemployed_dem += 2/12;
+        for (let state of demGrowthStates) {
+            Q[state + '_workers_dem'] = (Q[state + '_workers_dem'] || 0) + 3/12;
+            Q[state + '_middle_class_dem'] = (Q[state + '_middle_class_dem'] || 0) + 3/12;
+            Q[state + '_rural_dem'] = (Q[state + '_rural_dem'] || 0) + 3/12;
+            Q[state + '_immigrant_laborers_dem'] = (Q[state + '_immigrant_laborers_dem'] || 0) + 3/12;
+            Q[state + '_unemployed_dem'] = (Q[state + '_unemployed_dem'] || 0) + 3/12;
+        }
     }
 
 Q.has_event = 0;

@@ -8,7 +8,7 @@ tags: cotus_affairs, cabinet
 
 = Dealing with Southern Occupation
 
-With Republican control of Congress, we can take a more assertive role in managing Reconstruction. Loyal officials and local defense groups can be supported, hostile organizations challenged, and the army deployed where needed.
+With <span style="color: #c00000;">**Republican**</span> control of Congress, we can take a more assertive role in managing Reconstruction. Loyal officials and local defense groups can be supported, hostile organizations challenged, and the army deployed where needed.
 
 [? if enforcement_acts = 1 : The Enforcement Acts are in effect. Federal courts and marshals now have expanded authority to act against organized violence in the South. ?]
 [? if enforcement_acts = 0 and kkk_strength + whiteL_strength >= 400 : Paramilitary violence across the South is reaching a point where our current legal tools are no longer adequate. Congress has begun discussing whether new legislation is needed. ?]
@@ -47,7 +47,7 @@ on-arrival: {!
 
 Congress passes legislation giving federal courts and marshals direct authority over election interference and organized violence in the South. States that cannot or will not protect their citizens will now face federal intervention without waiting on local cooperation.
 
-The reaction is immediate. Democrats condemn it as military tyranny. Radical Republicans celebrate it as the law finally having teeth. Southern paramilitary groups are emboldened in their anger but now face real federal consequences for the first time.
+The reaction is immediate. <span style="color: #0015bc;">**Democrats**</span> condemn it as military tyranny. Radical Republicans celebrate it as the law finally having teeth. Southern paramilitary groups are emboldened in their anger but now face real federal consequences for the first time.
 
 @Reform
 title: Reform the Military Occupation Act of 1867
@@ -140,12 +140,12 @@ on-arrival: {!
 
 The President formally suspends the writ of habeas corpus across several counties where paramilitary violence has made normal law enforcement impossible. Hundreds of suspects are detained without bail. Military tribunals replace hostile local courts.
 
-The results on the ground are real: violence drops sharply in the affected areas, and freedmen report being able to move and organize with less fear. But the political cost is severe. Democrats call it the beginning of military despotism. Even some Republicans are uncomfortable. Liberal Republican dissent spikes. Abroad, the action draws criticism from governments that had praised American republican institutions.
+The results on the ground are real: violence drops sharply in the affected areas, and freedmen report being able to move and organize with less fear. But the political cost is severe. <span style="color: #0015bc;">**Democrats**</span> call it the beginning of military despotism. Even some <span style="color: #c00000;">**Republicans**</span> are uncomfortable. <span style="color: #DAA520;">**Liberal Republican**</span> dissent spikes. Abroad, the action draws criticism from governments that had praised American republican institutions.
 
 The violence has been suppressed. Whether the suppression can last is another question.
 
 @reinstate_state_militias
-title: Reform Southern Republican State Militias
+title: Reform Southern <span style="color: #c00000;">**Republican**</span> State Militias
 view-if: state_militia_formed = 0
 choose-if: occupation >= 1
 unavailable-subtitle: [? if occupation < 1: We are not occupying the South. ?]
@@ -168,11 +168,11 @@ choose-if: occupation >= 1
 unavailable-subtitle: [? if occupation < 1: There is no federal presence to manage the transition. ?]
 on-arrival: state_militia_formed = 0; state_militia_strength = 0; Union_League_strength -= 10; Us_police_strength -= 5; moderate_support += 1; dem_relation += 3; rural_dem -= 1; resource += 1
 
-To avoid further escalation, we order the demobilization of Republican-aligned militias in the South. This eases tensions but leaves our allies more exposed.
+To avoid further escalation, we order the demobilization of <span style="color: #c00000;">**Republican**</span>-aligned militias in the South. This eases tensions but leaves our allies more exposed.
 
 @Deploy
 
-The Freedmen's Bureau reports mounting violence across the former Confederate states. Local militias and armed groups are terrorizing Black voters and Republican officeholders. General Sherman warns that without a stronger federal presence, the new Southern governments cannot survive. How many troops will you commit?
+The Freedmen's Bureau reports mounting violence across the former Confederate states. Local militias and armed groups are terrorizing Black voters and <span style="color: #c00000;">**Republican**</span> officeholders. General Sherman warns that without a stronger federal presence, the new Southern governments cannot survive. How many troops will you commit?
 
 - @One
 - @Ten
@@ -214,7 +214,7 @@ on-arrival: {!
     Q.freedmen_rep += Q.enforcement_acts ? 5 : 3;
 !}
 
-Ten thousand soldiers are ordered south by rail and river. Republican governors have been notified and the Bureau is coordinating with local commanders on where the need is greatest.[? if enforcement_acts = 1 : Soldiers now arrive with federal arrest authority behind them, not just rifles. ?]
+Ten thousand soldiers are ordered south by rail and river. <span style="color: #c00000;">**Republican**</span> governors have been notified and the Bureau is coordinating with local commanders on where the need is greatest.[? if enforcement_acts = 1 : Soldiers now arrive with federal arrest authority behind them, not just rifles. ?]
 
 @Fifty
 title: Send 50,000 soldiers to the South

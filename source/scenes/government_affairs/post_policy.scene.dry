@@ -13,7 +13,7 @@ The Post Office is the largest arm of the federal bureaucracy—and the most pol
 
 @postmaster_policy
 
-- @southern_patronage: Fill Southern postal jobs with loyal Unionists and Black Republicans.
+- @southern_patronage: Fill Southern postal jobs with loyal Unionists and Black <span style="color: #c00000;">**Republican**</span>.
 - @machine_loyalty: Reward Northern party men and fundraisers with plum appointments.
 - @civil_service_reform: Begin removing patronage and professionalizing the postal service.
 - @root: Leave the Post Office on autopilot for now.
@@ -24,7 +24,7 @@ The Post Office is the largest arm of the federal bureaucracy—and the most pol
 subtitle: -1 Budget
 on-arrival: freemen_rep += 3; rural_dem -= 2; radical_strength += 1; conservative_dissent += 1; budget -= 1; PoliticalCostPenalty += 1; kkk_strength += 2
 
-Thousands of postal appointments across the South are handed to Black Republicans, Union loyalists, and carpetbaggers. This expands federal presence in the region—but inflames local opposition and fuels accusations of corruption.
+Thousands of postal appointments across the South are handed to Black <span style="color: #c00000;">**Republican**</span>, Union loyalists, and carpetbaggers. This expands federal presence in the region—but inflames local opposition and fuels accusations of corruption.
 
 @machine_loyalty
 subtitle: +1 Budget

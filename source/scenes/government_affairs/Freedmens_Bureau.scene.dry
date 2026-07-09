@@ -84,7 +84,7 @@ Bureau agents are on the ground in [+ bureau_target +]. What should they priorit
 - @schools: Open new Bureau schoolhouses and hire local teachers.
 - @courts: Station Bureau agents in local courthouses to assist freedmen with labor disputes.
 - @registration: Send agents door to door to register freedmen voters and explain their rights.
-- @outreach: Expand Bureau offices and build relationships with local Republican leaders and freedmen communities.
+- @outreach: Expand Bureau offices and build relationships with local <span style="color: #c00000;">**Republican**</span> leaders and freedmen communities.
 - @soldiers: Request a detachment of federal soldiers to protect Bureau headquarters and agents.
 
 
@@ -151,7 +151,7 @@ on-arrival: {!
     Q.Union_League_strength = Math.min(1000, (Q.Union_League_strength || 0) + 15);
 !}
 
-Bureau officers meet with Black ministers, freedmen community leaders, and Southern Republican organizers in [+ bureau_target +]. Trust is slow to build, but the network grows, and these connections will matter come election time.
+Bureau officers meet with Black ministers, freedmen community leaders, and Southern <span style="color: #c00000;">**Republican**</span> organizers in [+ bureau_target +]. Trust is slow to build, but the network grows, and these connections will matter come election time.
 
 @soldiers
 subtitle: -[+ bureau_cost +] budget

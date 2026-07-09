@@ -4,7 +4,6 @@ new-page: true
 on-arrival: {!
     Q.Panic_seen = 1;
 
-    // Immediate economic shock
     Q.workers_dem += 5;
     Q.immigrant_laborers_dem += 4;
     Q.middle_class_dem += 5;
@@ -13,8 +12,9 @@ on-arrival: {!
     Q.unemployed += 2;
     if (Q.budget > 0) Q.budget -= 1;
     if (Q.dues > 2) Q.dues -= 1;
-    Q.inflation -= 1.2;       // deflationary crash
+    Q.inflation -= 1.2;
     Q.economic_growth -= 2.5;
+    Q.dem_reform_strength += 2;
 
     // Political fallout
     Q.radical_dissent += 4;

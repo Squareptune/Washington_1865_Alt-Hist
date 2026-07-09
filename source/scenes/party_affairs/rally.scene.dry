@@ -9,7 +9,7 @@ go-to: main_rally; dem_attack if whiteL_strength >= 6
 
 @dem_attack
 
-A mob, possibly with White League soldiers, has attacked the Republican rally!
+A mob, possibly with White League soldiers, has attacked the <span style="color: #c00000;">**Republican**</span> rally!
 
 - @police_protect: Call the police to protect our rally.
 - @unionleague_protect: Rely on the Union League to defend the rally.
@@ -50,7 +50,7 @@ We chose to cancel the rally due to the threat of violence. While it may be the 
 
 @main_rally
 
-Mass rallies are key to building up Republican support, especially among loyal Unionists and newly enfranchised voters. What is the main focus of this rally?
+Mass rallies are key to building up <span style="color: #c00000;">**Republican**</span> support, especially among loyal Unionists and newly enfranchised voters. What is the main focus of this rally?
 
 - @reconstruction: Uphold Reconstruction and protect the rights of Freedmen.
 - @industry: Promote industrial growth and northern prosperity.
@@ -72,7 +72,7 @@ Our focus on economic progress and industry appeals to the northern business cla
 @unity
 on-arrival: middle_class_rep += 2; rural_rep += 2; moderate_strength += 3; radical_dissent -= 2; conservative_dissent -= 2; liberal_dissent -= 2;
 
-We emphasize national unity and healing, aiming to unite former Unionists and moderates behind a stable Republican vision.
+We emphasize national unity and healing, aiming to unite former Unionists and moderates behind a stable <span style="color: #c00000;">**Republican**</span> vision.
 
 @law_order
 on-arrival: rural_rep += 3; freemen_rep += 2; conservative_strength += 3; radical_dissent -= 1; liberal_dissent -= 1;

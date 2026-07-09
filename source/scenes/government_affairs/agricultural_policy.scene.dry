@@ -9,7 +9,7 @@ tags: potus_affairs, cabinet
 
 = Agricultural Policy
 
-The Republican Party must address the crisis of Southern agriculture. Former plantations lie fallow, freedmen demand land, and poor whites face ruin. Our Northern industrial base wants cheap cotton and food, while Southern Republicans—Black and white—need economic survival. Radicals push for confiscating Confederate estates, while moderates prefer market solutions.  
+The <span style="color: #c00000;">**Republican**</span> Party must address the crisis of Southern agriculture. Former plantations lie fallow, freedmen demand land, and poor whites face ruin. Our Northern industrial base wants cheap cotton and food, while Southern <span style="color: #c00000;">**Republicans**</span>—Black and white—need economic survival. Radicals push for confiscating Confederate estates, while moderates prefer market solutions.  
 
 - @land_reform
 - @land_reform2
@@ -46,13 +46,13 @@ subtitle: -2 budget - Increase financing for agricultural credit and insurance.
 choose-if: budget >= 2
 on-arrival: budget -= 2; PoliticalCostPenalty += 2; agricultural_finance += 1; rural_rep += 6*(1-dissent); rural_dem -= 4; kkk_strength -= 5; rural_policy += 1; economic_growth += 0.2; moderate_strength += 2; liberal_strength += 1; conservative_dissent += 1
 
-"The Freedmen’s Bank expands loans for Black cotton growers and white tenant farmers. Northern investors grumble about risk, but Southern Republicans hail it as salvation from sharecropping bondage."
+"The Freedmen’s Bank expands loans for Black cotton growers and white tenant farmers. Northern investors grumble about risk, but Southern <span style="color: #c00000;">**Republican**</span> hail it as salvation from sharecropping bondage."
 
 @pro_consumer
 title: Bread Subsidies
 subtitle: -1 budget – Cheap grain for Northern factories.
 choose-if: budget >= 1
-on-arrival: budget -= 1; PoliticalCostPenalty += 1; workers_rep += 5*(1-dissent); unemployed_rep += 4; rural_dem += 3; economic_growth += 0.2; moderate_strength += 2; conservative_dissent += 1
+on-arrival: budget -= 1; PoliticalCostPenalty += 1; workers_rep += 5*(1-dissent); unemployed_rep += 4; rural_dem += 3; economic_growth += 0.2; moderate_strength += 2; conservative_dissent += 1; dem_reform_strength += 2;
 
 "We flood Northern markets with cheap Midwestern grain. Textile workers cheer, but Southern planters accuse us of ‘starving the South’ to feed Yankee mills."
 

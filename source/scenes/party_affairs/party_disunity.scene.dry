@@ -14,7 +14,7 @@ Internal conflict is tearing our party apart. With little agreement on goals or 
 [? if radical_dissent > 30 : The radicals are increasingly confrontational toward the party establishment. ?]
 [? if moderate_dissent > 30 : The moderates are frustrated at the party’s growing instability. ?]
 [? if conservative_dissent > 30 : The conservatives argue that we’ve strayed too far from pragmatism. ?]
-[? if liberal_dissent > 30: The liberals threaten to break with the party leadership. ?]
+[? if liberal_dissent > 30: The <span style="color: #DAA520;">**liberals**</span> threaten to break with the party leadership. ?]
 
 We must address these tensions before a split becomes inevitable.
 
@@ -53,7 +53,7 @@ on-arrival: conservative_dissent -= 7; radical_dissent += 3; moderate_dissent +=
 We promise more gradual reforms and traditional messaging, which angers radicals and centrists alike.
 
 @concessions_liberals
-title: Give concessions to the liberals
+title: Give concessions to the <span style="color: #DAA520;">**liberals**</span>
 view-if: liberal_dissent > 30
 on-arrival: liberal_dissent -= 7; radical_dissent += 4; moderate_dissent += 2
 

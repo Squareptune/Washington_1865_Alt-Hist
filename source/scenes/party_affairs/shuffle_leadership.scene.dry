@@ -165,7 +165,7 @@ on-arrival: schurz_advisor = 0; liberal_dissent += 4; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Schurz has been removed as an advisor. The liberal faction disapproves.
+Schurz has been removed as an advisor. The <span style="color: #DAA520;">**liberal**</span> faction disapproves.
 
 @remove_trumbull
 title: Remove Trumbull
@@ -174,7 +174,7 @@ on-arrival: trumbull_advisor = 0; liberal_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Trumbull has been removed as an advisor. The liberal faction disapproves.
+Trumbull has been removed as an advisor. The <span style="color: #DAA520;">**liberal**</span> faction disapproves.
 
 @remove_cox
 title: Remove Cox
@@ -183,7 +183,7 @@ on-arrival: cox_advisor = 0; liberal_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Cox has been removed as an advisor. The liberal faction disapproves.
+Cox has been removed as an advisor. The <span style="color: #DAA520;">**liberal**</span> faction disapproves.
 
 @remove_douglass
 title: Remove Douglass
@@ -211,7 +211,7 @@ frequency: 1
 - @Radical: Add Radical advisor
 - @Moderate: Add Moderate advisor
 - @Conservative: Add Conservative advisor
-- @Liberal: Add Liberal advisor
+- @Liberal: Add <span style="color: #DAA520;">**Liberal**</span> advisor
 - @Nonfactional: Add non-factional advisor
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
@@ -419,7 +419,7 @@ William Seward is now an advisor. His long experience in government is valuable,
 
 @add_schurz
 title: Carl Schurz
-subtitle: Missouri senator and intellectual leader of the Liberal Republican movement. Champion of civil service reform.
+subtitle: Missouri senator and intellectual leader of the <span style="color: #DAA520;">**Liberal Republicans**</span> movement. Champion of civil service reform.
 is-card: true
 card-image: img/portraits/Schurz,_Hon._Carl.jpg
 tags: liberal_advisor
@@ -431,7 +431,7 @@ Carl Schurz is now an advisor. His reform credentials and German-American connec
 
 @add_trumbull
 title: Lyman Trumbull
-subtitle: Illinois senator. Drifting steadily toward the Liberal Republicans.
+subtitle: Illinois senator. Drifting steadily toward the <span style="color: #DAA520;">**Liberal Republicans**</span>.
 is-card: true
 card-image: img/portraits/Lyman_Trumbull.jpg
 tags: liberal_advisor

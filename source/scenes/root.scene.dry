@@ -53,10 +53,14 @@ Q.conservative_strength = 15;
 Q.conservative_dissent = 5;
 Q.liberal_strength = 5;
 Q.liberal_dissent = 10;
-
-// Liberal Republican split tracking
 Q.liberal_split = 0;
 Q.liberal_split_timer = 0;
+
+//Democrat Factions
+Q.dem_bourbon_strength = 60;
+Q.dem_bourbon_dissent = 5;
+Q.dem_reform_strength = 15;
+Q.dem_reform_dissent = 10;
 
 Q.yea_r = 0;
 Q.nah_r = 0;
@@ -2000,4 +2004,4 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 The Civil War is approaching an end, and we are thinking about the future. Though the wounds of war run deep, the nation begins to rebuild. The economy in the North is poised for expansion, and the promise of freedom brings new possibilities for millions. In foreign affairs, the United States stands united once more, and with peace restored, we look to the future with cautious optimism.
 
-Now, the Republican Party's task is to prepare for the next phase of Reconstruction. The Democratic opposition, long tied to the cause of secession and slavery, is discredited in the eyes of many. With President Lincoln's legacy and the Union victory behind us, we stand to shape the future. Perhaps the next Congress will bring a stronger majority to secure full rights and citizenship for the freedmen.
+Now, the <span style="color: #c00000;">**Republican Party's**</span> task is to prepare for the next phase of Reconstruction. The <span style="color: #0015bc;">**Democratic**</span> opposition, long tied to the cause of secession and slavery, is discredited in the eyes of many. With President Lincoln's legacy and the Union victory behind us, we stand to shape the future. Perhaps the next Congress will bring a stronger majority to secure full rights and citizenship for the freedmen.

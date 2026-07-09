@@ -27,29 +27,19 @@ A delegation of Liberal Republican leaders has approached our party leadership. 
 @welcome_back
 on-arrival: {!
 
-// How many libs come back based on liberal_relation
 let relationScore = Q.liberal_relation || 30;
-
-// Base return rate: 60-75% depending on relations
 let returnRate = 0.60 + (relationScore / 100) * 0.15;
-// Dem defection rate: 15-25% (worse relations = more go to dems)
 let demRate = 0.25 - (relationScore / 100) * 0.10;
-// Other/straggler rate: remainder
 let otherRate = 1 - returnRate - demRate;
-
-// Calculate seat redistributions
 let libHouseSeats = Q.lib_r || 0;
 let libSenateSeats = Q.lib_senate_r || 0;
-
 let houseReturn = Math.round(libHouseSeats * returnRate);
 let houseDem = Math.round(libHouseSeats * demRate);
 let houseOther = libHouseSeats - houseReturn - houseDem;
-
 let senateReturn = Math.round(libSenateSeats * returnRate);
 let senateDem = Math.round(libSenateSeats * demRate);
 let senateOther = libSenateSeats - senateReturn - senateDem;
 
-// Apply seat changes
 Q.rep_r += houseReturn;
 Q.dem_r += houseDem;
 Q.other_r += houseOther;
@@ -60,22 +50,18 @@ Q.dem_senate_r += senateDem;
 Q.other_senate_r += senateOther;
 Q.lib_senate_r = 0;
 
-// Store for display
 Q.lib_house_returned = houseReturn;
 Q.lib_house_dem = houseDem;
 Q.lib_house_other = houseOther;
 Q.lib_senate_returned = senateReturn;
 
-// Faction effects - returning liberals bring dissent with them
-// They skew toward moderate and liberal factions
 Q.moderate_strength += 6;
 Q.moderate_dissent += 8;
 Q.liberal_strength += 4;
-Q.liberal_dissent += 12; // they are NOT happy about coming back
-Q.conservative_dissent += 5; // conservatives hate having them back
+Q.liberal_dissent += 12;=
+Q.conservative_dissent += 5;
 Q.radical_dissent += 4;
 
-// Voter support effects - lib voters partially return
 Q.middle_class_rep += 4;
 Q.middle_class_lib = 0;
 Q.workers_rep += 1;
@@ -89,6 +75,7 @@ Q.unemployed_lib = 0;
 // Some voter support bleeds to dems permanently
 Q.middle_class_dem += 2;
 Q.workers_dem += 1;
+Q.dem_reform_strength += 3;
 
 // Reset liberal split
 Q.liberal_split = 0;
@@ -167,6 +154,7 @@ Q.workers_lib = 0;
 Q.immigrant_laborers_lib = 0;
 Q.unemployed_lib = 0;
 Q.middle_class_dem += 1;
+Q.dem_reform_strength += 3;
 
 Q.liberal_split = 0;
 Q.liberal_relation = 50;
@@ -244,6 +232,7 @@ Q.workers_lib = 0;
 Q.immigrant_laborers_lib = 0;
 Q.unemployed_lib = 0;
 Q.middle_class_dem += 2;
+Q.dem_reform_strength += 4;
 
 Q.liberal_split = 0;
 Q.liberal_relation = 45;
@@ -316,6 +305,7 @@ Q.workers_lib = 0;
 Q.immigrant_laborers_lib = 0;
 Q.unemployed_lib = 0;
 Q.middle_class_dem += 4; // more flee to dems after being snubbed
+Q.dem_reform_strength += 6;
 
 Q.liberal_split = 0;
 Q.liberal_relation = 25; // they resent us

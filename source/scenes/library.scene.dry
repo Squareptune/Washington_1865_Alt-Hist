@@ -50,35 +50,35 @@ go-to: menu
 
 **1789**: George Washington is unanimously elected as the first President of the United States. The first Congress assembles, and the new federal government begins operation. The Bill of Rights is introduced and later ratified.
 
-**1791**: The first political factions emerge: the Federalists, led by Alexander Hamilton, support a strong national government and close ties to Britain; the Democratic-Republicans, led by Thomas Jefferson and James Madison, advocate for agrarianism and states’ rights.
+**1791**: The first political factions emerge: the <span style="color: #FF7F50;">**<span style="color: #FF7F50;">**Federalists**</span>**</span>, led by Alexander Hamilton, support a strong national government and close ties to Britain; the <span style="color: #228B22;">**Democratic-Republicans**</span>, led by Thomas Jefferson and James Madison, advocate for agrarianism and states’ rights.
 
-**1796**: Washington declines a third term. John Adams, a Federalist, is elected president. Partisan tensions deepen between Federalists and Democratic-Republicans.
+**1796**: Washington declines a third term. John Adams, a Federalist, is elected president. Partisan tensions deepen between <span style="color: #FF7F50;">**Federalists**</span> and <span style="color: #228B22;">**Democratic-Republicans**</span>.
 
 **1800**: Thomas Jefferson defeats Adams in what is called the "Revolution of 1800." Power transfers peacefully from one party to another, a landmark in republican governance.
 
 **1812-1815**: The United States declares war on Britain over trade restrictions and impressment of sailors. The War of 1812 ends in a draw but increases national pride and weakens Native resistance in the Midwest.
 
-**1816**:  The Federalist Party collapses after the Hartford Convention, where New England Federalists were accused of disloyalty during the war. This begins the Era of Good Feelings, a period of one-party rule under the Democratic-Republicans.
+**1816**:  The Federalist Party collapses after the Hartford Convention, where New England <span style="color: #FF7F50;">**Federalists**</span> were accused of disloyalty during the war. This begins the Era of Good Feelings, a period of one-party rule under the <span style="color: #228B22;">**Democratic-Republicans**</span>.
 
-**1828**: Andrew Jackson forms the Democratic Party, emphasizing populism, white male suffrage, and states' rights. He defeats Adams in a landslide, marking the rise of the Second Party System.
+**1828**: Andrew Jackson forms the <span style="color: #0015bc;">**Democrats**</span>, emphasizing populism, white male suffrage, and states' rights. He defeats Adams in a landslide, marking the rise of the Second Party System.
 
-**1834**: The Whig Party is formed in opposition to Jackson's executive overreach. It unites economic nationalists, reformers, and anti-Jackson Southerners.
+**1834**: The <span style="color: #F0DC82;">**Whig Party**</span> is formed in opposition to Jackson's executive overreach. It unites economic nationalists, reformers, and anti-Jackson Southerners.
 
 **1846–1848**: The Mexican-American War results in the U.S. annexing vast southwestern territory. Tensions rise over whether these new lands will allow slavery.
 
 **1850**:  The Compromise of 1850, engineered by Henry Clay and Stephen Douglas, tries to maintain a North-South balance. California enters as a free state; the Fugitive Slave Act enrages Northerners.
 
-**1854**: The Kansas-Nebraska Act allows territories to decide slavery via popular sovereignty. Violent conflict erupts in "Bleeding Kansas." The Whig Party collapses, and the Republican Party is founded as an anti-slavery party.
+**1854**: The Kansas-Nebraska Act allows territories to decide slavery via popular sovereignty. Violent conflict erupts in "Bleeding Kansas." The <span style="color: #F0DC82;">**Whig Party**</span> collapses, and the <span style="color: #c00000;">**Republican**</span> is founded as an anti-slavery party.
 
 **1857**: The Dred Scott decision by the Supreme Court declares that African Americans are not citizens and that Congress cannot prohibit slavery in the territories. The North reacts with outrage.
 
-**1860**: Abraham Lincoln, the Republican candidate, wins the presidency without any Southern electoral votes. Southern states begin seceding from the Union, fearing the end of slavery.
+**1860**: Abraham Lincoln, the <span style="color: #c00000;">**Republican**</span> candidate, wins the presidency without any Southern electoral votes. Southern states begin seceding from the Union, fearing the end of slavery.
 
 **1861**: The Civil War begins as Confederate forces attack Fort Sumter. The Union fights to preserve the United States; the Confederacy fights for independence and to protect slavery.
 
 **1863**: Lincoln issues the Emancipation Proclamation, declaring enslaved people in rebellious states to be free. The war becomes both a fight to preserve the Union and a crusade against slavery.
 
-**1864**: During the 1864 presidential election Lincoln forms a temporary alliance with pro-war Democrats and runs under the banner of the National Union Party. He selects Andrew Johnson, a Southern Unionist Democrat from Tennessee, as his running mate to signal unity and reconciliation. In the November election, Lincoln defeats Democratic nominee George B. McClellan, a former Union general who campaigns on a vague peace platform.
+**1864**: During the 1864 presidential election Lincoln forms a temporary alliance with pro-war <span style="color: #0015bc;">**Democrats**</span> and runs under the banner of the <span style="color: #B22222;">**National Union Party**</span>. He selects Andrew Johnson, a Southern Unionist <span style="color: #0015bc;">**Democrat**</span> from Tennessee, as his running mate to signal unity and reconciliation. In the November election, Lincoln defeats <span style="color: #0015bc;">**Democratic**</span> nominee George B. McClellan, a former Union general who campaigns on a vague peace platform.
 
 @curr_gov
 
@@ -92,17 +92,19 @@ Congress composition:
 
 **Senate**:
 
-Republicans: [+ rep_senate_r +]
-Democratics: [+ dem_senate_r +]
-Other: [+ other_senate_r +]
+<span style="color: #c00000;">**Republican**</span>: [+ rep_senate_r +]
+<span style="color: #0015bc;">**Democrats**</span>: [+ dem_senate_r +]
+[? if liberal_split = 1 : <span class="tooltip-text" title="Liberal Republican Party" style="color: #DAA520;">**Lib Republicans**</span>: [+ lib_senate_r +] seats, ?]
+<span style="color: #00cc00;">**Other**</span>: [+ other_senate_r +]
 
 **House of Representatives**:
 
-Republicans: [+ rep_r +]
-Democratics: [+ dem_r +]
-Other: [+ other_r +]
+<span style="color: #c00000;">**Republican**</span>: [+ rep_r +]
+<span style="color: #0015bc;">**Democrats**</span>: [+ dem_r +]
+[? if liberal_split = 1 : <span class="tooltip-text" title="Liberal Republican Party" style="color: #DAA520;">**Lib Republicans**</span>: [+ lib_r +] seats, ?]
+<span style="color: #00cc00;">**Other**</span>: [+ other_r +]
 
-Republican position: [? if rep_majority = 1 : Majority in government ?][? if rep_majority != 1 : Minority in government ?]
+<span style="color: #c00000;">**Republican**</span> position: [? if rep_majority = 1 : Majority in government ?][? if rep_majority != 1 : Minority in government ?]
 
 @cabinet
 go-to: menu
@@ -126,15 +128,15 @@ go-to: menu
 
 **Demographic Groups**
 
-**Freedmen**: Formerly enslaved African Americans in the South. Newly emancipated, they overwhelmingly support the Republican Party, especially its Radical faction, which promises civil rights, protection from white supremacist violence, and land reform. Freedmen often participate actively in Southern Republican politics, serving in local, state, and even national office during Reconstruction. They face constant threats from groups like the Ku Klux Klan and hostile Southern elites. They make up about 12–15% of the total U.S. population, concentrated in the Deep South.
+**Freedmen**: Formerly enslaved African Americans in the South. Newly emancipated, they overwhelmingly support the <span style="color: #c00000;">**Republican**</span> Party, especially its Radical faction, which promises civil rights, protection from white supremacist violence, and land reform. Freedmen often participate actively in Southern <span style="color: #c00000;">**Republican**</span> politics, serving in local, state, and even national office during Reconstruction. They face constant threats from groups like the Ku Klux Klan and hostile Southern elites. They make up about 12–15% of the total U.S. population, concentrated in the Deep South.
 
-**Urban Workers**: Urban laborers and industrial wage workers, especially in the North. This group includes both native-born and immigrant populations, employed in manufacturing, transportation, and trades. Their political loyalties are divided—Radical Republicans, early labor reformers, and Democrats all vie for their support. Some lean toward moderate reformism; others are suspicious of Black civil rights, fearing job competition. They make up around 25–30% of the national population.
+**Urban Workers**: Urban laborers and industrial wage workers, especially in the North. This group includes both native-born and immigrant populations, employed in manufacturing, transportation, and trades. Their political loyalties are divided—Radical <span style="color: #c00000;">**Republican**</span>, early labor reformers, and <span style="color: #0015bc;">**Democrats**</span> all vie for their support. Some lean toward moderate reformism; others are suspicious of Black civil rights, fearing job competition. They make up around 25–30% of the national population.
 
-**Middle Class**: White-collar professionals, small business owners, and educated elites. This group includes lawyers, teachers, clerks, and merchants—predominantly Northern, with strong influence in newspapers and civic organizations. They are the backbone of Moderate Republicans and some Liberal Republicans, supporting Reconstruction in principle but often wary of radical measures like land confiscation or racial integration. They represent 10–15% of the population.
+**Middle Class**: White-collar professionals, small business owners, and educated elites. This group includes lawyers, teachers, clerks, and merchants—predominantly Northern, with strong influence in newspapers and civic organizations. They are the backbone of Moderate <span style="color: #c00000;">**Republican**</span>s and some Liberal Republicans, supporting Reconstruction in principle but often wary of radical measures like land confiscation or racial integration. They represent 10–15% of the population.
 
-**Rural**: Smallholding farmers, planters, and tenant farmers, especially in the South and Midwest. In the North and West, many support the Republican Party due to its pro-farmer and homesteading policies. In the South, most white rural voters are Democrats and strongly oppose Reconstruction. This group is deeply divided by region and race. Rural Americans make up 30–40% of the population.
+**Rural**: Smallholding farmers, planters, and tenant farmers, especially in the South and Midwest. In the North and West, many support the <span style="color: #c00000;">**Republican**</span> Party due to its pro-farmer and homesteading policies. In the South, most white rural voters are <span style="color: #0015bc;">**Democrats**</span> and strongly oppose Reconstruction. This group is deeply divided by region and race. Rural Americans make up 30–40% of the population.
 
-**Immigrant Laborers**: A growing group of Irish, German, and other European immigrants concentrated in Northern cities. They work in labor-intensive, often low-wage jobs. Irish immigrants in particular lean Democratic, especially in opposition to Reconstruction and in defense of Catholic schools. German immigrants are more mixed, with some radical and liberal factions supporting Republicans or early Socialist movements. Immigrant laborers comprise 10–15% of the population.
+**Immigrant Laborers**: A growing group of Irish, German, and other European immigrants concentrated in Northern cities. They work in labor-intensive, often low-wage jobs. Irish immigrants in particular lean <span style="color: #0015bc;">**Democratic**</span>, especially in opposition to Reconstruction and in defense of Catholic schools. German immigrants are more mixed, with some radical and liberal factions supporting <span style="color: #c00000;">**Republican**</span>s or early Socialist movements. Immigrant laborers comprise 10–15% of the population.
 
 **Unemployed & Displaced**: A transient, politically volatile group composed of war veterans, former slaves denied land, displaced workers, and refugees from the Civil War. Many are mobile, poor, and desperate—susceptible to populist or radical appeals, but often disengaged from formal politics due to disenfranchisement or instability. This group is small but significant in times of crisis, making up around 5–8% of the population.
 
@@ -144,44 +146,44 @@ go-to: menu
 view-if: (not historical_mode) or game_over
 go-to: menu
 
-Republicans: [+ rep_senate_r +] seats
+<span style="color: #c00000;">**Republican**</span>s: [+ rep_senate_r +] seats
 
-Democrats: [+ dem_senate_r +] seats
+<span style="color: #0015bc;">**Democrats**</span>: [+ dem_senate_r +] seats
 
 Others: [+ other_senate_r +] seats
 
 House:
 
-Republicans: [+ rep_r +] seats
+<span style="color: #c00000;">**Republican**</span>s: [+ rep_r +] seats
 
-Democrats: [+ dem_r +] seats
+<span style="color: #0015bc;">**Democrats**</span>: [+ dem_r +] seats
 
 Others: [+ other_r +] seats
 
 **Detailed results for each demographic**
 
-Workers: Republican: [+ workers_rep +]%, Democrat: [+ workers_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ workers_other +]%
+Workers: <span style="color: #c00000;">**Republican**</span>: [+ workers_rep +]%, Democrat: [+ workers_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ workers_other +]%
 
-Middle Class: Republican: [+ middle_class_rep +]%, Democrat: [+ middle_class_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ middle_class_other +]%
+Middle Class: <span style="color: #c00000;">**Republican**</span>: [+ middle_class_rep +]%, Democrat: [+ middle_class_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ middle_class_other +]%
 
-Freemen: Republican: [+ freemen_rep +]%, Democrat: [+ freemen_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ freemen_other +]%
+Freemen: <span style="color: #c00000;">**Republican**</span>: [+ freemen_rep +]%, Democrat: [+ freemen_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ freemen_other +]%
 
-Immigrant Laborers: Republican: [+ immigrant_laborers_rep +]%, Democrat: [+ immigrant_laborers_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ immigrant_laborers_other +]%
+Immigrant Laborers: <span style="color: #c00000;">**Republican**</span>: [+ immigrant_laborers_rep +]%, Democrat: [+ immigrant_laborers_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ immigrant_laborers_other +]%
 
-Unemployed: Republican: [+ unemployed_rep +]%, Democrat: [+ unemployed_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ unemployed_other +]%
+Unemployed: <span style="color: #c00000;">**Republican**</span>: [+ unemployed_rep +]%, Democrat: [+ unemployed_dem +]%, Other [? if other_name != 0 : [+ other_name +]?]: [+ unemployed_other +]%
 
 Support for Reconstruction: [+ reconstruction_support +]%
 
 @parties
 go-to: menu
 
-**Republican Party** – The party of Lincoln and the Union: We are the dominant force in Washington following the Civil War. Our coalition includes Radical Republicans, who seek full equality and Reconstruction in the South, as well as Moderates who are more cautious but still oppose secession and slavery. We are the party of emancipation, the Freedmen's Bureau, and constitutional reform. Our base includes Northern industrialists, African Americans, and many reform-minded middle-class citizens.
+**<span style="color: #c00000;">**Republican**</span> Party** – The party of Lincoln and the Union: We are the dominant force in Washington following the Civil War. Our coalition includes Radical Republicans, who seek full equality and Reconstruction in the South, as well as Moderates who are more cautious but still oppose secession and slavery. We are the party of emancipation, the Freedmen's Bureau, and constitutional reform. Our base includes Northern industrialists, African Americans, and many reform-minded middle-class citizens.
 
-**Democratic Party** - The opposition party: The Democrats represent a mix of Northern conservatives and Southern ex-Confederates. Though weakened by the war, they remain a force in Congress and dominate Southern state politics where federal troops are absent. They oppose Radical Reconstruction and civil rights for freedmen, and many Democrats advocate for a swift return to “home rule” in the South. 
+**<span style="color: #0015bc;">**Democratic Party**</span>** - The opposition party: The <span style="color: #0015bc;">**Democrats**</span> represent a mix of Northern conservatives and Southern ex-Confederates. Though weakened by the war, they remain a force in Congress and dominate Southern state politics where federal troops are absent. They oppose Radical Reconstruction and civil rights for freedmen, and many <span style="color: #0015bc;">**Democrats**</span> advocate for a swift return to “home rule” in the South.
 
 Current relations: [+ dem_relation : relationships +]
 
-**Other parties** - there is a multitude of small, mostly single issue parties, such as the many Unionists parties and independents who don't belong to any party.
+**<span style="color: #00cc00;">**Other**</span>** - there is a multitude of small, mostly single issue parties, such as the many Unionists parties and independents who don't belong to any party.
 
 @paramilitaries
 on-arrival: {!
@@ -213,7 +215,7 @@ Police loyalty: [+ Us_police_loyalty : loyalty +]
 
 @factions
 
-**Internal factions of the Republicans**
+**Internal factions of the <span style="color: #c00000;">**Republican**</span>s**
 
 Overall dissent: [+ dissent_percent : dissent +]
 
@@ -384,7 +386,7 @@ if (d3 && window) {
 {!<svg id="house_chart" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#B22222'> </div></td><td>!} **Republican:** {!</td><td>!} **[+ rep_r +] seats** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#B22222'> </div></td><td>!} **<span style="color: #c00000;">**Republican**</span>:** {!</td><td>!} **[+ rep_r +] seats** {!</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#003366'> </div></td><td>!} **Democrat:** {!</td><td>!} **[+ dem_r +] seats** {!</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#AAAAAA'> </div></td><td>!} **Other:** {!</td><td>!} **[+ other_r +] seats** {!</td></tr>!}
 [? if liberal_split = 1 : {!<tr><td><div class="box" style='background-color:#DAA520'> </div></td><td>!} **Liberal Republican:** {!</td><td>!} **[+ lib_r +] seats** {!</td></tr>!} ?]
@@ -395,7 +397,7 @@ if (d3 && window) {
 {!<svg id="senate_chart" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#B22222'> </div></td><td>!} **Republican:** {!</td><td>!} **[+ rep_senate_r +] seats** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#B22222'> </div></td><td>!} **<span style="color: #c00000;">**Republican**</span>:** {!</td><td>!} **[+ rep_senate_r +] seats** {!</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#003366'> </div></td><td>!} **Democrat:** {!</td><td>!} **[+ dem_senate_r +] seats** {!</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#AAAAAA'> </div></td><td>!} **Other:** {!</td><td>!} **[+ other_senate_r +] seats** {!</td></tr>!}
 [? if liberal_split = 1 : {!<tr><td><div class="box" style='background-color:#DAA520'> </div></td><td>!} **Liberal Republican:** {!</td><td>!} **[+ lib_senate_r +] seats** {!</td></tr>!} ?]
