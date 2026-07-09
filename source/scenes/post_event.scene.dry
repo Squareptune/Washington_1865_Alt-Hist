@@ -735,7 +735,7 @@ if (Q.month_actions >= 1) {
         Q.rural_rep -= pressure * 2;
     }
     
-    let demReformDominant = (Q.dem_reform_strength > Q.dem_bourbon_strength) &&(Q.dem_reform_dissent < Q.dem_bourbon_dissent);
+    let demReformDominant = (Q.dem_reform_strength > Q.dem_bourbon_strength) && (Q.dem_reform_dissent < Q.dem_bourbon_dissent);
     let demGrowthStates = demReformDominant ? Q.states : Q.southern_states;
 
     if (Q.year == 1869) {
