@@ -208,7 +208,7 @@ if (total_strength <= 0) {
     Q.liberal_strength = 100 * Q.liberal_strength / total_strength;
 }
 
-var total_dissent = Q.radical_strength*Q.radical_dissent + Q.moderate_strength*Q.moderate_dissent + Q.conservative_strength* Q.conservative_dissent + Q.liberal_strength*Q.liberal_dissent
+var total_dissent = Q.radical_strength*Q.radical_dissent + Q.moderate_strength*Q.moderate_dissent + Q.conservative_strength* Q.conservative_dissent + Q.liberal_strength*Q.liberal_dissent;
 
 
 Q.dissent = 0.01*total_dissent/total_strength;
@@ -439,7 +439,7 @@ if (Q.month_actions >= 1) {
         }
     }
     // decrement timers
-    for (timer of Q.timers) {
+    for (let timer of Q.timers) {
         if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
             Q[timer+'_timer'] -= 1;
             if (timer === Q.speaker_boosted_committee && Q[timer+'_timer'] > 0) {
@@ -791,6 +791,8 @@ if (Q.month_actions >= 1) {
         }
     }
 
+}
+
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
 var scene = this.game.scenes['post_event.events_choice'];
@@ -809,6 +811,9 @@ if (this.ui && this.ui.show_portraits) {
             im.url = cc.faceImage;
         }
     }
+}
+
+if (typeof window !== "undefined" && window.generateBar) {
 }
 !}
 go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0
