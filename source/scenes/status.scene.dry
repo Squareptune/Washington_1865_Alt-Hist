@@ -69,19 +69,19 @@ Tariff rate: [+ tariffs +]
 
 = Inter-party Relations
 
-{!<span class="tooltip-text" title="Democratic Party" style="color: #0015bc;">Democrats</span>!}: [+ dem_relation : relationships +]
+**{!<span class="tooltip-text" title="Democratic Party" style="color: #0015bc;">Democrats</span>!}**: [+ dem_relation : relationships +]
 
 [? if liberal_split = 1 : {!<span class="tooltip-text" title="Liberal Republican Party">Lib. Rep.</span>!}: [+ liberal_relation : relationships +] ?]
 
 = Internal Factions of the Party
 
-{!<span class="tooltip-text" title="The Radicals support total equality for the freedmen and believe in retribution"<span style="color: #7A1F5C;">**Radical**</span>!} strength: [+ radical_strength : strength +], dissent: [+ radical_dissent : dissent +]
+**{!<span class="tooltip-text" title="The Radicals support total equality for the freedmen and believe in retribution"<span style="color: #7A1F5C;">Radical</span>!}** strength: [+ radical_strength : strength +], dissent: [+ radical_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The Moderates follow the ideas of Lincoln and quick reintegration of the south">Moderate</span>!} strength: [+ moderate_strength : strength +], dissent: [+ moderate_dissent : dissent +]
+**{!<span class="tooltip-text" title="The Moderates follow the ideas of Lincoln and quick reintegration of the south"<span style="color: #9D2933;">Moderate</span>!}** strength: [+ moderate_strength : strength +], dissent: [+ moderate_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Oppose the more ideas of the Radical Republicans and sought a less extreme path for southern reintegration">Conservative</span>!} strength: [+ conservative_strength : strength +], dissent: [+ conservative_dissent : dissent +]
+**{!<span class="tooltip-text" title="Oppose the more ideas of the Radical Republicans and sought a less extreme path for southern reintegration"<span style="color: #B5651D;">Conservative</span>!}** strength: [+ conservative_strength : strength +], dissent: [+ conservative_dissent : dissent +]
 
-[? if liberal_split = 0 : {!<span class="tooltip-text" title="Support civil liberties and free markets, but are skeptical of strong federal enforcement of racial equality or occupation policies">Liberal</span>!} strength: [+ liberal_strength : strength +], dissent: [+ liberal_dissent : dissent +] ?]
+**[? if liberal_split = 0 : {!<span class="tooltip-text" title="Support civil liberties and free markets, but are skeptical of strong federal enforcement of racial equality or occupation policies"<span style="color: #DAA520;">Liberal</span>!}** strength: [+ liberal_strength : strength +], dissent: [+ liberal_dissent : dissent +] ?]
 
 [? if liberal_split = 1 : The Liberal faction has broken away to form the Liberal Republican Party. ?]
 
