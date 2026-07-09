@@ -58,7 +58,7 @@ Q.lib_senate_returned = senateReturn;
 Q.moderate_strength += 6;
 Q.moderate_dissent += 8;
 Q.liberal_strength += 4;
-Q.liberal_dissent += 12;=
+Q.liberal_dissent += 12;
 Q.conservative_dissent += 5;
 Q.radical_dissent += 4;
 
