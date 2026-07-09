@@ -69,13 +69,13 @@ Tariff rate: [+ tariffs +]
 
 = Inter-party Relations
 
-{!<span class="tooltip-text" title="Democratic Party" style="color: #0015bc;">**Democrats**</span>!}: [+ dem_relation : relationships +]
+{!<span class="tooltip-text" title="Democratic Party" style="color: #0015bc;">Democrats</span>!}: [+ dem_relation : relationships +]
 
 [? if liberal_split = 1 : {!<span class="tooltip-text" title="Liberal Republican Party">Lib. Rep.</span>!}: [+ liberal_relation : relationships +] ?]
 
 = Internal Factions of the Party
 
-{!<span class="tooltip-text" title="The Radicals support total equality for the freedmen and believe in retribution">Radical</span>!} strength: [+ radical_strength : strength +], dissent: [+ radical_dissent : dissent +]
+{!<span class="tooltip-text" title="The Radicals support total equality for the freedmen and believe in retribution"<span style="color: #7A1F5C;">**Radical**</span>!} strength: [+ radical_strength : strength +], dissent: [+ radical_dissent : dissent +]
 
 {!<span class="tooltip-text" title="The Moderates follow the ideas of Lincoln and quick reintegration of the south">Moderate</span>!} strength: [+ moderate_strength : strength +], dissent: [+ moderate_dissent : dissent +]
 
@@ -97,7 +97,7 @@ KKK_Militarization: [+ kkk_militancy : militancy +]
 
 [? if whiteL_formed = 1 : White League Militarization: [+ whiteL_militancy : militancy +] ?]
 
-{!<span class="tooltip-text" title=" The Union League is a <span style="color: #c00000;">**Republican**</span>-aligned patriotic society defending Black civil rights and Reconstruction.">Union League</span>!} Strength: [+ Union_League_strength +] thousand
+{!<span class="tooltip-text" title=" The Union League is a Republican-aligned patriotic society defending Black civil rights and Reconstruction.">Union League</span>!} Strength: [+ Union_League_strength +] thousand
 
 Union League Militancy: [+ Union_League_militancy : militancy +]
 
@@ -137,7 +137,7 @@ House:
 
 <span style="color: #c00000;">**Republican**</span>: [+ rep_r_pro +] seats
 
-<span style="color: #17181a;">**Democrats**</span>: [+ dem_r_pro +] seats
+<span style="color: #0015bc;">**Democrats**</span>: [+ dem_r_pro +] seats
 
 [? if liberal_split = 1 : <span style="color: #DAA520;">**Liberal Republicans**</span>: [+ lib_r_pro +] seats ?]
 
