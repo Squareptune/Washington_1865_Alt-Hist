@@ -11,10 +11,10 @@ tags: party_affairs
 
 Internal conflict is tearing our party apart. With little agreement on goals or strategy, factions openly undermine each other, sabotaging our campaigns and weakening our message.
 
-[? if radical_dissent > 30 : The <span style="color: #7A1F5C;">Radicals</span> are increasingly confrontational toward the party establishment. ?]
-[? if moderate_dissent > 30 : The <span style="color: #9D2933;">Moderates</span> are frustrated at the party’s growing instability. ?]
-[? if conservative_dissent > 30 : The conservatives argue that we’ve strayed too far from pragmatism. ?]
-[? if liberal_dissent > 30: The <span style="color: #DAA520;">**liberals**</span> threaten to break with the party leadership. ?]
+[? if radical_dissent > 30 : The <span style="color: #7A1F5C;">**Radicals**</span> are increasingly confrontational toward the party establishment. ?]
+[? if moderate_dissent > 30 : The <span style="color: #9D2933;">**Moderates**</span> are frustrated at the party’s growing instability. ?]
+[? if conservative_dissent > 30 : The <span style="color: #B5651D;">**Conservatives**</span> argue that we’ve strayed too far from pragmatism. ?]
+[? if liberal_dissent > 30: The <span style="color: #DAA520;">**Liberals**</span> threaten to break with the party leadership. ?]
 
 We must address these tensions before a split becomes inevitable.
 
@@ -32,32 +32,32 @@ on-arrival: radical_dissent -= 5; moderate_dissent -= 5; conservative_dissent -=
 We apply pressure across the board to restore order, but risk losing influence with key factions.
 
 @concessions_radicals
-title: Give concessions to the <span style="color: #7A1F5C;">radicals</span>.
+title: Give concessions to the <span style="color: #7A1F5C;">**radicals</span>.
 view-if: radical_dissent > 30
 on-arrival: radical_dissent -= 7; moderate_dissent += 4; conservative_dissent += 2
 
-We adopt more <span style="color: #7A1F5C;">radical</span> rhetoric and promise bold reforms, at the risk of alienating more cautious voices.
+We adopt more <span style="color: #7A1F5C;">**radical**</span> rhetoric and promise bold reforms, at the risk of alienating more cautious voices.
 
 @concessions_moderates
-title: Give concessions to the <span style="color: #9D2933;">Moderates</span>
+title: Give concessions to the <span style="color: #9D2933;">**Moderates**</span>
 view-if: moderate_dissent > 30
 on-arrival: moderate_dissent -= 7; radical_dissent += 3; socialist_dissent += 2
 
-We <span style="color: #9D2933;">moderates</span> our tone and focus on achievable goals. The <span style="color: #7A1F5C;">radicals</span> aren't pleased.
+We <span style="color: #9D2933;">**moderates**</span> our tone and focus on achievable goals. The <span style="color: #7A1F5C;">**radicals**</span> aren't pleased.
 
 @concessions_conservatives
-title: Give concessions to the <span style="color: #B5651D;">Conservatives</span>.
+title: Give concessions to the <span style="color: #B5651D;">**Conservatives**</span>.
 view-if: conservative_dissent > 30
 on-arrival: conservative_dissent -= 7; radical_dissent += 3; moderate_dissent += 2
 
-We promise more gradual reforms and traditional messaging, which angers <span style="color: #7A1F5C;">radicals</span> and <span style="color: #9D2933;">moderates</span> alike.
+We promise more gradual reforms and traditional messaging, which angers <span style="color: #7A1F5C;">**radicals**</span> and <span style="color: #9D2933;">**moderates**</span> alike.
 
 @concessions_liberals
 title: Give concessions to the <span style="color: #DAA520;">**liberals**</span>
 view-if: liberal_dissent > 30
 on-arrival: liberal_dissent -= 7; radical_dissent += 4; moderate_dissent += 2
 
-We incorporate more civil liberties and reformist policies to satisfy liberal demands, though some <span style="color: #9D2933;">moderates</span> and r<span style="color: #7A1F5C;">radicals</span>adicals may object.
+We incorporate more civil liberties and reformist policies to satisfy liberal demands, though some <span style="color: #9D2933;">**moderates**</span> and <span style="color: #7A1F5C;">**radicals**</span> may object.
 
 @do_nothing
 title: Let them argue it out.

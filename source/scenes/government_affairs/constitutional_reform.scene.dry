@@ -9,7 +9,7 @@ go-to: reforms_menu
 
 = Rewriting the Nation's Charter
 
-Many <span style="color: #7A1F5C;">Radical Republicans</span> of the <span style="color: #c00000;">**Republican**</span> party aim to amend the Constitution to push through their agenda and speed up the reconstruction process.
+Many <span style="color: #7A1F5C;">**Radical Republicans**</span> of the <span style="color: #c00000;">**Republican**</span> party aim to amend the Constitution to push through their agenda and speed up the reconstruction process.
 
 A constitutional amendment requires either a two-thirds supermajority in Congress as well as three-fourths support of all the states.
 
@@ -58,7 +58,7 @@ The amendment passes! Public funds are now barred from 'sectarian' (Catholic) sc
 - @reforms_menu: See other reform options.
 
 @5
-subtitle: <span style="color: #7A1F5C;">Radical</span> Land Reform: Amend the 5th!
+subtitle: <span style="color: #7A1F5C;">**Radical**</span> Land Reform: Amend the 5th!
 view-if: fifth_A = 0
 choose-if: amendmentResult = 1 and house_majority = 3 and sen_majority = 3 and limit = 1
 unavailable-subtitle: [? if limit < 1: We shouldn't pass too many amendments?][? if house_majority < 3: We do not have enough seats in the House ?][? if sen_majority < 3: We also do not have enough seats in the Senate ?][? if amendmentResult = 0: 3/4th of the States don't approve of the amendment?]
@@ -66,7 +66,7 @@ on-arrival: limit -= 1; fifth_A = 1; conservative_dissent += 10; radical_dissent
 
 The revised 5th Amendment has passed Congress and been ratified by the states. The "just compensation" clause has been struck from the Constitution, opening the door for uncompensated land confiscation from former Confederates.
 
-<span style="color: #7A1F5C;">Radical Republicans</span> hail the amendment as the cornerstone of true Reconstruction. Freedmen's advocates now push for aggressive redistribution—"forty acres and a mule" could become the law of the land.
+<span style="color: #7A1F5C;">**Radical Republicans**</span> hail the amendment as the cornerstone of true Reconstruction. Freedmen's advocates now push for aggressive redistribution—"forty acres and a mule" could become the law of the land.
 
 Southern elites are outraged, denouncing the amendment as tyranny. The path ahead will be turbulent, but this is a revolution in land ownership and federal power.
 

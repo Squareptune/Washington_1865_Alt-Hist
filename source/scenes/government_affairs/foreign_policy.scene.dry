@@ -119,7 +119,7 @@ on-arrival: treaty_Washington += 1; economic_growth += 0.2; middle_class_rep += 
 
 We signed the *Treaty of Washington*, a landmark diplomatic success. The Alabama Claims are settled via arbitration, and Britain agrees to pay $15.5 million in gold to the United States as compensation for damages.
 
-The money goes straight into the Treasury. Border disputes are resolved peacefully. <span style="color: #9D2933;">Moderates</span> hail it as a statesmanlike triumph, and even nationalists acknowledge the treaty upheld American honor — and paid for it, too.
+The money goes straight into the Treasury. Border disputes are resolved peacefully. <span style="color: #9D2933;">**Moderates**</span> hail it as a statesmanlike triumph, and even nationalists acknowledge the treaty upheld American honor — and paid for it, too.
 
 @san_juan_arbitration
 title: Press our claim in the San Juan Boundary arbitration.
@@ -156,7 +156,7 @@ The Kaiser rules for British sovereignty over the islands. The loss stings less 
 title: Normalize relations with Haiti.
 view-if: haiti_support = 0
 choose-if: conservative_strength < 30
-unavailable-subtitle: The <span style="color: #B5651D;">Conservatives</span> sway the party away from this
+unavailable-subtitle: The <span style="color: #B5651D;">**Conservatives**</span> sway the party away from this
 on-arrival: freedmen_rep += 3; radical_strength += 1; economic_growth += 0.1; europe_relation -= 1; haiti_support += 1; conservative_dissent -= 10
 
 Though Haiti has been independent for decades, we have refused full diplomatic recognition, largely due to racial politics.
@@ -167,7 +167,7 @@ We now send an envoy to Port-au-Prince, signaling respect for Black self-governm
 title: Continue relations with Haiti.
 view-if: haiti_support = 1
 choose-if: conservative_strength < 30
-unavailable-subtitle: The <span style="color: #B5651D;">Conservatives</span> sway the party away from this
+unavailable-subtitle: The <span style="color: #B5651D;">**Conservatives**</span> sway the party away from this
 on-arrival: freedmen_rep += 3; radical_strength += 1; economic_growth += 0.1; europe_relation -= 1; conservative_dissent -= 5
 
 We continue relations with Haiti, which is seen as a beacon of hope to the Freedmen of the party and the rest of the United States.
@@ -176,7 +176,7 @@ We continue relations with Haiti, which is seen as a beacon of hope to the Freed
 title: Deepen ties with Liberia.
 view-if: liberia_support = 0
 choose-if: conservative_strength < 30
-unavailable-subtitle: The <span style="color: #B5651D;">Conservatives</span> sway the party away from this
+unavailable-subtitle: The <span style="color: #B5651D;">**Conservatives**</span> sway the party away from this
 on-arrival: freedmen_rep += 2; radical_strength += 1; liberia_support += 1; conservative_dissent -= 5
 
 The American Colonization Society still promotes emigration to Liberia as an answer to the "Negro Question," an idea Frederick Douglass and most Black leaders reject outright — freedom, they insist, means citizenship here, not exile there.
@@ -187,7 +187,7 @@ Short of endorsing emigration, we can still expand consular support, mission sch
 title: Continue building ties with Liberia.
 view-if: liberia_support = 1
 choose-if: conservative_strength < 30
-unavailable-subtitle: The <span style="color: #B5651D;">Conservatives</span> sway the party away from this
+unavailable-subtitle: The <span style="color: #B5651D;">**Conservatives**</span> sway the party away from this
 on-arrival: freedmen_rep += 2; radical_strength += 1; conservative_dissent -= 2
 
 Trade in palm oil and coffee grows modestly, and mission schools continue their work. It is a small relationship, but a genuine one, and freedmen across the South take note of a Black republic treated as a diplomatic equal.
@@ -246,7 +246,7 @@ on-arrival: {!
 
 Cuban rebels have been fighting Spanish colonial rule since 1868 in what promises to be a long, grinding war. Recognizing their belligerency would let American arms and volunteers reach the rebellion more openly — a moral stand against the last major slaveholding power in the hemisphere, and a headache for Madrid.
 
-<span style="color: #7A1F5C;">Radicals</span>, still flush with abolitionist conviction, are enthusiastic. Spain lodges a furious protest.
+<span style="color: #7A1F5C;">**Radicals**</span>, still flush with abolitionist conviction, are enthusiastic. Spain lodges a furious protest.
 
 @maintain_cuban_neutrality
 title: Maintain strict neutrality on Cuba.

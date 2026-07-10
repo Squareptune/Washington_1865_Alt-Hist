@@ -39,7 +39,7 @@ on-arrival: stevens_advisor = 0; radical_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Stevens has been removed as an advisor. The <span style="color: #7A1F5C;">Radical Republicans</span> disapproves.
+Stevens has been removed as an advisor. The <span style="color: #7A1F5C;">**Radical Republicans**</span> disapproves.
 
 @remove_sumner
 title: Remove Sumner
@@ -48,7 +48,7 @@ on-arrival: sumner_advisor = 0; radical_dissent += 4; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Sumner has been removed as an advisor. The <span style="color: #7A1F5C;">Radical Republicans</span> disapproves.
+Sumner has been removed as an advisor. The <span style="color: #7A1F5C;">**Radical Republicans**</span> disapproves.
 
 @remove_wade
 title: Remove Wade
@@ -57,7 +57,7 @@ on-arrival: wade_advisor = 0; radical_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Wade has been removed as an advisor. The <span style="color: #7A1F5C;">Radical Republicans</span> disapproves.
+Wade has been removed as an advisor. The <span style="color: #7A1F5C;">**Radical Republicans**</span> disapproves.
 
 @remove_chandler
 title: Remove Chandler
@@ -66,7 +66,7 @@ on-arrival: chandler_advisor = 0; radical_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Chandler has been removed as an advisor. The <span style="color: #7A1F5C;">Radical Republicans</span> disapproves.
+Chandler has been removed as an advisor. The <span style="color: #7A1F5C;">**Radical Republicans**</span> disapproves.
 
 @remove_morton
 title: Remove Morton
@@ -75,7 +75,7 @@ on-arrival: morton_advisor = 0; radical_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Morton has been removed as an advisor. The <span style="color: #7A1F5C;">Radical Republicans</span> disapproves.
+Morton has been removed as an advisor. The <span style="color: #7A1F5C;">**Radical Republicans**</span> disapproves.
 
 @remove_butler
 title: Remove Butler
@@ -84,7 +84,7 @@ on-arrival: butler_advisor = 0; radical_dissent += 4; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Butler has been removed as an advisor. The <span style="color: #7A1F5C;">Radical Republicans</span> disapproves.
+Butler has been removed as an advisor. The <span style="color: #7A1F5C;">**Radical Republicans**</span> disapproves.
 
 @remove_garfield
 title: Remove Garfield
@@ -93,7 +93,7 @@ on-arrival: garfield_advisor = 0; moderate_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Garfield has been removed as an advisor. The <span style="color: #9D2933;">Moderates</span> disapproves.
+Garfield has been removed as an advisor. The <span style="color: #9D2933;">**Moderates**</span> disapproves.
 
 @remove_sherman
 title: Remove Sherman
@@ -102,7 +102,7 @@ on-arrival: sherman_advisor = 0; moderate_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Sherman has been removed as an advisor. The <span style="color: #9D2933;">Moderates</span> disapproves.
+Sherman has been removed as an advisor. The <span style="color: #9D2933;">**Moderates**</span> disapproves.
 
 @remove_blaine
 title: Remove Blaine
@@ -111,7 +111,7 @@ on-arrival: blaine_advisor = 0; moderate_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Blaine has been removed as an advisor. The <span style="color: #9D2933;">Moderates</span> disapproves.
+Blaine has been removed as an advisor. The <span style="color: #9D2933;">**Moderates**</span> disapproves.
 
 @remove_hayes
 title: Remove Hayes
@@ -120,7 +120,7 @@ on-arrival: hayes_advisor = 0; moderate_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Hayes has been removed as an advisor. The <span style="color: #9D2933;">Moderates</span> disapproves.
+Hayes has been removed as an advisor. The <span style="color: #9D2933;">**Moderates**</span> disapproves.
 
 @remove_fish
 title: Remove Fish
@@ -129,7 +129,7 @@ on-arrival: fish_advisor = 0; moderate_dissent += 2; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Fish has been removed as an advisor. The <span style="color: #9D2933;">Moderates</span> disapproves.
+Fish has been removed as an advisor. The <span style="color: #9D2933;">**Moderates**</span> disapproves.
 
 @remove_conkling
 title: Remove Conkling
@@ -138,7 +138,7 @@ on-arrival: conkling_advisor = 0; conservative_dissent += 4; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Conkling has been removed as an advisor. The <span style="color: #B5651D;">Conservatives</span> disapproves.
+Conkling has been removed as an advisor. The <span style="color: #B5651D;">**Conservatives**</span> disapproves.
 
 @remove_cameron
 title: Remove Cameron
@@ -147,7 +147,7 @@ on-arrival: cameron_advisor = 0; conservative_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Cameron has been removed as an advisor. The <span style="color: #B5651D;">Conservatives</span> disapproves.
+Cameron has been removed as an advisor. The <span style="color: #B5651D;">**Conservatives**</span> disapproves.
 
 @remove_seward
 title: Remove Seward
@@ -156,7 +156,7 @@ on-arrival: seward_advisor = 0; conservative_dissent += 3; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Seward has been removed as an advisor. The <span style="color: #B5651D;">Conservatives</span> disapproves.
+Seward has been removed as an advisor. The <span style="color: #B5651D;">**Conservatives**</span> disapproves.
 
 @remove_schurz
 title: Remove Schurz
@@ -192,7 +192,7 @@ on-arrival: douglass_advisor = 0; radical_dissent += 5; freemen_rep -= 3; n_advi
 tags: remove_advisor
 go-to: rm_main
 
-Douglass has been removed as an advisor. The <span style="color: #7A1F5C;">Radical Republicans</span> and the freedmen community disapprove strongly.
+Douglass has been removed as an advisor. The <span style="color: #7A1F5C;">**Radical Republicans**</span> and the freedmen community disapprove strongly.
 
 
 ###################### adding leaders
@@ -209,8 +209,8 @@ tags: radical_advisor, moderate_advisor, conservative_advisor, liberal_advisor, 
 frequency: 1
 
 - @Radical: Add <span style="color: #7A1F5C;">Radical</span> advisor
-- @Moderate: Add <span style="color: #9D2933;">Moderate</span> advisor
-- @Conservative: Add Conservative advisor
+- @Moderate: Add <span style="color: #9D2933;">**Moderates**</span> advisor
+- @Conservative: Add <span style="color: #B5651D;">**Conservatives**</span> advisor
 - @Liberal: Add <span style="color: #DAA520;">Liberal</span> advisor
 - @Nonfactional: Add non-factional advisor
 - @rm_main: Remove advisors instead.
@@ -245,7 +245,7 @@ view-if: n_advisors < 3
 
 @add_stevens
 title: Thaddeus Stevens
-subtitle: Leader of the <span style="color: #7A1F5C;">Radical Republicans</span> in the House. Uncompromising champion of equality.
+subtitle: Leader of the <span style="color: #7A1F5C;">**Radical Republicans**</span> in the House. Uncompromising champion of equality.
 is-card: true
 card-image: img/portraits/Thaddeus_Stevens.jpg
 tags: radical_advisor
@@ -257,7 +257,7 @@ Thaddeus Stevens is now an advisor.
 
 @add_sumner
 title: Charles Sumner
-subtitle: Senate leader of the <span style="color: #7A1F5C;">Radical Republicans</span>. Passionate abolitionist and champion of Black civil rights.
+subtitle: Senate leader of the <span style="color: #7A1F5C;">**Radical Republicans**</span>. Passionate abolitionist and champion of Black civil rights.
 is-card: true
 card-image: img/portraits/Charles_Sumner.jpg
 tags: radical_advisor
@@ -319,7 +319,7 @@ Benjamin Butler is now an advisor. His methods are controversial but his results
 
 @add_garfield
 title: James Garfield
-subtitle: Ohio war hero and rising <span style="color: #9D2933;">moderate</span> star. Skilled master debater.
+subtitle: Ohio war hero and rising <span style="color: #9D2933;">**Moderates**</span> star. Skilled master debater.
 is-card: true
 card-image: img/portraits/James_Abram_Garfield.jpg
 tags: moderate_advisor
@@ -331,7 +331,7 @@ James Garfield is now an advisor. His broad appeal across factions makes him a v
 
 @add_sherman
 title: John Sherman
-subtitle: Ohio senator and fiscal <span style="color: #9D2933;">moderates</span>. Brother of the general. The party's leading voice on economic policy.
+subtitle: Ohio senator and fiscal <span style="color: #9D2933;">**Moderates**</span>. Brother of the general. The party's leading voice on economic policy.
 is-card: true
 card-image: img/portraits/John-Sherman.jpg
 tags: moderate_advisor
@@ -355,7 +355,7 @@ James Blaine is now an advisor. His national profile and political skill are con
 
 @add_hayes
 title: Rutherford Hayes
-subtitle: Ohioian. <span style="color: #9D2933;">moderate</span>, honest, and broadly trusted.
+subtitle: Ohioian. <span style="color: #9D2933;">**Moderates**</span>, honest, and broadly trusted.
 is-card: true
 card-image: img/portraits/Rutherford_Hayes.jpg
 tags: moderate_advisor
@@ -367,7 +367,7 @@ Rutherford Hayes is now an advisor. His reputation for integrity is a useful cou
 
 @add_fish
 title: Hamilton Fish
-subtitle: New York <span style="color: #9D2933;">moderate</span>. A steady hand on foreign policy.
+subtitle: New York <span style="color: #9D2933;">**Moderates**</span>. A steady hand on foreign policy.
 is-card: true
 card-image: img/portraits/Hamilton_Fish.jpg
 tags: moderate_advisor
@@ -381,7 +381,7 @@ Hamilton Fish is now an advisor. His diplomatic experience opens doors abroad th
 
 @add_conkling
 title: Roscoe Conkling
-subtitle: New York machine boss and dominant conservative figure. Controls the Custom House.
+subtitle: New York machine boss and dominant <span style="color: #B5651D;">**Conservative**</span> figure. Controls the Custom House.
 is-card: true
 card-image: img/portraits/Roscoe_Conkling.jpg
 tags: conservative_advisor
@@ -405,7 +405,7 @@ Simon Cameron is now an advisor. His Pennsylvania machine is a formidable asset,
 
 @add_seward
 title: William Seward
-subtitle: Secretary of State and former Whig leader. Pragmatic conservative.
+subtitle: Secretary of State and former Whig leader. Pragmatic <span style="color: #B5651D;">**Conservative**</span>.
 is-card: true
 card-image: img/portraits/Seward.jpg
 tags: conservative_advisor

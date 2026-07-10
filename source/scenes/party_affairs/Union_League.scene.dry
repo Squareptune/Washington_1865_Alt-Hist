@@ -25,7 +25,7 @@ unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed)
 subtitle: -[+ rb_militarization_cost +] resources
 on-arrival: resources -= rb_militarization_cost; rb_investment += 1; Union_League_strength += 50; Union_League_militancy += 0.05; radical_strength += 2; radical_dissent -= 2; moderate_dissent += 5; liberal_strength -= 1; liberal_dissent += 3; workers_rep += 2*(1-dissent); unemployed_rep += 2*(1-dissent); dem_relation -= 5 if historical_mode
 
-Some in our party decry the increasing militarization of the Union League. They say it is emulating the Southern Redeemers or the labor radicals, and risks alienating our allies in the moderate factions. On the other hand, more <span style="color: #7A1F5C;">Radical Republicans</span> are being drawn to our organizations, away from the labor agitators.
+Some in our party decry the increasing militarization of the Union League. They say it is emulating the Southern Redeemers or the labor radicals, and risks alienating our allies in the moderate factions. On the other hand, more <span style="color: #7A1F5C;">**Radical Republicans**</span> are being drawn to our organizations, away from the labor agitators.
 
 @militant_2
 view-if: funded_reichsbanner >= 1

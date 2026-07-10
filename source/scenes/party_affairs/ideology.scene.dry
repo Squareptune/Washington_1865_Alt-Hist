@@ -28,7 +28,7 @@ if (Q.ideology && Q.ideology != "radical") {
 go-to: changed if changed = 1
 on-departure: ideology = "radical"; radical_strength += 10; freemen_rep += 3; radical_dissent -= 5; moderate_dissent += 5; rural_other += 2; liberal_dissent += 2; conservative_dissent += 3;
 
-<span style="color: #7A1F5C;">Radical Republicans</span> support full Reconstruction, racial equality, and a democratic revolution in the South.
+<span style="color: #7A1F5C;">**Radical Republicans**</span> support full Reconstruction, racial equality, and a democratic revolution in the South.
 
 @moderate_republican  
 on-arrival: {!  
@@ -39,7 +39,7 @@ if (Q.ideology && Q.ideology != "moderate") {
 go-to: changed if changed = 1  
 on-departure: ideology = "moderate"; moderate_strength += 10; moderate_dissent -= 5; radical_dissent += 5; conservative_dissent -= 2; middle_class_rep += 3; rural_rep += 2; freemen_rep -= 2; liberal_strength += 3; liberal_dissent -= 2;
 
-<span style="color: #9D2933;">Moderates</span> hope to reconcile North and South with a more cautious approach, avoiding excess upheaval.
+<span style="color: #9D2933;">**Moderates**</span> hope to reconcile North and South with a more cautious approach, avoiding excess upheaval.
 
 @conservative_republican
 on-arrival: {!
@@ -50,7 +50,7 @@ if (Q.ideology && Q.ideology != "conservative") {
 go-to: changed if changed = 1
 on-departure: ideology = "conservative"; conservative_strength += 10; conservative_dissent -= 5; radical_dissent += 5; liberal_dissent += 3; freemen_rep -= 2; rural_rep += 2; middle_class_rep += 1;
 
-<span style="color: #B5651D;">Conservatives</span> seek to preserve order and stability, prioritizing unity over rapid social transformation.
+<span style="color: #B5651D;">**Conservatives**</span> seek to preserve order and stability, prioritizing unity over rapid social transformation.
 
 @liberal_republican
 on-arrival: {!
